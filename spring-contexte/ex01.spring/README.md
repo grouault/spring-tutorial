@@ -1,0 +1,1 @@
+Projet simple permettant de mettre en place un context spring avec un fichier XML.
