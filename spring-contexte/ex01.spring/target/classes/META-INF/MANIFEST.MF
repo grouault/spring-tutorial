@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: grouault
+Class-Path: spring-context-4.3.11.RELEASE.jar spring-aop-4.3.11.RELEAS
+ E.jar spring-beans-4.3.11.RELEASE.jar spring-core-4.3.11.RELEASE.jar 
+ spring-expression-4.3.11.RELEASE.jar log4j-1.2-api-2.9.0.jar log4j-ap
+ i-2.9.0.jar log4j-core-2.9.0.jar commons-logging-1.2.jar
+Build-Jdk: 1.8.0_131
+Created-By: Maven Integration for Eclipse
+Main-Class: fr.exagone.Main
+
