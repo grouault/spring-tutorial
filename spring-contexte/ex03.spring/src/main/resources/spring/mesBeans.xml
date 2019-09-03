@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans	xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Beans Contexte -->
+	<beans>
+	
+		<bean id="voiture1" class="fr.exagone.beans.Voiture">
+			<property name="marque" value="Opel" />
+			<property name="modele" value="Grandland X" />
+		</bean>
+		
+		<!-- CLIENT 1 -->
+		<bean id="adresse1" class="fr.exagone.beans.Adresse">
+			<property name="rue" value="rue Roland Garros" />
+			<property name="ville" value="Athis"/>
+			<property name="codePostal" value="91234" />
+			<property name="pays" value="France" />
+		</bean>
+		
+		<bean id="adresse2" class="fr.exagone.beans.Adresse">
+			<constructor-arg name="rue" value="rue des lilas" ></constructor-arg>
+			<constructor-arg name="ville" value="Pré-Saint-Gervais" ></constructor-arg>
+			<constructor-arg name="codePostal" value="93087" ></constructor-arg>
+			<constructor-arg name="pays" value="France" ></constructor-arg>
+		</bean>
+		
+		<bean name="adresse3" class="fr.exagone.beans.Adresse">
+			<property name="rue" value="rue du tennis" />
+			<property name="ville" value="Loisirs"/>
+			<property name="codePostal" value="10000" />
+			<property name="pays" value="Pays des rêves" />
+		</bean>
+		
+		<bean id="adresses" class="java.util.Vector">
+		    <constructor-arg>
+		        <list>
+		            <ref bean="adresse1" />
+		            <ref bean="adresse2" />
+		            <ref bean="adresse3" />                
+		        </list>
+		    </constructor-arg>
+		</bean>
+		
+		<bean id="client1" class="fr.exagone.beans.Client">
+			<property name="nom" value="lunz" />
+			<property name="prenom" value="Axel" />
+			<property name="age" value="28" />
+			<property name="adresses" ref="adresses" />
+		</bean>
+		
+	</beans>
+
+</beans>
