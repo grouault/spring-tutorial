@@ -4,7 +4,7 @@ Projet simple permettant d'instancier des composants dans le conteneur léger
 ==> Exemple d'implémentation d'une liste en Spring
 
 # Instanciation d'une liste
-test
+voir le fichier liste.xml
 
 # Code générer par l'exécution:
 [03/09/2019 21:52:11] - DEBUG - fr.exagone.Main.main(Main.java:30) - -- Debut --  
