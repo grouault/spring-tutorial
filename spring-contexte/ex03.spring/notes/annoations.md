@@ -1,5 +1,5 @@
 # Declarations XML
-<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
+bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"
 
 # 
 ## Annotations
