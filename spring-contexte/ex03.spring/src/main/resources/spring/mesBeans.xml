@@ -6,6 +6,12 @@
 	<!-- Beans Contexte -->
 	<beans>
 	
+		<!-- PROPERTIES -->
+		<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+  			<property name="location" value="spring/adresses.properties"/>
+		</bean>
+	
+		<!-- VOITURE 1 -->
 		<bean id="voiture1" class="fr.exagone.beans.Voiture">
 			<property name="marque" value="Opel" />
 			<property name="modele" value="Grandland X" />
@@ -13,24 +19,24 @@
 		
 		<!-- CLIENT 1 -->
 		<bean id="adresse1" class="fr.exagone.beans.Adresse">
-			<property name="rue" value="rue Roland Garros" />
-			<property name="ville" value="Athis"/>
-			<property name="codePostal" value="91234" />
-			<property name="pays" value="France" />
+			<property name="rue" value="${addr1.rue}" />
+			<property name="ville" value="${addr1.ville}"/>
+			<property name="codePostal" value="${addr1.codePostal}" />
+			<property name="pays" value="${addr1.pays}" />
 		</bean>
 		
 		<bean id="adresse2" class="fr.exagone.beans.Adresse">
-			<constructor-arg name="rue" value="rue des lilas" ></constructor-arg>
-			<constructor-arg name="ville" value="Pré-Saint-Gervais" ></constructor-arg>
-			<constructor-arg name="codePostal" value="93087" ></constructor-arg>
-			<constructor-arg name="pays" value="France" ></constructor-arg>
+			<constructor-arg name="rue" value="${addr2.rue}" ></constructor-arg>
+			<constructor-arg name="ville" value="${addr2.ville}" ></constructor-arg>
+			<constructor-arg name="codePostal" value="${addr2.codePostal}" ></constructor-arg>
+			<constructor-arg name="pays" value="${addr2.pays}" ></constructor-arg>
 		</bean>
 		
 		<bean name="adresse3" class="fr.exagone.beans.Adresse">
-			<property name="rue" value="rue du tennis" />
-			<property name="ville" value="Loisirs"/>
-			<property name="codePostal" value="10000" />
-			<property name="pays" value="Pays des rêves" />
+			<property name="rue" value="${addr3.rue}" />
+			<property name="ville" value="${addr3.ville}"/>
+			<property name="codePostal" value="${addr3.codePostal}" />
+			<property name="pays" value="${addr3.pays}" />
 		</bean>
 		
 		<bean id="adresses" class="java.util.Vector">

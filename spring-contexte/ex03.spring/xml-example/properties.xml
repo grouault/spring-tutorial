@@ -1,0 +1,22 @@
+<!-- 
+PROPERTIES 
+- permet d'initialiser les paramètres de configuration de beans à partir de 
+clés définis dans une fichier de propriétés
+-->
+<beans>
+
+<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+			<property name="location" value="spring/adresses.properties"/>
+</bean>
+
+<!-- 
+bean utilisant les properties
+CLIENT 1 -->
+<bean id="adresse1" class="fr.exagone.beans.Adresse">
+	<property name="rue" value="${addr1.rue}" />
+	<property name="ville" value="${addr1.ville}"/>
+	<property name="codePostal" value="${addr1.codePostal}" />
+	<property name="pays" value="${addr1.pays}" />
+</bean>
+
+</beans>

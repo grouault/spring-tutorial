@@ -3,6 +3,8 @@
 	<property name="prenom" value="Elise" />
 	<property name="age" value="35" />
 	<property name="adresses">
+	
+		<!-- EXEMPLE INSTANCIATION LISTE -->
 		<bean class="java.util.ArrayList">
 			<constructor-arg>
 				<list value-type="com.exo.Adresse">
@@ -15,5 +17,8 @@
 				</list>
 			</constructor-arg>
 		</bean>
+		
+		
+		
 	</property>
 </bean>
