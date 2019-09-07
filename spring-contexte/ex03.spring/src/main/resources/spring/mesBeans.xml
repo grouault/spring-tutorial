@@ -6,10 +6,21 @@
 	<!-- Beans Contexte -->
 	<beans>
 	
+		<!-- ####################  -->
+		<!-- SPRING-CONFIGURATION  -->
+	    <!-- ####################  -->
+	    
+	    <!-- ANNOTATION -->
+	    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
+	
 		<!-- PROPERTIES -->
 		<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
   			<property name="location" value="spring/adresses.properties"/>
 		</bean>
+	
+		<!-- ################## -->
+		<!-- BEANS-DECLARATIONS -->
+	    <!-- ################## -->
 	
 		<!-- VOITURE 1 -->
 		<bean id="voiture1" class="fr.exagone.beans.Voiture">
@@ -49,11 +60,64 @@
 		    </constructor-arg>
 		</bean>
 		
-		<bean id="client1" class="fr.exagone.beans.Client">
+		<bean id="client1" class="fr.exagone.beans.Client" init-method="initialiser" destroy-method="detruire">
 			<property name="nom" value="lunz" />
 			<property name="prenom" value="Axel" />
 			<property name="age" value="28" />
 			<property name="adresses" ref="adresses" />
+		</bean>
+		
+		<!-- 
+		
+		CLIENT 2 -->
+		<bean id="adresse22" class="fr.exagone.beans.Adresse">
+			<constructor-arg name="rue" value="rue des lilas" ></constructor-arg>
+			<constructor-arg name="ville" value="Pré-Saint-Gervais" ></constructor-arg>
+			<constructor-arg name="codePostal" value="93087" ></constructor-arg>
+			<constructor-arg name="pays" value="France" ></constructor-arg>
+		</bean>
+		
+		<bean id="client2" class="fr.exagone.beans.Client">
+			<property name="nom" value="Dominguez" />
+			<property name="prenom" value="Dimitri" />
+			<property name="age" value="19" />
+			<property name="adresses">
+				<bean class="java.util.ArrayList">
+					<constructor-arg>
+						<list value-type="fr.exagone.beans.Adresse">
+							<bean class="fr.exagone.beans.Adresse">
+								<constructor-arg index="0" value="78000" />
+								<constructor-arg index="1" value="18 rue de la Reine" />
+								<constructor-arg index="2" value="Versailles" />
+								<constructor-arg index="3" value="France" />
+							</bean>
+						</list>
+					</constructor-arg>
+				</bean>
+			</property>
+		</bean>
+		
+		<!-- 
+		
+		CLIENT 3 -->
+		<bean id="client3" class="fr.exagone.beans.Client">
+			<property name="nom" value="Vanavermat" />
+			<property name="prenom" value="Greg" />
+			<property name="age" value="29" />
+			<property name="adresses">
+				<bean class="java.util.ArrayList">
+					<constructor-arg>
+						<list value-type="fr.exagone.beans.Adresse">
+							<bean class="fr.exagone.beans.Adresse">
+								<constructor-arg index="0" value="35000" />
+								<constructor-arg index="1" value="18 rue de Fougères" />
+								<constructor-arg index="2" value="Rennes" />
+								<constructor-arg index="3" value="France" />
+							</bean>
+						</list>
+					</constructor-arg>
+				</bean>
+			</property>
 		</bean>
 		
 	</beans>

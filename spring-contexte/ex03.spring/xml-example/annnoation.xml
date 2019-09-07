@@ -1,0 +1,7 @@
+<!-- 
+
+ANNOTATION 
+Permet de prendre en compte les annotations dans les classes Javas
+ex: PostContruct - PreDestroy
+-->
+<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />

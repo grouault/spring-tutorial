@@ -2,7 +2,12 @@ package fr.exagone.beans;
 
 import java.util.List;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 public class Client {
+	
+	private final static Logger LOG = LogManager.getLogger(Client.class);
 
 	private String nom;
 	
@@ -12,6 +17,14 @@ public class Client {
 	
 	private List<Adresse> adresses;
 
+	public void initialiser() {
+		Client.LOG.info("Dans mon Init du client");
+	}
+	
+	public void detruire() {
+		Client.LOG.info("Dans mon Destroy du client");
+	}
+	
 	public Client() {
 		// TODO Auto-generated constructor stub
 	}

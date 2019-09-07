@@ -1,11 +1,29 @@
 package fr.exagone.beans;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 public class Adresse {
 
 	private String rue;
 	private String ville;
 	private String codePostal;
 	private String pays;
+	
+	private static Logger LOG = LogManager.getLogger(Adresse.class);
+
+	@PostConstruct
+	public void initialize() {
+		Adresse.LOG.info("init dans Adresse");
+	}
+	
+	@PreDestroy
+	public void destroy() {
+		Adresse.LOG.info("destroy dans Adresse");
+	}
 	
 	public Adresse() {
 	}
