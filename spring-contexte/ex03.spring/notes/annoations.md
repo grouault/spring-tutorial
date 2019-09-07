@@ -1,3 +1,9 @@
+# Declarations XML
+<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
+
+# 
+## Annotations
+
 # @PostConstruct
 Mettre sur une fonction d'une classe java : declenché après la construction
 
