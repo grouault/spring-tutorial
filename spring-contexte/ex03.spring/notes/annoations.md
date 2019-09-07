@@ -2,4 +2,4 @@
 Mettre sur une fonction d'une classe java : declenché après la construction
 
 # @PreDestroy
-Mettre sur une fonction d'une classe java
+Mettre sur une fonction d'une classe java : déclenché sur close de app.context.
