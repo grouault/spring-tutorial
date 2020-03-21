@@ -2,13 +2,25 @@
 
 ### Chargement du context-spring
 
+Charger les fichiers de configurations de plusieurs manières:
+
+    appContext = new ClassPathXmlApplicationContext("classpath:spring/mesBeans.xml",
+    	"file:///data/config.xml","http://monserveur.com/config.xml");
+
+
+* classpath: permet de charger une configuration dans un sous répertoire du répertoire local
+* file: permet de charger un fichier dans c:\data\config.xml
+* http: permet de charger un fichier depuis une URL
+
+Exemple de code 
+
 
     appContext = new ClassPathXmlApplicationContext("spring/mesBeans.xml");
     appContext = new ClassPathXmlApplicationContext("spring-ingredient.xml, spring-accessoires.xml");
     appContext = new ClassPathXmlApplicationContext("spring/spring-*.xml");
     
     
-Code générique de chargement
+Code générique complet de chargement
 
 
     ClassPathXmlApplicationContext appContext = null;
