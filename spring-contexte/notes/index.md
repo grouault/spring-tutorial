@@ -2,6 +2,15 @@
 
 ### Chargement du context-spring
 
+
+    appContext = new ClassPathXmlApplicationContext("spring/mesBeans.xml");
+    appContext = new ClassPathXmlApplicationContext("spring-ingredient.xml, spring-accessoires.xml");
+    appContext = new ClassPathXmlApplicationContext("spring/spring-*.xml");
+    
+    
+Code générique de chargement
+
+
     ClassPathXmlApplicationContext appContext = null;
     try{
         // Chargement du context Spring
