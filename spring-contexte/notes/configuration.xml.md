@@ -1,4 +1,4 @@
-## [SPRING-CONTEXTE](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/INDEX.md)
+## [SPRING:configuration XML](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/INDEX.md)
 
 ### Chargement du context-spring
 
