@@ -37,8 +37,10 @@ public class Main {
 
 			// Recuperation de notre instance de client
 			Voiture v1 = (Voiture)appContext.getBean("voiture1");
-			// Affichage
 			Main.LOG.debug(v1.toString());
+			
+			Voiture v2 = (Voiture)appContext.getBean("voiture2");
+			Main.LOG.debug(v2.toString());
 			
 		} catch (BeansException e) {
 			Main.LOG.fatal("Erreur", e);

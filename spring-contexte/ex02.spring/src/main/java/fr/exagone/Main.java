@@ -52,7 +52,9 @@ public class Main {
 			// Tentative de récupération des adresses
 			Adresse a2 = (Adresse)appContext.getBean("adresse2");
 			Main.LOG.debug("adresse 2 : " + a2.toString());
-			Adresse a3 = (Adresse)appContext.getBean("adresse3");
+			// Adresse a3 = (Adresse)appContext.getBean("adresse3");
+			// ==> génère une erreur
+			Adresse a3 = c3.getAdresse();
 			Main.LOG.debug("adresse 3 : " + a3.toString());
 			
 			

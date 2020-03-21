@@ -37,6 +37,10 @@ public class Main {
 			// Récupération des clients
 			Client c1 = (Client)appContext.getBean("client1");
 			Main.LOG.debug("client 1: " + c1.toString());
+
+			// Récupération des clients
+			Client c2 = (Client)appContext.getBean("client2");
+			Main.LOG.debug("client 2: " + c2.toString());
 			
 			
 		} catch (BeansException e) {
