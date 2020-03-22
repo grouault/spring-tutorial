@@ -1,9 +1,9 @@
 # [list,set,vector ... ](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/balise-attributs-xml/configuration-xml.md)
 
- list, set, vector
+==> list, set, vector
 
-* adresses : liste de champs de type String
-* adresses : liste de champs de type String
+adresses : liste de champs de type String
+
 
      <!-- 
      property name="adresses": simple string -->
@@ -14,7 +14,7 @@
         </list>
       </property>
 
-
+adresses : liste de champs de type String
 
 
 
