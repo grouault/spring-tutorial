@@ -3,6 +3,8 @@
 
 ### [Balises et attributs xml](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/balise-attributs-xml/configuration-xml.md)
 
+### [spring.configuration]
+
 ### Java : Chargement du context-spring
 
 Charger les fichiers de configurations de plusieurs manières:
