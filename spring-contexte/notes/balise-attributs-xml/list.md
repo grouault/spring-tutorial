@@ -8,11 +8,11 @@ adresses : liste de champs de type String
      <!-- 
      property name="adresses": simple string -->
      <property name="adresses">
-        <list>
-	  <value>1 rue du midi</value>
-	  <value>é rue de Paris</value>
-        </list>
-      </property>
+       <list>
+         <value>1 rue du midi</value>
+         <value>é rue de Paris</value>
+       </list>
+     </property>
 
 adresses : liste de bean de type Adresse
 ==> construction des objets directement dans la liste
