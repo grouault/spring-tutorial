@@ -5,6 +5,8 @@
 * id: identifiant de la configuration
 * classe : type d'objet
 
+Les objets fabriqués par Spring sont appelés : Spring bean
+
 ## Traitements posts-processeurs
 ### bean xml: init-method / destroy-method
     <bean id="client1" class="fr.exagone.beans.Client" init-method="initialiser" destroy-method="detruire">
