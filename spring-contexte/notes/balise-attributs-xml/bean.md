@@ -1,6 +1,10 @@
 # bean 
 [retour](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/balise-attributs-xml/configuration-xml.md)
 
+## General
+* id: identifiant de la configuration
+* classe : type d'objet
+
 ## Traitements posts-processeurs
 ### bean xml: init-method / destroy-method
     <bean id="client1" class="fr.exagone.beans.Client" init-method="initialiser" destroy-method="detruire">
