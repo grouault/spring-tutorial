@@ -1,9 +1,10 @@
 ## [SPRING: configuration XML](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/INDEX.md)
 
-
-### [Balises et attributs xml](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/balise-attributs-xml/configuration-xml.md)
+### [balises et attributs xml](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/balise-attributs-xml/configuration-xml.md)
+==> principales balises pour la configuration des beans
 
 ### [spring.configuration](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/spring-configuration-xml/index.md)
+==> fonctionnalité de spring à configurer dans les fichiers de configuration de spring
 
 ### Java : Chargement du context-spring
 
