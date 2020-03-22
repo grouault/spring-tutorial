@@ -3,6 +3,9 @@
 ## CommonAnnotationBeanPostProcessor
 This post-processor includes support for the PostConstruct and PreDestroy annotations - as init annotation and destroy annotation, respectively - through inheriting from InitDestroyAnnotationBeanPostProcessor with pre-configured annotation types.
 
+XML
+
+
     <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
 
 
