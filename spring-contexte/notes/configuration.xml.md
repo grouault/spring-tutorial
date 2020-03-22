@@ -1,6 +1,9 @@
 ## [SPRING: configuration XML](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/INDEX.md)
 
-### Chargement du context-spring
+
+### [Balises et attributs xml](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/balise-attributs-xml/configuration-xml.md)
+
+### Java : Chargement du context-spring
 
 Charger les fichiers de configurations de plusieurs manières:
 
