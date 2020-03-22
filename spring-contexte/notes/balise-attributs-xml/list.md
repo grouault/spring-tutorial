@@ -1,6 +1,6 @@
 # [list,set,vector ... ](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/balise-attributs-xml/configuration-xml.md)
 
-==> list, set, vector
+Note: il faut utiliser un constructeur pour préciser l'implémentation de la la liste : list, set, vector
 
 adresses : liste de champs de type String
 
@@ -31,8 +31,8 @@ adresses : liste de bean de type Adresse
     </property>
 
 adresses : liste de bean de type Adresse
-==> construction des objets directement dans la liste
-==> utilistation d'un constructeur
+* construction des objets directement dans la liste
+* utilistation d'un constructeur
 
     <!-- property name="adresses" -->
     <property name="adresses">
