@@ -1,6 +1,5 @@
-&lt;&gt;
-
-# [Balises et attributs XML](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/configuration.xml.md)
+# Balises et attributs XML
+[retour](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/configuration.xml.md)
 
 ## &lt;bean&gt;, id et class
 
