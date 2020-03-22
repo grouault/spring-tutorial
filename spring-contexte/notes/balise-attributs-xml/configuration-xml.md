@@ -17,7 +17,7 @@
 ## scope: singletion et prototype
 
 ## gestion des collections : &lt;list /&gt; &lt;set&gt;
-* list
+* [list](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/balise-attributs-xml/list.md)
 * set
 * vector
 ## gestion des collections : &lt;list /&gt; &lt;ref&gt;
