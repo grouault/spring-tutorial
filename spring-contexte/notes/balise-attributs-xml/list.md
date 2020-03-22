@@ -14,20 +14,20 @@ adresses : liste de champs de type String
         </list>
       </property>
 
-adresses : liste de champs de type String
-
+adresses : liste de bean de type Adresse
+==> construction des objets directement dans la liste
 
 
     <!-- property name="adresses" -->
     <property name="adresses">
-	   <list value-type="fr.exagone.beans.Adresse">
-		   <bean class="fr.exagone.beans.Adresse">
-			   <constructor-arg index="0" value="78000" />
-			   <constructor-arg index="1" value="18 rue de la Reine" />
-			   <constructor-arg index="2" value="Versailles" />
-			   <constructor-arg index="3" value="France" />
-		   </bean>
-	   </list>
+      <list value-type="fr.exagone.beans.Adresse">
+        <bean class="fr.exagone.beans.Adresse">
+          <constructor-arg index="0" value="78000" />
+          <constructor-arg index="1" value="18 rue de la Reine" />
+          <constructor-arg index="2" value="Versailles" />
+          <constructor-arg index="3" value="France" />
+         </bean>
+      </list>
     </property>
 
 
