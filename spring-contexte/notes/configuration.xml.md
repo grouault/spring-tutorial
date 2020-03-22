@@ -3,7 +3,7 @@
 
 ### [Balises et attributs xml](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/balise-attributs-xml/configuration-xml.md)
 
-### [spring.configuration]
+### [spring.configuration](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/configuration.xml.md)
 
 ### Java : Chargement du context-spring
 
