@@ -4,12 +4,6 @@
 ## &lt;bean&gt;, id et class
 * [bean, ...](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/balise-attributs-xml/bean.md)
 
-## &lt;property name="" value=""&gt;
-
-## &lt;property name="" ref=""&gt;
-
-## &lt;constructor-arg name="" /&gt;
-
 ## Héritage de configuration &lt;bean&gt;
 
 ## Héritage de configuration abstract
