@@ -82,18 +82,14 @@
 			<property name="prenom" value="Dimitri" />
 			<property name="age" value="19" />
 			<property name="adresses">
-				<bean class="java.util.ArrayList">
-					<constructor-arg>
-						<list value-type="fr.exagone.beans.Adresse">
-							<bean class="fr.exagone.beans.Adresse">
-								<constructor-arg index="0" value="78000" />
-								<constructor-arg index="1" value="18 rue de la Reine" />
-								<constructor-arg index="2" value="Versailles" />
-								<constructor-arg index="3" value="France" />
-							</bean>
-						</list>
-					</constructor-arg>
-				</bean>
+				<list value-type="fr.exagone.beans.Adresse">
+					<bean class="fr.exagone.beans.Adresse">
+						<constructor-arg index="0" value="78000" />
+						<constructor-arg index="1" value="18 rue de la Reine" />
+						<constructor-arg index="2" value="Versailles" />
+						<constructor-arg index="3" value="France" />
+					</bean>
+				</list>
 			</property>
 		</bean>
 		
@@ -105,18 +101,14 @@
 			<property name="prenom" value="Greg" />
 			<property name="age" value="29" />
 			<property name="adresses">
-				<bean class="java.util.ArrayList">
-					<constructor-arg>
-						<list value-type="fr.exagone.beans.Adresse">
-							<bean class="fr.exagone.beans.Adresse">
-								<constructor-arg index="0" value="35000" />
-								<constructor-arg index="1" value="18 rue de Fougères" />
-								<constructor-arg index="2" value="Rennes" />
-								<constructor-arg index="3" value="France" />
-							</bean>
-						</list>
-					</constructor-arg>
-				</bean>
+				<list value-type="fr.exagone.beans.Adresse">
+					<bean class="fr.exagone.beans.Adresse">
+						<constructor-arg index="0" value="35000" />
+						<constructor-arg index="1" value="18 rue de Fougères" />
+						<constructor-arg index="2" value="Rennes" />
+						<constructor-arg index="3" value="France" />
+					</bean>
+				</list>
 			</property>
 		</bean>
 		
