@@ -3,6 +3,7 @@
  list, set, vector
 
 * adresses : liste de champs de type String
+* adresses : liste de champs de type String
 
      <!-- 
      property name="adresses": simple string -->
@@ -14,7 +15,7 @@
       </property>
 
 
-* adresses : liste de champs de type String
+
 
 
     <!-- property name="adresses" -->
