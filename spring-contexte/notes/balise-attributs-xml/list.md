@@ -1,4 +1,8 @@
-    <!-- property name="adresses": simple string -->
+# [list,set,vector ... ](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/balise-attributs-xml/configuration-xml.md)
+
+==> list, set, vector
+
+<!-- property name="adresses": simple string -->
 	<property name="adresses">
 		<list>
 			<value>1 rue du midi</value>
