@@ -15,21 +15,24 @@
  2- charger le fichier de properties via la classe Spring PropertyPlaceholderConfigurer
  
  
+    <beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
     <!-- PROPERTIES -->
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="location" value="spring/adresses.properties"/>
     </bean>
     
- 3- modifiez la déclaration de vos beans adresses afin qu'elle face usage du contenu du fichier de properties    
-
-
-    <!-- CLIENT 1 -->
+     <!-- CLIENT 1 -->
     <bean id="adresse1" class="fr.exagone.beans.Adresse">
         <property name="rue" value="${addr1.rue}" />
         <property name="ville" value="${addr1.ville}"/>
         <property name="codePostal" value="${addr1.codePostal}" />
         <property name="pays" value="${addr1.pays}" />
     </bean>
+    
+    </beans>
     
 ## Configuration des fichiers XML avec un fichier de properties
 Autre configuration : avec dans la déclartion, le spring-context
@@ -52,4 +55,4 @@ Autre configuration : avec dans la déclartion, le spring-context
         <property name="password" value="${db.password}"></property>
     </bean>
 
-</beans>
+    </beans>
