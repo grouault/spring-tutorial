@@ -17,7 +17,9 @@
 ## scope: singletion et prototype
 
 ## gestion des collections : &lt;list /&gt; &lt;set&gt;
-
+* list
+* set
+* vector
 ## gestion des collections : &lt;list /&gt; &lt;ref&gt;
 
 ## gestion des collections : &lt;map /&gt; &lt;props&gt;
