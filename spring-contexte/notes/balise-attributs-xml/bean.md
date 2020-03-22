@@ -1,5 +1,5 @@
 # bean 
-[retour]
+[retour](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/balise-attributs-xml/configuration-xml.md)
 
 ## Traitements posts-processeurs
 ### bean xml: init-method / destroy-method
