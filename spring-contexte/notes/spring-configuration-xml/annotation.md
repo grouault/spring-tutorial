@@ -9,11 +9,11 @@ This post-processor includes support for the PostConstruct and PreDestroy annota
 Java:
 
     @PostConstruct
-	  public void initialize() {
+    public void initialize() {
         Adresse.LOG.info("init dans Adresse");
     }
 	
     @PreDestroy
-	  public void destroy() {
+    public void destroy() {
         Adresse.LOG.info("destroy dans Adresse");
-	  }
+    }
