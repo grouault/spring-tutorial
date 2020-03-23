@@ -1,6 +1,8 @@
 ## SPRING: configuration XML
 [retour](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/INDEX.md)
 
+### [initialisation fichiers configuration TODO]
+
 ### [balises et attributs xml](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/balise-attributs-xml/configuration-xml.md)
 ==> principales balises pour la configuration des beans
 
