@@ -74,12 +74,22 @@ adresses : liste de bean de type Adresse
 ==> utilistation d'un constructeur	
 	
     <!-- par référence -->
-    <bean class="java.util.Vector">
-	<constructor-arg>
-	  <list>
-	    <ref bean="adresse1" />
-		<ref bean="adresse2" />
-		<ref bean="adresse3" />                
-	  </list>
-    </constructor-arg>
+    <bean id="client3" class="fr.exagone.beans.Client">
+	<property name="nom" value="Vanavermat" />
+	<property name="prenom" value="Greg" />
+	<property name="age" value="29" />
+	<property name="adresses">
+		<bean class="java.util.Vector">
+		  <constructor-arg>			
+		  <list value-type="fr.exagone.beans.Adresse">
+			 <bean class="fr.exagone.beans.Adresse">
+				<constructor-arg index="0" value="35000" />
+				<constructor-arg index="1" value="18 rue de Fougères" />
+				<constructor-arg index="2" value="Rennes" />
+				<constructor-arg index="3" value="France" />
+			 </bean>
+		  </list>
+		  </constructor-arg>
+		</bean>
+	</property>
     </bean>
