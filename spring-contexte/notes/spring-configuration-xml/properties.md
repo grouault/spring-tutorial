@@ -36,7 +36,7 @@
     
 ## Configuration des fichiers XML avec un fichier de properties
 Autre configuration : avec dans la déclartion xml, le spring-context :
-http://www.springframework.org/schema/context/spring-context.xsd
+xmlns:http://www.springframework.org/schema/context/spring-context.xsd
 
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
