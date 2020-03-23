@@ -67,13 +67,14 @@ adresses : liste de bean de type Adresse
 		<ref bean="adresse3" />                
 	  </list>
     </bean>
-	
+
+## gestion des collections : &lt;list /&gt; &lt;constructor&gt;
 adresses : liste de bean de type Adresse
 ==> la liste référence des beans déjà existant
 ==> utilistation d'un constructeur	
 	
     <!-- par référence -->
-    <bean id="adresses" class="java.util.Vector">
+    <bean class="java.util.Vector">
 	<constructor-arg>
 	  <list>
 	    <ref bean="adresse1" />
