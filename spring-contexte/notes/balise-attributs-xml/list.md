@@ -1,7 +1,5 @@
-# [list,set,vector ... ](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/balise-attributs-xml/configuration-xml.md)
-
-Note: il faut utiliser un constructeur pour préciser l'implémentation de la la liste : list, set, vector
-
+# list,set,vector ... 
+[retour]((https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/balise-attributs-xml/configuration-xml.md)
 
 ## gestion des collections : &lt;list /&gt; &lt;value&gt;
 adresses : liste de champs de type String
@@ -70,8 +68,7 @@ adresses : liste de bean de type Adresse
 
 ## gestion des collections : &lt;list /&gt; &lt;constructor&gt;
 adresses : liste de bean de type Adresse
-==> la liste référence des beans déjà existant
-==> utilistation d'un constructeur	
+==> la liste référence des beans déjà existant	
 	
     <!-- par référence -->
     <bean id="client3" class="fr.exagone.beans.Client">
