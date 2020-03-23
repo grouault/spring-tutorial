@@ -2,6 +2,8 @@
 
 Note: il faut utiliser un constructeur pour préciser l'implémentation de la la liste : list, set, vector
 
+
+## gestion des collections : &lt;list /&gt; &lt;value&gt;
 adresses : liste de champs de type String
 
 
@@ -14,6 +16,7 @@ adresses : liste de champs de type String
        </list>
      </property>
 
+## gestion des collections : &lt;list /&gt; &lt;bean&gt;
 adresses : liste de bean de type Adresse
 ==> construction des objets directement dans la liste
 
@@ -50,9 +53,11 @@ adresses : liste de bean de type Adresse
      </bean>
     </property>
 
+
+
+## gestion des collections : &lt;list /&gt; &lt;ref&gt;
 adresses : liste de bean de type Adresse
 ==> la liste référence des beans déjà existant	
-
 
     <!-- par référence -->
     <bean id="adresses" class="java.util.Vector">
