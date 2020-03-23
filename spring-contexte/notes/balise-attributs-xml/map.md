@@ -1,5 +1,5 @@
 # creation d'une map
-    
+[retour](https://github.com/grouault/spring-tutorial/tree/master/spring-contexte/notes/balise-attributs-xml)
     
     <bean id="mapVilles" class="java.util.HashMap">
     <constructor-arg>
