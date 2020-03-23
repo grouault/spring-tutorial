@@ -1,7 +1,8 @@
 # SPRING-FRAMEWORK
 
 ## url
-[javapoint](https://www.javatpoint.com/spring-tutorial)
+[javatpoint](https://www.javatpoint.com/spring-tutorial)
+[onlinetutorialspoint](https://www.onlinetutorialspoint.com/spring-tutorials)
 
 ## configuration
 ### configuration-spring
