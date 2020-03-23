@@ -13,6 +13,4 @@
 ## gestion des collections : &lt;list /&gt; &lt;set&gt;
 * [list,set,vector, ...](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/balise-attributs-xml/list.md)
 
-## gestion des collections : &lt;list /&gt; &lt;ref&gt;
-
 ## gestion des collections : &lt;map /&gt; &lt;props&gt;
