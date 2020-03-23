@@ -1,5 +1,7 @@
 package fr.exagone;
 
+import java.util.Map;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.BeansException;
@@ -44,6 +46,10 @@ public class Main {
 
 			Client c3 = (Client)appContext.getBean("client3");
 			Main.LOG.debug("client 3: " + c3.toString());
+			
+			// Recuperation de la map des villes.
+			Map<String, Client> mapVilles = (Map)appContext.getBean("mapVilles");
+			Main.LOG.debug("mapVilles = " + mapVilles);
 			
 			
 		} catch (BeansException e) {

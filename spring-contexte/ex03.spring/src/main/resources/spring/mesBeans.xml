@@ -83,13 +83,13 @@
 			<property name="age" value="19" />
 			<property name="adresses">
 				<list>
-						<bean class="fr.exagone.beans.Adresse">
-							<constructor-arg index="0" value="78000" />
-							<constructor-arg index="1" value="18 rue de la Reine" />
-							<constructor-arg index="2" value="Versailles" />
-							<constructor-arg index="3" value="France" />
-						</bean>
-					</list>
+					<bean class="fr.exagone.beans.Adresse">
+						<constructor-arg index="0" value="78000" />
+						<constructor-arg index="1" value="18 rue de la Reine" />
+						<constructor-arg index="2" value="Versailles" />
+						<constructor-arg index="3" value="France" />
+					</bean>
+				</list>
 
 			</property>
 		</bean>
@@ -117,6 +117,21 @@
 			</property>
 		</bean>
 		
+		<!-- 
+	
+		MAP : ville ==> client -->
+		<bean id="mapVilles" class="java.util.HashMap">
+			<constructor-arg>
+			<map>
+				<entry key="Rennes"><ref bean="client3"/></entry>
+				<entry key="Paris"><ref bean="client1"/></entry>
+				<entry key="Versailles"><ref bean="client2"/></entry>
+			</map>	
+			</constructor-arg>
+		</bean>
+		
+		
 	</beans>
+	
 
 </beans>
