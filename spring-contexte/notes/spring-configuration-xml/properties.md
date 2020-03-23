@@ -1,4 +1,5 @@
-# [properties](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/spring-configuration-xml/index.md)
+# properties
+[retour](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/spring-configuration-xml/index.md)
 
 ## Configuration des fichiers XML avec un fichier de properties
 1- créez un fichier properties à la racine de votre répertoire spring
