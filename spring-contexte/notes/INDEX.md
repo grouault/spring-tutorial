@@ -3,6 +3,7 @@
 ## url
 * [javatpoint](https://www.javatpoint.com/spring-tutorial)
 * [onlinetutorialspoint](https://www.onlinetutorialspoint.com/spring-tutorials)
+* [java2novice](https://www.java2novice.com/spring/)
 
 ## configuration
 ### configuration-spring
