@@ -4,6 +4,7 @@
 * [javatpoint](https://www.javatpoint.com/spring-tutorial)
 * [onlinetutorialspoint](https://www.onlinetutorialspoint.com/spring-tutorials)
 * [java2novice](https://www.java2novice.com/spring/)
+* [howtodoinjava](https://howtodoinjava.com/)
 
 ## configuration
 ### configuration-spring
