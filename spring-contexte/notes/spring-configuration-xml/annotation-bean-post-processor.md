@@ -6,7 +6,7 @@
 
 ![image](https://user-images.githubusercontent.com/20648687/77641152-de451d80-6f5b-11ea-932b-43b8c695f506.png)
 
-## xml : init - destroy
+## xml : init-method / destroy-method
     <bean id="question-1" class="fr.exagone.beans.SimpleQuestion" scope="prototype" 
         init-method="initialiser" destroy-method="detruire">
 	<constructor-arg value="1"></constructor-arg>
