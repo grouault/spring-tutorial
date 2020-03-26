@@ -2,14 +2,22 @@
 [retour](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/spring-configuration-xml/index.md)
 
 ## lifecycle bean
-[lifecyclebean](https://howtodoinjava.com/spring-core/spring-bean-life-cycle/){:target="_blank"}
+[lifecyclebean](https://howtodoinjava.com/spring-core/spring-bean-life-cycle/)
 
 ![image](https://user-images.githubusercontent.com/20648687/77641152-de451d80-6f5b-11ea-932b-43b8c695f506.png)
 
-## Traitement post-processeurs
+## xml : init - destroy
+    <bean id="question-1" class="fr.exagone.beans.SimpleQuestion" scope="prototype" 
+        init-method="initialiser" destroy-method="detruire">
+	<constructor-arg value="1"></constructor-arg>
+	<constructor-arg value="What is java"></constructor-arg>
+	<constructor-arg ref="reponse-1"></constructor-arg>
+    </bean>
+
+## annotation : Traitement post-processeurs
 This post-processor includes support for the PostConstruct and PreDestroy annotations - as init annotation and destroy annotation, respectively - through inheriting from InitDestroyAnnotationBeanPostProcessor with pre-configured annotation types.
 
-XML
+Fichier de configuration spring : XML
 
 
     <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
