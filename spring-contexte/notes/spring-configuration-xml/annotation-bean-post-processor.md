@@ -10,6 +10,7 @@
 
 ## par configuration xml : init-method / destroy-method
 xml
+
     <bean id="question-1" class="fr.exagone.beans.SimpleQuestion" scope="prototype" 
         init-method="initialiser" destroy-method="detruire">
 	<constructor-arg value="1"></constructor-arg>
