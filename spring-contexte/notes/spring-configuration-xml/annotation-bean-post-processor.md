@@ -70,3 +70,14 @@ A l'instanciation, spring cherche les composants qui sont des BeansPostProcessor
 A la fermeture du contexte-spring, la méthode [destroy] est exécutée.
  
 [Plus d'info](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/ex00.spring/README.md)
+
+## ApplicationProvider
+Comment obtenir l’objet de contexte d’application de Spring avec les classes non gérées par le conteneur. Il n’est pas possible d’avoir toutes les classes en tant que classes gérées par le conteneur, dans ces classes vous devez obtenir l’objet de contexte d’application. Cela peut être réalisé en utilisant l’interface Applicationcontextaware.
+* créer une classe qui implémente l'interface ; la méthode "setApplicationContext" permet de récupérer l'object applicationContext
+* declarer un bean dans le fichier de configuration de spring
+* dans la classe non gérée par Spring, appelé le contexte :
+Java:
+
+
+     ApplicationContextProvider appContext = new ApplicationContextProvider();
+     TestBean tb = appContext.getApplicactionContext().getBean("testBean", TestBean.class);
