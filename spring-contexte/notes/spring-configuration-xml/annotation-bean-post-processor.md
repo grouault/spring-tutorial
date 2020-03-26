@@ -3,6 +3,7 @@
 
 ## lifecycle bean
 [lifecyclebean](https://howtodoinjava.com/spring-core/spring-bean-life-cycle/)
+
 ![image](https://user-images.githubusercontent.com/20648687/77641152-de451d80-6f5b-11ea-932b-43b8c695f506.png)
 
 ## Traitement post-processeurs
