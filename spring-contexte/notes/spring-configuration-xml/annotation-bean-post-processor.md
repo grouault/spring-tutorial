@@ -66,4 +66,7 @@ Un post-processeur de beans permet de modifier sur mesure les nouvelles instance
 
 Dans le cas de plusieurs instances Beanpostprocessor, nous pouvons contrôler l’ordre en définissant la propriété order ou implémenter l’interface Ordered.
 
+A l'instanciation, spring cherche les composants qui sont des BeansPostProcessor, et exécute la méthode [afterPropertiesSet].
+A la fermeture du contexte-spring, la méthode [destroy] est exécutée.
+ 
 [Plus d'info](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/ex00.spring/README.md)
