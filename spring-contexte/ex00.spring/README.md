@@ -1,7 +1,6 @@
-## map
+## points abordés
 
-## init-method / destroy-method
-
-## @PostConstruct / @PreDestroy
-
-## beanPostProcessor 
+* map
+* init-method / destroy-method
+* @PostConstruct / @PreDestroy
+* beanPostProcessor 
