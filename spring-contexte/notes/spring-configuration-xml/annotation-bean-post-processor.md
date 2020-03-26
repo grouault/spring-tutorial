@@ -1,5 +1,5 @@
-# bean - lifcecycle - init et destroy - InitaliseBean - DisposableBean - BeanPostProcessor
-==> il s'agit des traitement PostProcessor
+# bean - lifcecycle - init et destroy - InitaliseBean - DisposableBean - BeanPostProcessor - ApplicationContext
+==> il s'agit des traitement PostProcessor -
 
 [retour](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/spring-configuration-xml/index.md)
 
