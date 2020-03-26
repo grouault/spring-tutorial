@@ -8,7 +8,8 @@
 
 ![image](https://user-images.githubusercontent.com/20648687/77641152-de451d80-6f5b-11ea-932b-43b8c695f506.png)
 
-## xml : init-method / destroy-method
+## par configuration xml : init-method / destroy-method
+xml
     <bean id="question-1" class="fr.exagone.beans.SimpleQuestion" scope="prototype" 
         init-method="initialiser" destroy-method="detruire">
 	<constructor-arg value="1"></constructor-arg>
@@ -16,7 +17,17 @@
 	<constructor-arg ref="reponse-1"></constructor-arg>
     </bean>
 
-## annotation :@PostConstruct / @PreDestroy
+Java      
+    
+    public void initialiser() {
+        SimpleQuestion.LOG.info("[SimpleQuestion]: in Init method");
+    }
+	
+    public void detruire() {
+        SimpleQuestion.LOG.info("[SimpleQuestion]: in Detruire method");
+    }
+
+## par annotation :@PostConstruct / @PreDestroy
 This post-processor includes support for the PostConstruct and PreDestroy annotations - as init annotation and destroy annotation, respectively - through inheriting from InitDestroyAnnotationBeanPostProcessor with pre-configured annotation types.
 
 Fichier de configuration spring : XML
