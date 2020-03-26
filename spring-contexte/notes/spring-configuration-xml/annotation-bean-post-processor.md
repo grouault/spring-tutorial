@@ -1,4 +1,5 @@
 # bean - lifcecycle - init et destroy - InitaliseBean - DisposableBean
+==> il s'agit des traitement PostProcessor
 [retour](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/spring-configuration-xml/index.md)
 
 ## lifecycle bean
@@ -14,7 +15,7 @@
 	<constructor-arg ref="reponse-1"></constructor-arg>
     </bean>
 
-## annotation : Traitement post-processeurs
+## annotation :@PostConstruct / @PreDestroy
 This post-processor includes support for the PostConstruct and PreDestroy annotations - as init annotation and destroy annotation, respectively - through inheriting from InitDestroyAnnotationBeanPostProcessor with pre-configured annotation types.
 
 Fichier de configuration spring : XML
