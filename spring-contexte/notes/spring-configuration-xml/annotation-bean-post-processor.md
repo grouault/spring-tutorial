@@ -59,3 +59,5 @@ Cependant, dans le cas où une fuite de mémoire peut se produire comme décrit 
 Un post-processeur de beans permet de modifier sur mesure les nouvelles instances de beans créées par Spring Bean Factory. Si vous voulez implémenter une logique personnalisée après que le conteneur Spring ait fini d’instancier, de configurer et d’initialiser un bean, nous pouvons brancher une ou plusieurs implémentations de Beanpostprocessor.
 
 Dans le cas de plusieurs instances Beanpostprocessor, nous pouvons contrôler l’ordre en définissant la propriété order ou implémenter l’interface Ordered.
+
+[Plus d'infon](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/ex00.spring/README.md)
