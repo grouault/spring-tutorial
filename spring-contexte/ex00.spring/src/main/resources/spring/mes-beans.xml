@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+
+	<!-- bean post processor -->
+	<bean id="customBeanPostProcessor" class="fr.exagone.beans.processors.CustomBeanPostProcessor" />
+
+	<!-- question-1, avec sa reponse -->
+	<bean id="reponse-1" class="java.util.HashMap">
+		<constructor-arg>
+			<map>
+				<entry key="Java is a programming Language" value="Ajay Kumar"></entry>
+				<entry key="Java is a Platform" value="John Smith"></entry>  
+				<entry key="Java is an Island" value="Raj Kumar"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
+	<bean id="question-1" class="fr.exagone.beans.SimpleQuestion" scope="prototype" 
+		init-method="initialiser" destroy-method="detruire">
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="What is java"></constructor-arg>
+		<constructor-arg ref="reponse-1"></constructor-arg>
+	</bean>
+
+</beans>
