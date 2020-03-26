@@ -48,3 +48,7 @@ Java:
     public void destroy() {
         Adresse.LOG.info("destroy dans Adresse");
     }
+
+## singleton / prototype
+Un bean ayant un scope prototype et une destroy-method (en annotation, déclaration XML ou implémentation d'interface) ne verra JAMAIS cette dernière appelée.
+Tant que le prototype ne contient pas lui-même une référence à une autre ressource telle qu’une connexion à une base de données ou un objet de session, il sera ramasser par le garbage collector dès que toutes les références à l’objet auront été supprimées ou que l’objet sera hors de portée. Il n’est donc généralement pas nécessaire de détruire explicitement un prototype de haricot.
