@@ -50,8 +50,10 @@ Java:
     }
 
 ## InitializingBean
+L'interface permet à un bean d’effectuer des travaux d’initialisation après que toutes les propriétés nécessaires sur le bean ont été définies par le conteneur.
 
 ## DisposableBean
+L'interface permet à un bean d’obtenir un callback lorsque le conteneur le contenant est détruit.
 
 ## singleton / prototype
 Un bean ayant un scope prototype et une destroy-method (en annotation, déclaration XML ou implémentation d'interface) ne verra JAMAIS cette dernière appelée.
