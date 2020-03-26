@@ -60,4 +60,4 @@ Un post-processeur de beans permet de modifier sur mesure les nouvelles instance
 
 Dans le cas de plusieurs instances Beanpostprocessor, nous pouvons contrôler l’ordre en définissant la propriété order ou implémenter l’interface Ordered.
 
-[Plus d'infon](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/ex00.spring/README.md)
+[Plus d'info](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/ex00.spring/README.md)
