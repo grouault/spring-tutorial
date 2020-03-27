@@ -11,6 +11,14 @@
 
 	<!-- bean post processor -->
 	<bean id="customBeanPostProcessor" class="fr.exagone.beans.processors.CustomBeanPostProcessor" />
+	
+	<!-- application context provider -->
+	<bean id="applicationContextProvider" class="fr.exagone.beans.providers.ApplicationContextProvider" />
+
+	<!-- test bean -->
+	<bean id="testBean" class="fr.exagone.beans.TestBean">
+		<property name="test" value="test-value"></property>
+	</bean>
 
 	<!-- question-1, avec sa reponse -->
 	<bean id="reponse-1" class="java.util.HashMap">

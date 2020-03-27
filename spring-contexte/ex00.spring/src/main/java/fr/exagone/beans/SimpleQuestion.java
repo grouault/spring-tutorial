@@ -10,6 +10,8 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
+import fr.exagone.beans.providers.ApplicationContextProvider;
+
 public class SimpleQuestion implements DisposableBean, InitializingBean {
 
 	private static final Logger LOG = LogManager.getLogger();
@@ -20,9 +22,10 @@ public class SimpleQuestion implements DisposableBean, InitializingBean {
 	
 	private Map<String, String> answers;
 
+	private ApplicationContextProvider appContext = new ApplicationContextProvider();
+	
 	
 	public SimpleQuestion() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	public SimpleQuestion(Integer id, String label, Map<String, String> answers) {
@@ -33,7 +36,8 @@ public class SimpleQuestion implements DisposableBean, InitializingBean {
 	}
 	
 	public void initialiser() {
-		SimpleQuestion.LOG.info("[SimpleQuestion]: in Init method");
+		TestBean tb = appContext.getApplicactionContext().getBean("testBean", TestBean.class);
+		SimpleQuestion.LOG.info("[SimpleQuestion]: in Init method : TestBean = " + tb);
 	}
 	
 	public void detruire() {
