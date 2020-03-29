@@ -19,13 +19,13 @@
 	</bean>
 
 	<!-- Declaration de nos DAO enfants -->
-	<bean id="compteDAOImpl" class="com.banque.dao.impl.CompteDAO" parent="abstractDao">
+	<bean id="compteDAO" class="com.banque.dao.impl.CompteDAO" parent="abstractDao">
 	</bean>
 	
-	<bean id="operationDAOImpl" class="com.banque.dao.impl.OperationDAO" parent="abstractDao">
+	<bean id="operationDAO" class="com.banque.dao.impl.OperationDAO" parent="abstractDao">
 	</bean>
 	
-	<bean id="utilisateurDAOImpl" class="com.banque.dao.impl.UtilisateurDAO" parent="abstractDao">
+	<bean id="utilisateurDAO" class="com.banque.dao.impl.UtilisateurDAO" parent="abstractDao">
 	</bean>
 
 </beans>

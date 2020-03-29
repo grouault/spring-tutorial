@@ -8,14 +8,14 @@
 
 	<!-- Declaration de nos services et mise en place des liens avec les DAO -->
 	<bean id="authentificationService" class="com.banque.service.impl.AuthentificationService" parent="abstractService">
-		<constructor-arg name="utilisateurDAO" ref="utilisateurDAOImpl"></constructor-arg>
+		<constructor-arg name="utilisateurDAO" ref="utilisateurDAO"></constructor-arg>
 	</bean>
 	<bean id="compteService" class="com.banque.service.impl.CompteService" parent="abstractService">
-		<constructor-arg name="compteDAO" ref="compteDAOImpl"></constructor-arg>
+		<constructor-arg name="compteDAO" ref="compteDAO"></constructor-arg>
 	</bean>
 	<bean id="operationService" class="com.banque.service.impl.OperationService" parent="abstractService">
-		<constructor-arg name="operationDAO" ref="operationDAOImpl"></constructor-arg>
-		<constructor-arg name="compteDAO" ref="compteDAOImpl"></constructor-arg>
+		<constructor-arg name="operationDAO" ref="operationDAO"></constructor-arg>
+		<constructor-arg name="compteDAO" ref="compteDAO"></constructor-arg>
 	</bean>
 
 </beans>
