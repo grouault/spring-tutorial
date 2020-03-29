@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.banque</groupId>
-	<artifactId>en07.spring</artifactId>
+	<artifactId>en07.spring.xml</artifactId>
 	<version>1.0.0</version>
 
 	<developers>
