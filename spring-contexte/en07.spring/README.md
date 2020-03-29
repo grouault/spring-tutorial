@@ -1,4 +1,5 @@
 # Liser moi
+Version du projet avec une configuration Full XML
 
 ## prérequis
 1. docker : docker-compose up
