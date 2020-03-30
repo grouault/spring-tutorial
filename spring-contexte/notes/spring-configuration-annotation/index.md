@@ -47,3 +47,6 @@ Cycle de vie annotation:
 ## traitement post-processeurs
 [voir](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/spring-configuration-xml/annotation-bean-post-processor.md)
 
+## properties
+[voir](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/spring-configuration-xml/properties.md)
+
