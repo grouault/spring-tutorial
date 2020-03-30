@@ -5,7 +5,7 @@
 Configuration par annotation
 ```
 @autowired
-Stéréotype: @Component / @Repository / @Service / @Controller / @RestController
+Stéréotype: @Component / @Repository / @Service / @Controller / @RestController / @Configuration
 @Scope
 @Qualifier
 @Value
@@ -23,7 +23,15 @@ Java:
 @ComponentScan("com.banque")
 ```
 
+Cycle de vie annotation:
+```
+1- Détection des beans : Scan des annotations @Component
+2- BeanFactoryPostProcessor
+3- Instanciation des beans et injection des dépendances
+4- BeanPostProcessor
+```
+
 ## @Autowired
 
+## @Qualifier
 
-## [properties](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/spring-configuration-xml/properties.md)
