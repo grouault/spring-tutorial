@@ -61,6 +61,9 @@ xmlns:http://www.springframework.org/schema/context/spring-context.xsd
 
     </beans>
     
+Note:
+@value : permet de récupérer une valeur chargée par un property-placeholder.
+    
 ## @annotation    
 
 - @PropertySource
