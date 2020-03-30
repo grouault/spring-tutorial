@@ -17,6 +17,4 @@ Spring permet 3 types de configuration:
 ### [spring.configuration](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/spring-configuration-xml/index.md)
 ==> fonctionnalité de spring à configurer dans les fichiers de configuration de spring
 
-[spring-configuration](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/spring-configuration-xml/index.md)
-
 ### configuration-maven
