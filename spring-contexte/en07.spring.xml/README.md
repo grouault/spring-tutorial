@@ -1,5 +1,12 @@
 # Liser moi
-Version du projet avec une configuration Full XML
+Version du projet avec une configuration Full XML. Les beans sont gérés dans les fichiers XML:
+- service, dao
+- chargement des properties : paramètre bdd
+
+Note : 
+La connexion n'est à la bdd n'est pas géré par Spring.
+Appelle à la méthode getConnexion
+
 
 ## prérequis
 1. docker : docker-compose up
