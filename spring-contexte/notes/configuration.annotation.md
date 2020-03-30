@@ -60,5 +60,12 @@ Java:
 
 * @ComponentScan: indique les packages à inspecter pour charger les configurations
 
-
+### Faire cohabiter les différents styles de configuration
+Usage de 
+```
+<context:annotation-config />
+```
+* execution de toutes les annotations
+* scan des classes annotées mais les beans doivent être explicitement annotés
+* @component n'est plus nécessaire
 
