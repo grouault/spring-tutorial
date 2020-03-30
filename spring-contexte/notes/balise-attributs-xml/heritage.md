@@ -12,6 +12,10 @@
     </bean>
 
 ### Héritage de configuration abstract
+    
+- Définition des propriétés dans le bean 'abstract'.
+- Récupération des propriétés dans les beans 'enfants'
+    
     <!-- Declaration de notre configuration de DAO parent -->
     <bean id="abstractDao" class="com.banque.dao.impl.AbstractDAO" abstract="true">
       <property name="url" value="${bdd.url}"></property>
@@ -23,3 +27,5 @@
     <!-- Declaration de nos DAO enfants -->
     <bean id="compteDAO" class="com.banque.dao.impl.CompteDAO" parent="abstractDao">
     </bean>
+    <bean id="operationDAO" class="com.banque.dao.impl.OperationDAO" parent="abstractDao">
+	</bean>
