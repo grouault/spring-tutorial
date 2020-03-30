@@ -8,7 +8,7 @@ Stéréotype:
 @Component / @Repository / @Service / @Controller / @RestController / @Configuration
 
 Injection
-@autowired / @Required / @Lazy
+@Autowired / @Required / @Lazy
 
 Scope et discrimination
 @Scope
