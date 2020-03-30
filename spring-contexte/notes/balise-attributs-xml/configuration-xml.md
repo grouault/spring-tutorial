@@ -8,7 +8,7 @@
 
 ## Héritage de configuration abstract
 
-## scope: singletion et prototype
+## scope: singleton et prototype
 
 ## gestion des collections : &lt;list /&gt; &lt;set&gt;
 * [list,set,vector, ...](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/balise-attributs-xml/list.md)
