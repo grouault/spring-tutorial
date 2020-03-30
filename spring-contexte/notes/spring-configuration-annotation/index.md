@@ -7,7 +7,7 @@ Configuration par annotation
 @autowired
 Stéréotype: @Component / @Repository / @Service / @Controller / @RestController / @Configuration
 @Scope
-@Qualifier
+@Qualifier/@Primary
 @Value
 @Required
 @Lazy
