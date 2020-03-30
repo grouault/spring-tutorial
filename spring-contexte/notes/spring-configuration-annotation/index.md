@@ -35,6 +35,12 @@ Cycle de vie annotation:
 ```
 
 ## @Autowired
+* injection par constructeur
+* injection par méthode setXxxx
+* injection par membre  / attribut
 
-## @Qualifier
+## @Qualifier / @Primary
+* pour lever les ambiguités quand plusieurs beans de même type sont sélectionnables par Spring.
+* bonnes pratiques: si possible ne pas préciser les noms des composants / il est rare de définir plusieurs implémentations pour un même bean au sein d'un contexte applicatif.
+
 
