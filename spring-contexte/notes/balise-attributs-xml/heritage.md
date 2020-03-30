@@ -13,8 +13,8 @@
 
 ### Héritage de configuration abstract
     
-Définition des propriétés dans le bean 'abstract'.
-Récupération des propriétés dans les beans 'enfants'
+1. Définition des propriétés dans le bean 'abstract'.
+2. Récupération des propriétés dans les beans 'enfants'
     
     <!-- Declaration de notre configuration de DAO parent -->
     <bean id="abstractDao" class="com.banque.dao.impl.AbstractDAO" abstract="true">
