@@ -9,7 +9,6 @@ Stéréotype: @Component / @Repository / @Service / @Controller / @RestControlle
 @Scope
 @Qualifier/@Primary
 @Value
-
 ```
 Cycle de vie (annotation):
 ```
