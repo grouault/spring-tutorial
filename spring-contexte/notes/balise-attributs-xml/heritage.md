@@ -15,9 +15,9 @@
     
 1. Définition des propriétés dans le bean 'abstract'.
 2. Récupération des propriétés dans les beans 'enfants'
-    
-<!-- Declaration de notre configuration de DAO parent -->
-     <bean id="abstractDao" class="com.banque.dao.impl.AbstractDAO" abstract="true">
+    <!-- -->
+    <!-- Declaration de notre configuration de DAO parent -->
+    <bean id="abstractDao" class="com.banque.dao.impl.AbstractDAO" abstract="true">
       <property name="url" value="${bdd.url}"></property>
       <property name="driver" value="${bdd.driver}"></property>
       <property name="login" value="${bdd.login}"></property>
@@ -28,4 +28,4 @@
     <bean id="compteDAO" class="com.banque.dao.impl.CompteDAO" parent="abstractDao">
     </bean>
     <bean id="operationDAO" class="com.banque.dao.impl.OperationDAO" parent="abstractDao">
-	</bean>
+    </bean>
