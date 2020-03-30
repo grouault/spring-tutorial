@@ -13,7 +13,10 @@ Stéréotype: @Component / @Repository / @Service / @Controller / @RestControlle
 @Lazy
 ```
 
-Les composants sont détectés au démarrage de l'application
+Les composants sont détectés au démarrage de l'application:
+- indique la racine, les sous-package sont scannés
+- les archives jars des dépendances sont prises en compte
+
 XML:
 ```
 <context:component-scan base-package="base.package" />
