@@ -6,10 +6,14 @@ Configuration par annotation
 ```
 Stéréotype: 
 @Component / @Repository / @Service / @Controller / @RestController / @Configuration
+
 Injection
 @autowired / @Required / @Lazy
+
+Scope et discrimination
 @Scope
 @Qualifier/@Primary
+
 Property
 @Value
 ```
