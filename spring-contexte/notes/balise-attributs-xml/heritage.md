@@ -15,10 +15,10 @@
     <!-- Declaration de notre configuration de DAO parent -->
     <bean id="abstractDao" class="com.banque.dao.impl.AbstractDAO" abstract="true">
       <property name="url" value="${bdd.url}"></property>
-		  <property name="driver" value="${bdd.driver}"></property>
-		  <property name="login" value="${bdd.login}"></property>
-		  <property name="pwd" value="${bdd.password}"></property>
-	  </bean>
+      <property name="driver" value="${bdd.driver}"></property>
+      <property name="login" value="${bdd.login}"></property>
+      <property name="pwd" value="${bdd.password}"></property>
+    </bean>
     
     <!-- Declaration de nos DAO enfants -->
     <bean id="compteDAO" class="com.banque.dao.impl.CompteDAO" parent="abstractDao">
