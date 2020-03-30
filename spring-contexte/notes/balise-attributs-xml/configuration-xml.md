@@ -4,9 +4,7 @@
 ## &lt;bean&gt;, id et class
 * [bean, ...](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/balise-attributs-xml/bean.md)
 
-## Héritage de configuration &lt;bean&gt;
-
-## Héritage de configuration abstract
+## Héritage
 
 ## scope: singleton et prototype
 
