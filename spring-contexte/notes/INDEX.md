@@ -11,7 +11,7 @@
 
 Spring permet 3 types de configuration:
 * [par fichiers.xml](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/configuration.xml.md)
-* par annotation
+* [par annotation](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/configuration.annotation.md)
 * par l'annotation: @configuration
 
 ### [spring.configuration](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/spring-configuration-xml/index.md)
