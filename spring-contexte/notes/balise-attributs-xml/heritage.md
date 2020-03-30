@@ -4,7 +4,7 @@
 
 ### Héritage de configuration &lt;bean&gt;
     <!-- Declaration de notre configuration service parent -->
-	  <bean id="abstractService" class="com.banque.service.impl.AbstractService" abstract="true"/>	
+    <bean id="abstractService" class="com.banque.service.impl.AbstractService" abstract="true"/>	
 
     <!-- Declaration de nos services et mise en place des liens avec les DAO -->
     <bean id="authentificationService" class="com.banque.service.impl.AuthentificationService" parent="abstractService">
