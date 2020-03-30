@@ -73,13 +73,13 @@ Exemple:
 
         private static final Logger LOG = LogManager.getLogger();
 	
-	@Value("${bdd.driver}")
-	private String driver;
+        @Value("${bdd.driver}")
+        private String driver;
 	
-	@Value("${bdd.url}")
-	private String url;
-	private String url;
-	
-	...
+        @Value("${bdd.url}")
+        private String url;
+        private String url;
+       
+        ...
 	
     }
