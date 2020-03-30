@@ -6,12 +6,30 @@ Principe : Injection via les annotations
 * annotations embarquées dans le code source de la classe
 * configuration XML réduite au maximum
 
-### [liste des @annotations](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/spring-configuration-annotation/index.md)
+### Cycle de vie annotation:
+```
+1- Détection des beans : Scan des annotations @Component
+2- BeanFactoryPostProcessor
+3- Instanciation des beans et injection des dépendances
+4- BeanPostProcessor
+```
 
+### Chargement du context-spring
 
+Les composants sont détectés au démarrage de l'application:
+- indique la racine, les sous-package sont scannés
+- les archives jars des dépendances sont prises en compte
 
+XML:
+```
+<context:component-scan base-package="base.package" />
+```
 
-### Java : Chargement du context-spring
+Java:
+```
+@ComponentScan("com.banque")
+```
+
 Charger les fichiers de configurations de plusieurs manières:
 
     @ComponentScan("com.banque")
@@ -37,3 +55,6 @@ Charger les fichiers de configurations de plusieurs manières:
 
 
 * @ComponentScan: indique les packages à inspecter pour charger les configurations
+
+
+### [liste des @annotations](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/spring-configuration-annotation/index.md)
