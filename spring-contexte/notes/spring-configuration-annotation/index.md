@@ -14,7 +14,7 @@ Scope et discrimination
 @Scope
 @Qualifier/@Primary
 
-Property
+Property-placeholder
 @Value
 ```
 Cycle de vie (annotation):
