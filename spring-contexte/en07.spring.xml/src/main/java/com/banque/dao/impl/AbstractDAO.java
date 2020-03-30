@@ -337,6 +337,7 @@ public abstract class AbstractDAO<T extends IEntity> implements IDAO<T> {
 	public final Connection getConnexion() throws ExceptionDao {
 		try {
 			Class.forName(this.getDriver());
+			AbstractDAO.LOG.info("getConnexion()");
 		} catch (Exception e) {
 			AbstractDAO.LOG.error("Impossible de charger le driver pour la base", e);
 			throw new ExceptionDao(e);
