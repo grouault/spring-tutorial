@@ -16,9 +16,10 @@ import com.banque.service.ICompteService;
 import com.banque.service.IOperationService;
 
 /**
- * Exemple.
+ * Dans cet exemple, on indique les répertoires ou rechercher les annotations.
+ * @author grouault
+ *
  */
-// indique les répertoires ou rechercher les annotations.
 @ComponentScan("com.banque")
 @EnableAspectJAutoProxy
 public final class Main {
