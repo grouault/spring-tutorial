@@ -1,5 +1,6 @@
 # @annotation
 [retour](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/INDEX.md)
+[prec](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/configuration.annotation.md)
 
 Configuration par annotation
 ```
