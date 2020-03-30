@@ -22,6 +22,9 @@ Les composants sont détectés au démarrage de l'application:
 - indique la racine, les sous-package sont scannés
 - les archives jars des dépendances sont prises en compte
 
+
+Charger les fichiers de configurations de plusieurs manières:
+
 XML:
 ```
 <context:component-scan base-package="base.package" />
@@ -32,7 +35,6 @@ Java:
 @ComponentScan("com.banque")
 ```
 
-Charger les fichiers de configurations de plusieurs manières:
 
     @ComponentScan("com.banque")
     @EnableAspectJAutoProxy
