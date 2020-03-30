@@ -4,13 +4,11 @@
 
 Configuration par annotation
 ```
-@autowired
 Stéréotype: @Component / @Repository / @Service / @Controller / @RestController / @Configuration
+@autowired / @Required / @Lazy
 @Scope
 @Qualifier/@Primary
 @Value
-@Required
-@Lazy
 
 ```
 Cycle de vie (annotation):
