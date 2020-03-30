@@ -44,3 +44,6 @@ Cycle de vie annotation:
 * bonnes pratiques: si possible ne pas préciser les noms des composants / il est rare de définir plusieurs implémentations pour un même bean au sein d'un contexte applicatif.
 
 
+## traitement post-processeurs
+[voir]https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/spring-configuration-xml/annotation-bean-post-processor.md
+
