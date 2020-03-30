@@ -16,13 +16,13 @@ Charger les fichiers de configurations de plusieurs manières:
         
         private static final Logger LOG = LogManager.getLogger();
 
-	      /**
-	      * Exemple de fonctionnement.
+	 /**
+	  * Exemple de fonctionnement.
         *
-	      * @param args
-	      *            ne sert a rien
-	      */
-	    public static void main(String[] args) throws Exception {
+	  * @param args
+	  *            ne sert a rien
+	  */
+	  public static void main(String[] args) throws Exception {
 		    Main.LOG.info("-- Debut -- ");
 
 			    // Permet de démarrer Spring.
