@@ -5,6 +5,7 @@
 * [bean, ...](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/balise-attributs-xml/bean.md)
 
 ## héritage
+* [héritage](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/balise-attributs-xml/heritage.md)
 
 ## scope: singleton et prototype
 
