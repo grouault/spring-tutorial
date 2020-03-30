@@ -7,8 +7,11 @@ Principe : Injection via les annotations
 * configuration XML réduite au maximum
 
 ### [liste des @annotations](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/spring-configuration-annotation/index.md)
-### Java : Chargement du context-spring
 
+
+
+
+### Java : Chargement du context-spring
 Charger les fichiers de configurations de plusieurs manières:
 
     @ComponentScan("com.banque")
