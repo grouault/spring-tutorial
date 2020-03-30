@@ -18,18 +18,18 @@ Charger les fichiers de configurations de plusieurs manières:
 
 	 /**
 	  * Exemple de fonctionnement.
-        *
+          *
 	  * @param args
 	  *            ne sert a rien
 	  */
 	  public static void main(String[] args) throws Exception {
-		    Main.LOG.info("-- Debut -- ");
+		Main.LOG.info("-- Debut -- ");
 
-			    // Permet de démarrer Spring.
-			    // Permet de charger Spring : recherche d'annotation sur la classe Main.
-			    // Spring va rechercher les annotations.
-			    // context = zone de mémoire avec ses propres valeurs spring <==> context
-			    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Main.class);
+		// Permet de démarrer Spring.
+		// Permet de charger Spring : recherche d'annotation sur la classe Main.
+		// Spring va rechercher les annotations.
+		// context = zone de mémoire avec ses propres valeurs spring <==> context
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Main.class);
 
 
 * @ComponentScan: indique les packages à inspecter pour charger les configurations
