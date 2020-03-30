@@ -4,11 +4,15 @@
 
 ### Héritage de configuration &lt;bean&gt;
     <!-- Declaration de notre configuration service parent -->
-    <bean id="abstractService" class="com.banque.service.impl.AbstractService" abstract="true"/>	
+    <bean id="couleur" class="projet.voiture">
+        <property name="poids" value="1300"></property>
+        <property name="couleur" value="rouge"></property>
+    </bean>	
 
     <!-- Declaration de nos services et mise en place des liens avec les DAO -->
-    <bean id="authentificationService" class="com.banque.service.impl.AuthentificationService" parent="abstractService">
-      <constructor-arg name="utilisateurDAO" ref="utilisateurDAO"></constructor-arg>
+    <bean id="v" class="projet.voiture" parent="config.Voiture"></bean>
+    <bean id="vJaune" class="projet.voiture" parent="config.Voiture">
+        <property name="couleur" value="jaune"></property>
     </bean>
 
 ### Héritage de configuration abstract
