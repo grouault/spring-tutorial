@@ -6,7 +6,7 @@ Principe : Injection via les annotations
 * annotations embarquées dans le code source de la classe
 * configuration XML réduite au maximum
 
-### [@annotation](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/spring-configuration-annotation/index.md)
+### [liste des @annotations](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/spring-configuration-annotation/index.md)
 ### Java : Chargement du context-spring
 
 Charger les fichiers de configurations de plusieurs manières:
