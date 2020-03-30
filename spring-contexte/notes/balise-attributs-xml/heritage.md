@@ -12,7 +12,9 @@
     </bean>
 
 ### Héritage de configuration abstract
-    
+
+[plus](https://github.com/grouault/spring-tutorial/tree/master/spring-contexte/en07.spring.xml)
+
 1. Définition des propriétés dans le bean 'abstract'.
 2. Récupération des propriétés dans les beans 'enfants'
  <!-- -->
