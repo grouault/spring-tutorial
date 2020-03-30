@@ -5,7 +5,7 @@ Version du projet avec une configuration Full XML. Les beans sont gérés dans l
 
 Note : 
 La connexion n'est à la bdd n'est pas géré par Spring.
-Appelle à la méthode getConnexion
+- Appelle à la méthode getConnexion (AbstractDao)
 
 
 ## prérequis
