@@ -1,7 +1,9 @@
 # properties
 [retour](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/spring-configuration-xml/index.md)
 
-## Configuration des fichiers XML avec un fichier de properties
+## XML
+
+####  Configuration des fichiers XML avec un fichier de properties
 1- créez un fichier properties à la racine de votre répertoire spring
 
     ## Format : clef=valeur
@@ -35,7 +37,7 @@
     
     </beans>
     
-## Configuration des fichiers XML avec un fichier de properties
+####  Configuration des fichiers XML avec un fichier de properties
 Autre configuration : avec dans la déclartion xml, le spring-context :
 xmlns:http://www.springframework.org/schema/context/spring-context.xsd
 
@@ -58,3 +60,26 @@ xmlns:http://www.springframework.org/schema/context/spring-context.xsd
     </bean>
 
     </beans>
+    
+## @annotation    
+
+- @PropertySource
+- @Value:
+
+Exemple:
+
+    @PropertySource("classpath:spring/database.properties")
+    public abstract class AbstractDAO<T extends IEntity> implements IDAO<T> {
+
+        private static final Logger LOG = LogManager.getLogger();
+	
+	@Value("${bdd.driver}")
+	private String driver;
+	
+	@Value("${bdd.url}")
+	private String url;
+	private String url;
+	
+	...
+	
+    }
