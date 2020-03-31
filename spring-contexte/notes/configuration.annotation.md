@@ -27,7 +27,10 @@ Charger les fichiers de configurations de plusieurs manières:
 
 XML:
 ```
+<!-- scan des stereotypes -->
 <context:component-scan base-package="base.package" />
+<!-- aspect -->
+<aop:aspectj-autoproxy />
 ```
 
 Java:
