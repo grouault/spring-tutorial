@@ -36,7 +36,11 @@ XML:
 
 Java:
 ```
+// stereotype
 @ComponentScan("com.banque")
+
+// aspect
+@EnableAspectJAutoProxy
 ```
 
 
