@@ -1,12 +1,13 @@
 package com.banque.aop;
 
-import org.apache.logging.log4j.*;
-import org.aspectj.lang.*;
-import org.aspectj.lang.annotation.*;
-import org.springframework.stereotype.Component;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
 
 @Aspect
-@Component
 public class LogAspect {
 
 	  private final static Logger LOG = LogManager.getLogger();
