@@ -29,6 +29,7 @@ XML:
 ```
 <!-- scan des stereotypes -->
 <context:component-scan base-package="base.package" />
+
 <!-- aspect -->
 <aop:aspectj-autoproxy />
 ```
