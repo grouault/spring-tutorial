@@ -32,6 +32,8 @@ Version avec activation annotation et aspect
 			http://www.springframework.org/schema/aop/spring-aop.xsd"
             >
             
+	<!-- scan des stereotypes -->
+	<context:component-scan base-package="base.package" />
 
  	<aop:aspectj-autoproxy />
 	<bean id="logAspect" class="com.banque.aop.LogAspect"></bean>
