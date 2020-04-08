@@ -1,5 +1,9 @@
 # Liser moi
 
+url
+* https://blog.j-labs.pl/2019/10/Spring-AOP-in-practice-measure-method-execution-time
+* https://www.programcreek.com/java-api-examples/index.php?api=org.springframework.util.StopWatch
+
 ## prérequis
 1. docker : docker-compose up
 
