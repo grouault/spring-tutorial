@@ -15,3 +15,19 @@ Principales méthodes :
 * close / isClosed
 
 ## Transaction
+``
+connexion.setAutoCommit(false)
+try{
+
+  // instruction transaction
+  ...
+  
+  // validation de la transaction
+  connexion.commit();
+
+} catch (SQLException ex) {
+  // annulation connexion
+  connexion.rollback();
+} finally {
+  connexion.close();
+}
