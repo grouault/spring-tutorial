@@ -15,7 +15,7 @@ Principales méthodes :
 * close / isClosed
 
 ## Transaction
-``
+````
 connexion.setAutoCommit(false)
 try{
 
@@ -26,8 +26,13 @@ try{
   connexion.commit();
 
 } catch (SQLException ex) {
+
   // annulation connexion
   connexion.rollback();
+  
 } finally {
+
   connexion.close();
+  
 }
+````
