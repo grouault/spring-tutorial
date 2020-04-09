@@ -1,1 +1,17 @@
 # JDBC
+
+## Driver
+
+## Connection
+La classe java.sql.DriverManager fournit la méthode getConnexion().
+Cette méthode renvoie un objet Connexion qui est utilisée pour effectuer les opérations sur la base.
+Cette classe fournit par le driver implémente l'interface : java.sql.Connection
+Principales méthodes :
+* createStatement
+* prepareStatement
+* prepareCall
+* setAutocommit / commit  /rollback
+* getMetaData
+* close / isClosed
+
+## Transaction
