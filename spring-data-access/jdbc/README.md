@@ -10,6 +10,9 @@ Pour obtenir une connexion, il faut:
 ```
 Class.forName("com.mysql.jdbc.Driver")
 ```
+La méthode Driver.registerDriver() contient un initialiseur static qui permet de signaler la classe comme driver JDBC au niveau de la JVM.
+Ce chargement permmet alors l'établissement d'une connexion.
+
 * Récupération de la Connexion
 ```
 DriverManager.getConnection("jdbc:mysql://localhost/test","login","mdp")
