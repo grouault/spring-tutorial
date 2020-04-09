@@ -16,8 +16,7 @@ Principales méthodes :
 
 ## Transaction
 ````
-connexion.setAutoCommit(false)
-try{
+connexion.setAutoCommit(false);
 
   // instruction transaction
   ...
@@ -35,4 +34,5 @@ try{
   connexion.close();
   
 }
+connexion.setAutoCommit(true);
 ````
