@@ -1,6 +1,19 @@
 # JDBC
 
-## Driver
+Bibliothèque d'interfaces et de classes utilisées pour accéder à une base de donéees.
+Un programme JDBC envoie des requêtes à un SGBDR et exploite les résultats en Java.
+
+## Driver JDBC et connection
+Un driver est une implémentation des interfaces pour un SGBDR donné.
+Pour obtenir une connexion, il faut:
+* le chargement de la classe du driver par la JVM
+```
+Class.forName("com.mysql.jdbc.Driver")
+```
+* Récupération de la Connexion
+```
+DriverManager.getConnection("jdbc:mysql://localhost/test","login","mdp")
+```
 
 ## Connection
 La classe java.sql.DriverManager fournit la méthode getConnexion().
