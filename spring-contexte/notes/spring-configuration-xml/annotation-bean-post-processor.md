@@ -79,6 +79,13 @@ Comment obtenir l’objet de contexte d’application de Spring avec les classes
 
 Java:
 
-
+     @component
+     ApplicationContextProvider appContext
+     
+     ou
+     
      ApplicationContextProvider appContext = new ApplicationContextProvider();
      TestBean tb = appContext.getApplicactionContext().getBean("testBean", TestBean.class);
+
+
+Note : quand on fait un new, spring a déjà instancier une instance signleton et la récupère dans le contexte.
