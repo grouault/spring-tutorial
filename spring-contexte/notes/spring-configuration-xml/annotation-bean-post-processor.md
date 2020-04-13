@@ -9,8 +9,8 @@ Spring: fabrication des spring-beans:
 * le framework assemble les pièces puis gèrent l'exécution
 
 ## prototype / singleton
-- Singleton: chargé au démarrage de l'application
-- Prototype : ne sont chargés qu'à la demande
+- Singleton: chargé au démarrage de l'application, au chargement de la configuration.
+- Prototype : ne sont chargés qu'à la demande et non au chargement de la configuration.
 
 ## lifecycle bean
 [lifecyclebean](https://howtodoinjava.com/spring-core/spring-bean-life-cycle/)
