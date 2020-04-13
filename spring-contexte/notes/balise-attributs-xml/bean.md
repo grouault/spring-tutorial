@@ -25,6 +25,14 @@ Permet de fournir des arguments aux constructeurs d'un objet
     </bean>
 
 
+## scope: singleton et prototype
+Par défaut, les beans sont des singletons.
+Pour définir un prototype.
+```
+<bean id="client1" class="fr.exagone.beans.Client" scope="prototype" />
+```
+
+
 ## Traitements posts-processeurs
 ### bean xml: init-method / destroy-method
     <bean id="client1" class="fr.exagone.beans.Client" init-method="initialiser" destroy-method="detruire">
