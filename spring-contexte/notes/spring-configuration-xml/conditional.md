@@ -5,6 +5,7 @@
 Il sert à élaborer un type de vérification conditionnelle « If-Then-Else » pour l’enregistrement des beanss.
 
 Spring Condition Interface
+
 Il faut créer une classe qui implémente l'interface 'condition' fournit par Spring.
 public interface Condition {
 	boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata);
