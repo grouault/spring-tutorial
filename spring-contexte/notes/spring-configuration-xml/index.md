@@ -7,6 +7,6 @@
 
 ## [aspect](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/spring-configuration-xml/aspect.md)
 
-## [@conditional]
+## [@conditional](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/spring-configuration-xml/conditional.md)
 
-## [@Profile]
+## [@Profile](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/spring-configuration-xml/profile.md)
