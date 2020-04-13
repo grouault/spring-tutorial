@@ -1,7 +1,11 @@
 # bean - lifcecycle - init et destroy - InitaliseBean - DisposableBean - BeanPostProcessor - ApplicationContext
-==> il s'agit des traitement PostProcessor -
 
 [retour](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/spring-configuration-xml/index.md)
+
+Principe:
+Spring: fabrication des spring-beans
+1- Spring construit les singletons / prototype au chargement de la configurations XML ou scan des composants
+2- le framework assemble les pièces puis gèrent l'exécution
 
 ## lifecycle bean
 [lifecyclebean](https://howtodoinjava.com/spring-core/spring-bean-life-cycle/)
