@@ -74,12 +74,12 @@ A la fermeture du contexte-spring, la méthode [destroy] est exécutée.
 ## ApplicationProvider
 Comment obtenir l’objet de contexte d’application de Spring avec les classes non gérées par le conteneur. Il n’est pas possible d’avoir toutes les classes en tant que classes gérées par le conteneur, dans ces classes vous devez obtenir l’objet de contexte d’application. Cela peut être réalisé en utilisant l’interface Applicationcontextaware.
 * créer une classe qui implémente l'interface ; la méthode "setApplicationContext" permet de récupérer l'object applicationContext
-* declarer un bean dans le fichier de configuration de spring
+* declarer un bean dans le fichier de configuration de spring ou metter l'annotation @Component sur la classe précedemment crée.
 * dans la classe non gérée par Spring, appelé le contexte 
 
 Java:
 
-     @component
+     @Autowired
      ApplicationContextProvider appContext
      
      ou
