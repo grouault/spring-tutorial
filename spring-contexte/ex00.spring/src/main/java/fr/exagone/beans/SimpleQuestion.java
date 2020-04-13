@@ -9,6 +9,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import fr.exagone.beans.providers.ApplicationContextProvider;
 
@@ -22,8 +23,8 @@ public class SimpleQuestion implements DisposableBean, InitializingBean {
 	
 	private Map<String, String> answers;
 
-	private ApplicationContextProvider appContext = new ApplicationContextProvider();
-	
+	@Autowired
+	private ApplicationContextProvider appContext;
 	
 	public SimpleQuestion() {
 	}
