@@ -1,7 +1,11 @@
 # Liser moi
 
+## TODO
+1. créer Aspect via annotation
+https://blog.j-labs.pl/2019/10/Spring-AOP-in-practice-measure-method-execution-time
+2. mettre le timer sur les DAOs
+
 url
-* https://blog.j-labs.pl/2019/10/Spring-AOP-in-practice-measure-method-execution-time
 * https://www.programcreek.com/java-api-examples/index.php?api=org.springframework.util.StopWatch
 
 ## prérequis
