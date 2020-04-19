@@ -43,6 +43,6 @@ Sur la classe main
 ```
 // indique les répertoires ou rechercher les annotations.
 @ComponentScan("com.banque")
-// @EnableAspectJAutoProxy
+@EnableAspectJAutoProxy
 public final class Main {
 ```
