@@ -2,7 +2,8 @@
 
 ## TODO
 1. créer Aspect via annotation
-https://blog.j-labs.pl/2019/10/Spring-AOP-in-practice-measure-method-execution-time
+* https://blog.j-labs.pl/2019/10/Spring-AOP-in-practice-measure-method-execution-time
+
 2. mettre le timer sur les DAOs
 
 url
