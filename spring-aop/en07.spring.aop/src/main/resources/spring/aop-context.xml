@@ -17,6 +17,4 @@
 	<!-- scan des composants. -->
 	<context:component-scan base-package="com.banque" />
 
-	
-
 </beans>
