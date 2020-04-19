@@ -37,13 +37,13 @@ public class LogAspect {
 	  public Object logAround(ProceedingJoinPoint jp) throws Throwable {
 		  
 		  // log before
-		  LOG.info("Around - before : target = {}", jp.getTarget());
+		  LOG.info("Log Around - before : target = {}", jp.getTarget());
 		  
 		  // proceed
 		  Object toReturn = jp.proceed();
 		  
 		  // log after
-		  LOG.info("Around - after : target = {}", jp.getTarget());
+		  LOG.info("Log Around - after : target = {}", jp.getTarget());
 		  
 		  return toReturn;
 	  }

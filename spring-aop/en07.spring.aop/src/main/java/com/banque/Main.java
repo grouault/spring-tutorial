@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.banque.entity.ICompteEntity;
 import com.banque.entity.IUtilisateurEntity;
@@ -20,7 +21,7 @@ import com.banque.service.IOperationService;
  */
 // indique les répertoires ou rechercher les annotations.
 @ComponentScan("com.banque")
-@EnableAspectJAutoProxy
+// @EnableAspectJAutoProxy
 public final class Main {
 
 	private static final Logger LOG = LogManager.getLogger();
@@ -33,15 +34,23 @@ public final class Main {
 	 */
 	public static void main(String[] args) throws Exception {
 		Main.LOG.info("-- Debut -- ");
-
 		
+		// Définition du contexte par fichier de config : aop-context.xml
+		ClassPathXmlApplicationContext context = null;
+
+		// Définition du contexte par annotation.
+		// AnnotationConfigApplicationContext context = null;
+		
+		try {
 			
 			// Permet de démarrer Spring.
 			// Permet de charger Spring : recherche d'annotation sur la classe Main.
 			// Spring va rechercher les annotations.
 			// context = zone de mémoire avec ses propres valeurs spring <==> context
-			AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Main.class);
 			
+			// context = new AnnotationConfigApplicationContext(Main.class);
+			context = new ClassPathXmlApplicationContext("spring/aop-context.xml");
+		
 			
 			// On instancie le service authentification afin de recuperer un
 			// utilisateur
@@ -74,6 +83,14 @@ public final class Main {
 			serviceOp.faireVirement(utilisateur.getId().intValue(), deuxId[0].intValue(), deuxId[1].intValue(), 5D);
 			Main.LOG.info("Votre virement s'est bien effectue");
 
+		} finally {
+			
+			if (context != null) {
+				context.close();
+			}
+			
+		}	
+			
 		Main.LOG.info("-- Fin -- ");
 		System.exit(0);
 	}
