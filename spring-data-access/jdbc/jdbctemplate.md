@@ -10,6 +10,24 @@
 ## Transaction
 Plus de gestion des transactions explicit
 
+## XML Config
+```
+<!-- properties -->
+<context:property-placeholder location="classpath:spring/database.properties"/>
+
+<!-- data-source -->
+<bean id="dataSource" destroy-method="close" class="org.apache.commons.dbcp2.BasicDataSource">
+  <property name="driverClassName" value="${db.driver}"/>
+  <property name="url" value="${db.url}"/>
+  <property name="username" value="${db.login}"/>
+  <property name="password" value="${db.password}"/>
+</bean>
+
+<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+  <property name="dataSource" ref="dataSource"/>
+</bean>
+```
+
 ## Dao
 * Toutes les méthodes n'ont pas besoin de la connexion mais y accède via jdbctemplate
 * Certaines méthodes prennent en paramètre la connexion (classe anonyme), mais sont appelées par des méthodes de jdbctemplate
