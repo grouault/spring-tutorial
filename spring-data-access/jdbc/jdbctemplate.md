@@ -95,30 +95,30 @@ public T select(int pUneClef) throws ExceptionDao {
 ## Insert (KeyHolder) / Update / Delete
 * jdbctemplate.update( ... )
 ```
-	@Override
-	public T insert(final T pUneEntite) throws ExceptionDao {
-		if (pUneEntite == null) {
-			return null;
-		}
-		AbstractDAO.LOG.debug("Insert {}", pUneEntite.getClass());
-		try {
-			
-			// on passe par un prepare statement creator.
-			PreparedStatementCreator psc = new PreparedStatementCreator() {
-				@Override
-				public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
-					return AbstractDAO.this.buildStatementForInsert(pUneEntite, con);
-				}
-			};
-			
-			// recuperation de l'identifiant.
-			KeyHolder kh = new GeneratedKeyHolder();
-			this.getJdbcTemplate().update(psc, kh);
-			pUneEntite.setId(Integer.valueOf(kh.getKey().intValue()));
-		
-		} catch (Exception e) {
-			throw new ExceptionDao(e);
-		} 
-		return pUneEntite;
+@Override
+public T insert(final T pUneEntite) throws ExceptionDao {
+	if (pUneEntite == null) {
+		return null;
 	}
+	AbstractDAO.LOG.debug("Insert {}", pUneEntite.getClass());
+	try {
+
+		// on passe par un prepare statement creator.
+		PreparedStatementCreator psc = new PreparedStatementCreator() {
+			@Override
+			public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+				return AbstractDAO.this.buildStatementForInsert(pUneEntite, con);
+			}
+		};
+
+		// recuperation de l'identifiant.
+		KeyHolder kh = new GeneratedKeyHolder();
+		this.getJdbcTemplate().update(psc, kh);
+		pUneEntite.setId(Integer.valueOf(kh.getKey().intValue()));
+
+	} catch (Exception e) {
+		throw new ExceptionDao(e);
+	} 
+	return pUneEntite;
+}
 ```
