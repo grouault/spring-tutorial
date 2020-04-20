@@ -9,4 +9,12 @@
 
 ## Dao
 * Toutes les méthodes n'ont pas besoin de la connexion mais y accède via jdbctemplate
-* Certaines méthodes prennent en paramètre la connexion (classe anonyme), mais sont appelées par des méthode de jdbctemplate
+* Certaines méthodes prennent en paramètre la connexion (classe anonyme), mais sont appelées par des méthodes de jdbctemplate
+```
+			PreparedStatementCreator psc = new PreparedStatementCreator() {
+				@Override
+				public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+					return AbstractDAO.this.buildStatementForInsert(pUneEntite, con);
+				}
+			};
+```
