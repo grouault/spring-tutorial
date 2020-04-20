@@ -21,6 +21,20 @@ PreparedStatementCreator psc = new PreparedStatementCreator() {
 	}
 };
 ```
+buildStatementForInsert
+```
+	@Override
+	protected PreparedStatement buildStatementForInsert(IOperationEntity pUneEntite, Connection connexion)
+			throws SQLException {
+		String request = "insert into " + this.getTableName() + " (libelle, montant, date, compteId) values (?,?,?,?);";
+		PreparedStatement ps = connexion.prepareStatement(request, Statement.RETURN_GENERATED_KEYS);
+		ps.setString(1, pUneEntite.getLibelle());
+		ps.setDouble(2, pUneEntite.getMontant().doubleValue());
+		ps.setTimestamp(3, pUneEntite.getDate());
+		ps.setInt(4, pUneEntite.getCompteId().intValue());
+		return ps;
+	}
+```
 
 ## RowMapper
 Permet de mapper les résultats d'une requête sur une entité
@@ -49,3 +63,9 @@ public class OperationJdbcMapper implements RowMapper<IOperationEntity> {
 
 }
 ```
+## Select
+* jdbctemplate.query( ... )
+* jdbc.queryObject(... )
+
+## Insert / Update / Delete
+* jdbctemplate.update( ... )
