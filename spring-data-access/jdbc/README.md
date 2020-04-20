@@ -1,5 +1,9 @@
 # JDBC
 
+## Liens
+* [jdbctemplate]
+
+## Description
 Bibliothèque d'interfaces et de classes utilisées pour accéder à une base de donéees.
 Un programme JDBC envoie des requêtes à un SGBDR et exploite les résultats en Java.
 
