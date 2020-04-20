@@ -23,17 +23,17 @@ PreparedStatementCreator psc = new PreparedStatementCreator() {
 ```
 buildStatementForInsert
 ```
-	@Override
-	protected PreparedStatement buildStatementForInsert(IOperationEntity pUneEntite, Connection connexion)
-			throws SQLException {
-		String request = "insert into " + this.getTableName() + " (libelle, montant, date, compteId) values (?,?,?,?);";
-		PreparedStatement ps = connexion.prepareStatement(request, Statement.RETURN_GENERATED_KEYS);
-		ps.setString(1, pUneEntite.getLibelle());
-		ps.setDouble(2, pUneEntite.getMontant().doubleValue());
-		ps.setTimestamp(3, pUneEntite.getDate());
-		ps.setInt(4, pUneEntite.getCompteId().intValue());
-		return ps;
-	}
+@Override
+protected PreparedStatement buildStatementForInsert(IOperationEntity pUneEntite, Connection connexion)
+		throws SQLException {
+	String request = "insert into " + this.getTableName() + " (libelle, montant, date, compteId) values (?,?,?,?);";
+	PreparedStatement ps = connexion.prepareStatement(request, Statement.RETURN_GENERATED_KEYS);
+	ps.setString(1, pUneEntite.getLibelle());
+	ps.setDouble(2, pUneEntite.getMontant().doubleValue());
+	ps.setTimestamp(3, pUneEntite.getDate());
+	ps.setInt(4, pUneEntite.getCompteId().intValue());
+	return ps;
+}
 ```
 
 ## RowMapper
@@ -66,28 +66,28 @@ public class OperationJdbcMapper implements RowMapper<IOperationEntity> {
 ## Select
 * jdbctemplate.query( ... )
 ```
-	@Override
-	public T select(int pUneClef) throws ExceptionDao {
+@Override
+public T select(int pUneClef) throws ExceptionDao {
 
-		T result = null;
-		AbstractDAO.LOG.debug("select sur {} avec id={}", this.getClass(), String.valueOf(pUneClef));
-	
-		try {
-		
-			// request
-			String request = "select " + this.getAllColumnNames() + " from " + this.getTableName() + " where "
-					+ this.getPkName() + "=?;";
-			// result
-			result = this.getJdbcTemplate().queryForObject(request, this.getMapper(), pUneClef);
-		
-		} catch (EmptyResultDataAccessException e) {
-			return result;
-		} catch (Exception e) {
-			throw new ExceptionDao(e);
-		} 
+	T result = null;
+	AbstractDAO.LOG.debug("select sur {} avec id={}", this.getClass(), String.valueOf(pUneClef));
 
+	try {
+
+		// request
+		String request = "select " + this.getAllColumnNames() + " from " + this.getTableName() + " where "
+				+ this.getPkName() + "=?;";
+		// result
+		result = this.getJdbcTemplate().queryForObject(request, this.getMapper(), pUneClef);
+
+	} catch (EmptyResultDataAccessException e) {
 		return result;
-	}
+	} catch (Exception e) {
+		throw new ExceptionDao(e);
+	} 
+
+	return result;
+}
 ```
 
 * jdbc.queryObject(... )
