@@ -65,6 +65,31 @@ public class OperationJdbcMapper implements RowMapper<IOperationEntity> {
 ```
 ## Select
 * jdbctemplate.query( ... )
+```
+	@Override
+	public T select(int pUneClef) throws ExceptionDao {
+
+		T result = null;
+		AbstractDAO.LOG.debug("select sur {} avec id={}", this.getClass(), String.valueOf(pUneClef));
+	
+		try {
+		
+			// request
+			String request = "select " + this.getAllColumnNames() + " from " + this.getTableName() + " where "
+					+ this.getPkName() + "=?;";
+			// result
+			result = this.getJdbcTemplate().queryForObject(request, this.getMapper(), pUneClef);
+		
+		} catch (EmptyResultDataAccessException e) {
+			return result;
+		} catch (Exception e) {
+			throw new ExceptionDao(e);
+		} 
+
+		return result;
+	}
+```
+
 * jdbc.queryObject(... )
 
 ## Insert (KeyHolder) / Update / Delete
