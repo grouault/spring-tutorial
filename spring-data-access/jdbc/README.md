@@ -1,7 +1,7 @@
 # JDBC
 
 ## Liens
-* [jdbctemplate]
+* [jdbctemplate](https://github.com/grouault/spring-tutorial/blob/master/spring-data-access/jdbc/jdbctemplate.md)
 
 ## Description
 Bibliothèque d'interfaces et de classes utilisées pour accéder à une base de donéees.
