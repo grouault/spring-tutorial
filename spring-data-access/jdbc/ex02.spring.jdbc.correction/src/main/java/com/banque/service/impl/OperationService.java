@@ -7,6 +7,8 @@ import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.banque.dao.ICompteDAO;
 import com.banque.dao.IOperationDAO;
@@ -24,19 +26,19 @@ import com.banque.service.ex.FonctionnelleException;
 /**
  * Gestion des operations.
  */
+@Service
 public class OperationService extends AbstractService implements IOperationService {
-	
 	private static final Logger LOG = LogManager.getLogger();
+	@Autowired
 	private IOperationDAO operationDao;
+	@Autowired
 	private ICompteDAO compteDao;
 
 	/**
 	 * Constructeur de l'objet.
 	 */
-	public OperationService(IOperationDAO operationDAO, ICompteDAO compteDAO) {
+	public OperationService() {
 		super();
-		this.operationDao = operationDAO;
-		this.compteDao = compteDAO;
 	}
 
 	/**
@@ -187,66 +189,63 @@ public class OperationService extends AbstractService implements IOperationServi
 		if (unMontant < 0) {
 			throw new IllegalArgumentException("montant<0");
 		}
-		List<IOperationEntity> resultat = new ArrayList<IOperationEntity>(2);
-		IOperationEntity opSrc = null;
-		IOperationEntity opDst = null;
+		ICompteEntity compteSrc = null;
 		try {
-			ICompteEntity compteSrc = null;
-			try {
-				compteSrc = this.getCompteDao().select(unCompteIdSrc);
-			} catch (ExceptionDao e) {
-				throw new ErreurTechniqueException(e);
-			}
-			if (compteSrc == null) {
-				throw new EntityIntrouvableException();
-			}
-			if (unUtilisateurId != compteSrc.getUtilisateurId().intValue()) {
-				throw new AucunDroitException();
-			}
-			ICompteEntity compteDst = null;
-			try {
-				compteDst = this.getCompteDao().select(unCompteIdDst);
-			} catch (ExceptionDao e) {
-				throw new ErreurTechniqueException(e);
-			}
-			if (compteDst == null) {
-				throw new EntityIntrouvableException();
-			}
-			if (unUtilisateurId != compteDst.getUtilisateurId().intValue()) {
-				throw new AucunDroitException();
-			}
+			compteSrc = this.getCompteDao().select(unCompteIdSrc);
+		} catch (ExceptionDao e) {
+			throw new ErreurTechniqueException(e);
+		}
+		if (compteSrc == null) {
+			throw new EntityIntrouvableException();
+		}
+		if (unUtilisateurId != compteSrc.getUtilisateurId().intValue()) {
+			throw new AucunDroitException();
+		}
+		ICompteEntity compteDst = null;
+		try {
+			compteDst = this.getCompteDao().select(unCompteIdDst);
+		} catch (ExceptionDao e) {
+			throw new ErreurTechniqueException(e);
+		}
+		if (compteDst == null) {
+			throw new EntityIntrouvableException();
+		}
+		if (unUtilisateurId != compteDst.getUtilisateurId().intValue()) {
+			throw new AucunDroitException();
+		}
 
-			double montant = unMontant;
-			// Simulation
-			double soldeSrc = compteSrc.getSolde().doubleValue();
-			final double decouvertSrc = compteSrc.getDecouvert() != null ? compteSrc.getDecouvert().doubleValue()
-					: Double.MIN_VALUE;
-			double soldeDst = compteDst.getSolde().doubleValue();
-			final double decouvertDst = compteDst.getDecouvert() != null ? compteDst.getDecouvert().doubleValue()
-					: Double.MIN_VALUE;
+		double montant = unMontant;
+		// Simulation
+		double soldeSrc = compteSrc.getSolde().doubleValue();
+		final double decouvertSrc = compteSrc.getDecouvert() != null ? compteSrc.getDecouvert().doubleValue()
+				: Double.MIN_VALUE;
+		double soldeDst = compteDst.getSolde().doubleValue();
+		final double decouvertDst = compteDst.getDecouvert() != null ? compteDst.getDecouvert().doubleValue()
+				: Double.MIN_VALUE;
 
-			// On retire de la source
-			soldeSrc -= montant;
-			// On ajoute a destination
-			soldeDst += montant;
-			// On regarde si les decouverts suivent
-			if (soldeSrc <= decouvertSrc || soldeDst <= decouvertDst) {
-				throw new DecouvertException();
-			}
+		// On retire de la source
+		soldeSrc -= montant;
+		// On ajoute a destination
+		soldeDst += montant;
+		// On regarde si les decouverts suivent
+		if (soldeSrc <= decouvertSrc || soldeDst <= decouvertDst) {
+			throw new DecouvertException();
+		}
 
-			Timestamp now = new Timestamp(System.currentTimeMillis());
-			opSrc = new OperationEntity();
-			opSrc.setCompteId(Integer.valueOf(unCompteIdSrc));
-			opSrc.setDate(now);
-			opSrc.setMontant(Double.valueOf(-montant));
-			opSrc.setLibelle("Transaction avec le compte " + unCompteIdDst);
+		Timestamp now = new Timestamp(System.currentTimeMillis());
+		IOperationEntity opSrc = new OperationEntity();
+		opSrc.setCompteId(Integer.valueOf(unCompteIdSrc));
+		opSrc.setDate(now);
+		opSrc.setMontant(Double.valueOf(-montant));
+		opSrc.setLibelle("Transaction avec le compte " + unCompteIdDst);
 
-			opDst = new OperationEntity();
-			opDst.setCompteId(Integer.valueOf(unCompteIdDst));
-			opDst.setDate(now);
-			opDst.setMontant(Double.valueOf(unMontant));
-			opDst.setLibelle("Transaction avec le compte " + unCompteIdSrc);
-
+		IOperationEntity opDst = new OperationEntity();
+		opDst.setCompteId(Integer.valueOf(unCompteIdDst));
+		opDst.setDate(now);
+		opDst.setMontant(Double.valueOf(unMontant));
+		opDst.setLibelle("Transaction avec le compte " + unCompteIdSrc);
+		List<IOperationEntity> resultat = new ArrayList<IOperationEntity>(2);
+		try {
 			opSrc = this.getOperationDao().insert(opSrc);
 			opDst = this.getOperationDao().insert(opDst);
 			compteSrc.setSolde(Double.valueOf(soldeSrc));
@@ -256,11 +255,9 @@ public class OperationService extends AbstractService implements IOperationServi
 
 			resultat.add(opSrc);
 			resultat.add(opDst);
-			
 		} catch (ExceptionDao e) {
 			throw new ErreurTechniqueException(e);
-		} 
-		
+		}
 		return resultat;
 	}
 }

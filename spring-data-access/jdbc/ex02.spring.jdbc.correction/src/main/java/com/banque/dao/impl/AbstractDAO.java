@@ -3,20 +3,19 @@ package com.banque.dao.impl;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
-import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.stereotype.Repository;
 
 import com.banque.dao.IDAO;
 import com.banque.dao.ex.ExceptionDao;
@@ -28,21 +27,19 @@ import com.banque.entity.IEntity;
  * @param <T>
  *            Un type d'entite
  */
+@Repository
 public abstract class AbstractDAO<T extends IEntity> implements IDAO<T> {
 
 	private static final Logger LOG = LogManager.getLogger();
-	
+
+	@Autowired
 	private JdbcTemplate jdbcTemplate;
-	
+
 	/**
 	 * Constructeur de l'objet.
 	 */
 	protected AbstractDAO() {
 		super();
-	}
-	
-	protected AbstractDAO(JdbcTemplate jdbcTemplate) {
-		this.jdbcTemplate = jdbcTemplate;
 	}
 
 	/**
@@ -68,7 +65,14 @@ public abstract class AbstractDAO<T extends IEntity> implements IDAO<T> {
 	 */
 	protected abstract String getAllColumnNames();
 
-	protected abstract RowMapper<T> getMapper();
+	/**
+	 * Recupere le jdbc template
+	 *
+	 * @return le jdbc template
+	 */
+	public JdbcTemplate getJdbcTemplate() {
+		return this.jdbcTemplate;
+	}
 
 	/**
 	 * A la responsabilite de creer un statement qui servira pour l'insertion.
@@ -79,7 +83,7 @@ public abstract class AbstractDAO<T extends IEntity> implements IDAO<T> {
 	 *            une connexion
 	 * @return un statement adapte a l'insertion
 	 * @throws SQLException
-	 *             si un probleme survient
+	 *             si une erreur survient
 	 */
 	protected abstract PreparedStatement buildStatementForInsert(T pUneEntite, Connection connexion)
 			throws SQLException;
@@ -94,7 +98,7 @@ public abstract class AbstractDAO<T extends IEntity> implements IDAO<T> {
 	 *            une connexion
 	 * @return un statement adapte a la mise a jour
 	 * @throws SQLException
-	 *             si un probleme survient
+	 *             si une erreur survient
 	 */
 	protected abstract PreparedStatement buildStatementForUpdate(T pUneEntite, Connection connexion)
 			throws SQLException;
@@ -106,59 +110,52 @@ public abstract class AbstractDAO<T extends IEntity> implements IDAO<T> {
 		}
 		AbstractDAO.LOG.debug("Insert {}", pUneEntite.getClass());
 		try {
-			
-			// on passe par un prepare statement creator.
 			PreparedStatementCreator psc = new PreparedStatementCreator() {
 				@Override
-				public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
-					return AbstractDAO.this.buildStatementForInsert(pUneEntite, con);
+				public PreparedStatement createPreparedStatement(Connection connexion) throws SQLException {
+					// Pour faire usage du parametre pUneEntite dans une inner
+					// class on doit s'assurer qu'il est final
+					// Qui fait appel a notre methode buildStatementForInsert
+
+					return AbstractDAO.this.buildStatementForInsert(pUneEntite, connexion);
 				}
 			};
-			
-			// recuperation de l'identifiant.
 			KeyHolder kh = new GeneratedKeyHolder();
 			this.getJdbcTemplate().update(psc, kh);
 			pUneEntite.setId(Integer.valueOf(kh.getKey().intValue()));
-		
 		} catch (Exception e) {
 			throw new ExceptionDao(e);
-		} 
+		}
 		return pUneEntite;
 	}
 
 	@Override
 	public T update(final T pUneEntite) throws ExceptionDao {
-		
 		if (pUneEntite == null) {
 			return null;
 		}
-		
 		AbstractDAO.LOG.debug("update {}", pUneEntite.getClass());
 		if (pUneEntite.getId() == null) {
 			throw new ExceptionDao("L'entite n'a pas d'ID");
 		}
 
 		try {
-
-			// on passe par un prepare statement creator.
 			PreparedStatementCreator psc = new PreparedStatementCreator() {
 				@Override
-				public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
-					return AbstractDAO.this.buildStatementForUpdate(pUneEntite, con);
+				public PreparedStatement createPreparedStatement(Connection connexion) throws SQLException {
+					// Pour faire usage du parametre pUneEntite dans une inner
+					// class on doit s'assurer qu'il est final
+					// Qui fait appel a notre methode buildStatementForUpdate
+					return AbstractDAO.this.buildStatementForUpdate(pUneEntite, connexion);
 				}
 			};
-			
-			// execution de la mise à jour.
 			if (this.getJdbcTemplate().update(psc) == 1) {
 				return pUneEntite;
 			}
-			
 		} catch (Exception e) {
 			throw new ExceptionDao(e);
-		} 
-		
+		}
 		return null;
-		
 	}
 
 	@Override
@@ -171,46 +168,43 @@ public abstract class AbstractDAO<T extends IEntity> implements IDAO<T> {
 			throw new ExceptionDao("L'entite n'a pas d'ID");
 		}
 		try {
-			
-			String toUpdate = "delete from " + this.getTableName() + " where " + this.getPkName() + "=?;";
-			return 1 == this.getJdbcTemplate().update(toUpdate, pUneEntite.getId());
+			return 1 == this.getJdbcTemplate().update(
+					"delete from " + this.getTableName() + " where " + this.getPkName() + "=?;", pUneEntite.getId());
 		} catch (Exception e) {
 			throw new ExceptionDao(e);
 		}
 	}
 
+	/**
+	 * Donne un mapper.
+	 *
+	 * @return un mapper.
+	 */
+	protected abstract RowMapper<T> getMapper();
+
 	@Override
 	public T select(int pUneClef) throws ExceptionDao {
-
 		T result = null;
 		AbstractDAO.LOG.debug("select sur {} avec id={}", this.getClass(), String.valueOf(pUneClef));
-	
 		try {
-		
-			// request
-			String request = "select " + this.getAllColumnNames() + " from " + this.getTableName() + " where "
-					+ this.getPkName() + "=?;";
-			// result
-			result = this.getJdbcTemplate().queryForObject(request, this.getMapper(), pUneClef);
-		
+			result = this.getJdbcTemplate().queryForObject("select " + this.getAllColumnNames() + " from "
+					+ this.getTableName() + " where " + this.getPkName() + "=?;", this.getMapper(),
+					Integer.valueOf(pUneClef));
 		} catch (EmptyResultDataAccessException e) {
+			AbstractDAO.LOG.trace("Pas de resultat", e);
 			return result;
 		} catch (Exception e) {
 			throw new ExceptionDao(e);
-		} 
-
+		}
 		return result;
 	}
 
 	@Override
 	public List<T> selectAll(String pAWhere, String pAnOrderBy) throws ExceptionDao {
-		
 		List<T> result = new ArrayList<T>();
 		AbstractDAO.LOG.debug("selectAll sur {} avec where={} prderBy={}", this.getClass(), pAWhere, pAnOrderBy);
-		
 		try {
 
-			// request
 			StringBuilder request = new StringBuilder();
 			request.append("select ").append(this.getAllColumnNames()).append(" from ");
 			request.append(this.getTableName());
@@ -224,68 +218,13 @@ public abstract class AbstractDAO<T extends IEntity> implements IDAO<T> {
 			}
 			request.append(';');
 			AbstractDAO.LOG.debug("selectAll sur {} - requete={}", this.getClass(), request.toString());
-
-			// execution de la query.
-			result = this.jdbcTemplate.query(request.toString(), this.getMapper());
-
+			result = this.getJdbcTemplate().query(request.toString(), this.getMapper());
+		} catch (EmptyResultDataAccessException e) {
+			AbstractDAO.LOG.trace("Pas de resultat", e);
+			return result;
 		} catch (Exception e) {
 			throw new ExceptionDao(e);
-		} 
-
+		}
 		return result;
 	}
-
-
-	/**
-	 * Place les éléments dans la requête.
-	 * 
-	 * @param gaps
-	 * @return
-	 */
-	public PreparedStatementSetter setPssParameters(final List<?> gaps) {
-		return new PreparedStatementSetter() {
-			
-			@Override
-			public void setValues(PreparedStatement ps) throws SQLException {
-				
-				Iterator<?> iter = gaps.iterator();
-				int id = 0;
-				while (iter.hasNext()) {
-					id++;
-					Object lE = iter.next();
-					if (lE == null) {
-						continue;
-					}
-					if (lE instanceof String) {
-						ps.setString(id, (String) lE);
-					} else if (lE instanceof java.sql.Date) {
-						ps.setDate(id, (java.sql.Date) lE);
-					} else if (lE instanceof java.util.Date) {
-						ps.setDate(id, new java.sql.Date(((java.util.Date) lE).getTime()));
-					} else if (lE instanceof Timestamp) {
-						ps.setTimestamp(id, (Timestamp) lE);
-					} else if (lE instanceof Integer) {
-						ps.setInt(id, ((Integer) lE).intValue());
-					} else if (lE instanceof Double) {
-						ps.setDouble(id, ((Double) lE).doubleValue());
-					} else {
-						throw new SQLException("Type invalid '" + lE.getClass().getSimpleName() + "'");
-					}
-
-				}
-				
-			}
-			
-		};		
-	}
-	
-	
-	public JdbcTemplate getJdbcTemplate() {
-		return jdbcTemplate;
-	}
-
-	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
-		this.jdbcTemplate = jdbcTemplate;
-	}
-	
 }
