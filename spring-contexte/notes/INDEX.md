@@ -7,6 +7,9 @@
 * [java2novice](https://www.java2novice.com/spring/)
 * [howtodoinjava](https://howtodoinjava.com/)
 
+## livre
+* [spring par l'exemple](https://www.yumpu.com/fr/document/read/16621125/spring-par-lexemple)
+
 ## configuration
 ### xml / @annotation / java-config
 
