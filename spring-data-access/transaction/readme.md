@@ -14,7 +14,10 @@
   
   Une exécution non-recouvrable introduit un conflit insolvable entre les commit effectué par une T et les rollback d'une autre.
   On se trouve face à une exécution concurrente qui rend impossible le respect d'au moins une des deux propriétés transactionnelles requqites : la durabilité (Commit) ou l'atomicité (Rollback).
-  Principe: généralement, on cherche les écritures dans l'exécution. Ensuite, pour une écriture donnée, on vérifie s'il existe après d'autres lectures/écritures sur la même variable, réalisées par d'autres transactions. Une lecture peut indiquer un problème de recouvrablité / annulation en cascade, une écriture un problème d'exécution stricte.
+  Principe: 
+  * généralement, on cherche les écritures dans l'exécution. 
+  * Ensuite, pour une écriture donnée, on vérifie s'il existe après d'autres lectures/écritures sur la même variable, réalisées par d'autres transactions. 
+  * Une lecture peut indiquer un problème de recouvrablité / annulation en cascade, une écriture un problème d'exécution stricte.
   
   1. Lecture sale
   
