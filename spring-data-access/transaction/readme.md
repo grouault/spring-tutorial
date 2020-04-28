@@ -31,6 +31,7 @@
   
   #### 2 solutions
   Soit T2 lit l'image avant de T1, qui par définition est une valeur validée
+  
   Soit on met en attente les lectures sur des tuples en cours de modification
   
   2. Ecriture sale
