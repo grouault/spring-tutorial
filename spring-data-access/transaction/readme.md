@@ -12,7 +12,7 @@
 
 ### 2.2 Défaut de recouvrabilité
   
-  Une exécution recouvrable introduit un conflit insolvable entre les commit effectué par une T et les rollback d'une autre.
+  Une exécution non-recouvrable introduit un conflit insolvable entre les commit effectué par une T et les rollback d'une autre.
   
   1. Lecture sale
   
