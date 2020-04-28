@@ -24,6 +24,9 @@
   Idée : interdire T2 ayant fait une lecture sâle à partir de T1 de committer avant T1. Si Rollback de T1, on rollback T2.
   Aucun SGBD ne fait d'annulation en cascade. La solution est donc d'interdire les dirty-read.
   
+  #### 2 solutions
+  Soit T2 lit l'image avant de T1, qui par définition est une valeur validée
+  Soit on met en attente les lectures sur des tuples en cours de modification
   
   2. écriture sâle
 
