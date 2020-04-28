@@ -13,6 +13,7 @@
 ### 2.2 Défaut de recouvrabilité
   
   Une exécution non-recouvrable introduit un conflit insolvable entre les commit effectué par une T et les rollback d'une autre.
+  On se trouve face à une exécution concurrente qui rend impossible le respect d'au moins une des deux propriétés transactionnelles requqites : la durabilité (Commit) ou l'atomicité (Rollback).
   
   1. Lecture sale
   
