@@ -6,11 +6,11 @@
 * Durabilité (commit)
 
 ## 2. Problèmes consécutifs à une concurrence sans controle
-* Défaut de serialisabilité
+###  Défaut de serialisabilité
   * les mises à jours perdues
   * tuples fantômes
 
-* Défaut de recouvrabilité
+### Défaut de recouvrabilité
   
   Une exécution recouvrable introduit un conflit insolvable entre les commit effectué par une T et les rollback d'une autre.
   
