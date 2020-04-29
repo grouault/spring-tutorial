@@ -36,3 +36,15 @@ Cette configuration permet de créer un proxy transactionnel autour de l'objet c
 ## Rolling back a declarative transaction
 Pour faire un rollback d'une transaction (declarative), il faut lancer une exception à partir du code exécuté dans le contexte de la transaction. Toutes les exceptions non traitées et remontées seront analysées par l'infrastruture transactionnnelle de spring qui décidera s'il faut ou non faire un rollback de la transaction.
 Par défaut, toutes les erreurs 'RuntimeException' déclenche un Rollback et les exceptions non contrôlées. Les exceptions contrôlées ne déclenche pas de Rollback par défaut.
+
+Rollback de manière programmatique:
+```
+public void resolvePosition() {
+    try {
+        // some business logic...
+    } catch (NoProductInStockException ex) {
+        // trigger rollback programmatically
+        TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+    }
+}
+```
