@@ -31,6 +31,7 @@
   ##### Annulation en cascade
   Idée : interdire T2 ayant fait une lecture sâle à partir de T1 de committer avant T1. 
   Si Rollback de T1, on rollback T2.
+  Pour eviter l'annulation en cascade, T2 ne doit lire qu'à partir des T validées
   
   Exemple: r1[x] w1[y] r2[y] c1 w2[x] c2
   * R(T1): possible mais engendre R(T2)
