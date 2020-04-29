@@ -32,3 +32,7 @@ L'advisor permet de faire le lien entre un point de coupe et un advice. Le résu
     </aop:config>
 ```
 Cette configuration permet de créer un proxy transactionnel autour de l'objet créé à partir du bean FooService. Le proxy est configuré avec le transactional-advice txAdvice. Quand une méthode appropriée est invoqué sur le proxy, une transaction est démarré, suspendu, marqué en lecture seule... cela dépend de configuration de la transaction associé à la méthode.
+
+## Rolling back a declarative transaction
+Pour faire un rollback d'une transaction (declarative), il faut lancer une exception à partir du code exécuté dans le contexte de la transaction. Toutes les exceptions non traitées et remontées seront analysées par l'infrastruture transactionnnelle de spring qui décidera s'il faut ou non faire un rollback de la transaction.
+Par défaut, toutes les erreurs 'RuntimeException' déclenche un Rollback et les exceptions non contrôlées. Les exceptions contrôlées ne déclenche pas de Rollback par défaut.
