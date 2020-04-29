@@ -10,7 +10,7 @@ La gestion des transactions est permise/activé par le proxy AOP. La configurati
 ## declarative transaction
 * `<tx:advice>` : greffon qui permet de décrirer le comportement transactionnel souhaité à l'aide de `<tx:attribute>`. Le transaction-manager, qui piloté les transactions, doit être précisé sur le greffon.
 * `<aop:adivsor> / <aop:config> / <aop:pointcut>`
-L'advisor permet de faire le lien entre un point de coupe et un advice. Le résultat est qu'une exécution / appel de la méthode, l'advice sera executé.
+L'advisor permet de faire le lien entre un point de coupe et un advice. Le résultat est qu'une exécution / appel de la méthode, l'advice sera executé, imposant à la méthode de s'exécuter dans le contexte d'une transaction.
 
 ```
     <!-- the transactional advice (what 'happens'; see the <aop:advisor/> bean below) -->
