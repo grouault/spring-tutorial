@@ -26,7 +26,8 @@
   T1 devient dépendante de T2
   
   #### Annulation en cascade
-  Idée : interdire T2 ayant fait une lecture sâle à partir de T1 de committer avant T1. Si Rollback de T1, on rollback T2.
+  Idée : interdire T2 ayant fait une lecture sâle à partir de T1 de committer avant T1. 
+  Si Rollback de T1, on rollback T2.
   Aucun SGBD ne fait d'annulation en cascade. La solution est donc d'interdire les dirty-read.
   
   #### 2 solutions
