@@ -62,8 +62,9 @@
   * Ensuite, pour une écriture donnée, on vérifie s'il existe après d'autres lectures/écritures sur la même variable, réalisées par d'autres transactions.
     
     Anaylse :
-  * Une lecture peut indiquer un problème de recouvrablité / annulation en cascade, 
-  * Une écriture un problème d'exécution stricte.
+  * Une lecture peut indiquer un problème de recouvrablité (T2 lit de T1 des données non validées et commit) 
+  * Une lecture peut indiquer un problème d'annulation en cascade (T2 lit des données non validées) 
+  * Une écriture un problème d'exécution stricte (T2 ecrit le même tuple que T1 qui n'a pas validé)
   
   Execution:
   Recouvrable <== Eviter les annulation en cascade <== stricte
