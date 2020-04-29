@@ -25,7 +25,8 @@
   T2 peut modifier et valider. Quid d'un rollback de T1?
   T1 devient dépendante de T2 et ne peut plus faire de rollback car T2 a committé.
   * R(T2): possible
-  * R(T1): non recouvrable
+  * R(T1): impossible
+  * ==> exécution non recouvrable
   
   ##### Annulation en cascade
   Idée : interdire T2 ayant fait une lecture sâle à partir de T1 de committer avant T1. 
@@ -34,6 +35,7 @@
   Exemple: r1[x] w1[y] r2[y] c1 w2[x] c2
   * R(T1): possible mais engendre R(T2)
   * R(T2) : possible, écriture après commit de T1
+  * ==> exécution recouvrable
   
   En pratique:
   Aucun SGBD ne fait d'annulation en cascade. La solution est donc d'interdire les dirty-read.
