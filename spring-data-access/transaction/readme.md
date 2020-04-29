@@ -19,23 +19,23 @@
   * Ensuite, pour une écriture donnée, on vérifie s'il existe après d'autres lectures/écritures sur la même variable, réalisées par d'autres transactions. 
   * Une lecture peut indiquer un problème de recouvrablité / annulation en cascade, une écriture un problème d'exécution stricte.
   
-  1. Lecture sale
+  #### 2.2.1. Lecture sale
   
   T2 lit une mise à jour de T1 alors que T1 n'a pas validé. La lecture sâle transmet un tuple modifié par T1 à T2.
   T2 peut modifier et valider. Quid d'un rollback de T1?
   T1 devient dépendante de T2
   
-  #### Annulation en cascade
+  ##### Annulation en cascade
   Idée : interdire T2 ayant fait une lecture sâle à partir de T1 de committer avant T1. 
   Si Rollback de T1, on rollback T2.
   Aucun SGBD ne fait d'annulation en cascade. La solution est donc d'interdire les dirty-read.
   
-  #### 2 solutions
+  ##### 2 solutions
   Soit T2 lit l'image avant de T1, qui par définition est une valeur validée
   
   Soit on met en attente les lectures sur des tuples en cours de modification
   
-  2. Ecriture sale
+  #### 2.2.2. Ecriture sale
   * T1 modifie un tuple, T2 modifie le même tuple sans que T1 valide
   * T1 fait un rollback, que se passe-t-il pour T2?
   * Restauration de l'image avant de T1 et on pert l'écriture de T2
