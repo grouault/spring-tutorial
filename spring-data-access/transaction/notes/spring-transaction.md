@@ -10,7 +10,7 @@ La gestion des transactions est permise/activé par le proxy AOP. La configurati
 ## declarative transaction
 * `<tx:advice>` : greffon qui permet de décrirer le comportement transactionnel souhaité à l'aide de `<tx:attribute>`. Le transaction-manager, qui piloté les transactions, doit être précisé sur le greffon.
 * `<aop:adivsor> / <aop:config> / <aop:pointcut>`
-L'advisor permet de faire le lien entre un point de coupe et un advice. Le résultat est qu'une exécution / appel de la méthode, l'advice sera executé, imposant à la méthode de s'exécuter dans le contexte d'une transaction.
+L'advisor permet de faire le lien entre un point de coupe et un advice. Le résultat est qu'une exécution (fooServiceOperation) / appel de la méthode, l'advice sera executé, imposant à la méthode de s'exécuter dans le contexte d'une transaction.
 
 ```
     <!-- the transactional advice (what 'happens'; see the <aop:advisor/> bean below) -->
@@ -31,3 +31,4 @@ L'advisor permet de faire le lien entre un point de coupe et un advice. Le résu
         <aop:advisor advice-ref="txAdvice" pointcut-ref="fooServiceOperation"/>
     </aop:config>
 ```
+Cette configuration permet de créer un proxy transactionnel autour de l'objet créé à partir du bean FooService. Le proxy est configuré avec le transactional-advice txAdvice. Quand une méthode appropriée est invoqué sur le proxy, une transaction est démarré, suspendu, marqué en lecture seule... cela dépend de configuration de la transaction associé à la méthode.
