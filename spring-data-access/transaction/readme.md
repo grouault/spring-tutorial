@@ -53,8 +53,9 @@
   * le respect des propriétés ACID des T imposent au SGBD d'assurer la sérialisabilité des T et la recouvrabilité dite stricte, sans écriture ni lecture sale
   
   #### 2.2.3 Synthèse
-    
-    Principe: 
+  
+  ````
+  Principe: 
   * généralement, on cherche les écritures dans l'exécution. 
   * Ensuite, pour une écriture donnée, on vérifie s'il existe après d'autres lectures/écritures sur la même variable, réalisées par d'autres transactions.
     
@@ -64,5 +65,6 @@
   
   Execution:
   Recouvrable <== Eviter les annulation en cascade <== stricte
+  ````
   
 ## 3. Les niveaux d'isolation
