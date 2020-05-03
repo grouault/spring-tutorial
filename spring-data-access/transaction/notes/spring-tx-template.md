@@ -13,7 +13,7 @@ Un bloc de code d'une méthode métier, non l'intégralité du corps de la méth
 ### Solution
 * Utiliser un template de transaction `TransactionTemplate` qui va gérer pour nous le code standard de gestion de la transaction.
 * Le code est à encapsuler dans une classe de rappel qui implémente l'interface `TransactionCallBack` ou `TransactionCallBackWithoutResult` et la passer au template de transaction pour son exécution.
-* Dans le case d'une classe qui implémente `TransactionCallBackWithoutResult`, la valeur de retour de l'objet de rappel est renvoyée à la méthode execute() du template.
+* Dans le case d'une classe qui implémente `TransactionCallBack`, la valeur de retour de l'objet de rappel est renvoyée à la méthode execute() du template.
 
 ### Explication
 Un template de transaction est créé pour un gestionnaire de transactions, tout comme un template JDBC est créé pour une source de données.
