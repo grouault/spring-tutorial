@@ -1,5 +1,5 @@
 ## Spring declarative transaction
-[retour](ttps://github.com/grouault/spring-tutorial/blob/master/spring-data-access/transaction/notes/spring-transaction.md)
+[retour](https://github.com/grouault/spring-tutorial/blob/master/spring-data-access/transaction/notes/spring-transaction.md)
 
 ## Implementation Spring framework declarative transaction
 
