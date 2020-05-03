@@ -19,3 +19,7 @@ Un template de transaction est créé pour un gestionnaire de transactions, tout
 Le template exécute un objet de rappel qui implémente l'interface de rappel par une classe séparéee ou interne.
 Les arguments de la méthode dans lequel est définit le TransactionTemplate doivent être déclaré final.
 
+### Important
+* Le code transactionnel démarre et arrête au début et à la fin de la classe de rappel.
+* Si une exception, type RuntimeException est déclenché dans la classe de rappel, la Tx est annulé (Rollback) et remonte dans la pile d'appel, ce qui peut annuler une Transaction Englobante.
+
