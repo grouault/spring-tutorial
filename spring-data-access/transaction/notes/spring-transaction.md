@@ -4,7 +4,7 @@
 * ### programmatic-transaction
 
     * API du gestionnaire de transaction
-    * Transaction Template
+    * [Transaction Template](https://github.com/grouault/spring-tutorial/blob/master/spring-data-access/transaction/notes/spring-tx-template.md)
     
 * ### declarative-transaction
 
