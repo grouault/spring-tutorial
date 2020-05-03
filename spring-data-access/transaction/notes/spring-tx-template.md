@@ -14,5 +14,5 @@ Le code est à encapsuler dans une classe de rappel qui implémente l'interface 
 ### Explication
 Un template de transaction est créé pour un gestionnaire de transactions, tout comme un template JDBC est créé pour une source de données.
 Le template exécute un objet de rappel qui implémente l'interface de rappel par une classe séparéee ou interne.
-Les arguments de la méthode dans lequel est définit le TransactionTemplate doivent être déclaré final
+Les arguments de la méthode dans lequel est définit le TransactionTemplate doivent être déclaré final.
 
