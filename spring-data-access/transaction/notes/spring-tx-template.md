@@ -23,6 +23,10 @@ Les arguments de la méthode dans lequel est définit le TransactionTemplate doi
 #### portée de la transaction
 * Le code transactionnel démarre et arrête au début et à la fin de la classe de rappel.
 #### gestion Exception
-* Si une exception, type RuntimeException est déclenché dans la classe de rappel, la Tx est annulé (Rollback) et remonte dans la pile d'appel. Si l'exception n'est pas gérée, la transaction englobante s'il y en a une est annulée. L'idée est donc de gérée l'exception dans un block catch. Ce dernier (ou bloque finally) peut exécuter un code transactionnel. Ce dernier se fera dans le contexte transactionnelle englobant ou si ce dernier est indépendant, un transaction template peut être utilisé.
+* Si une exception, type RuntimeException est déclenché dans la classe de rappel, la Tx est annulé (Rollback) et remonte dans la pile d'appel. 
+1/ Dans le cas d'une transaction qui n'opére pas dans le même contexte transactionnel que la transaction parente, si l'exception n'est pas gérée, la transaction englobante est quand même annulée. En gérant l'exception, la transaction englobante ira à son terme.
+2/  Dans le cas d'une transaction qui opére dans le même contexte transactionnel que la transaction parente, que l'exception soit gérée ou non, la transaction englobante échouera. Une exception de type `UnexpectedRollbackException` sera alors lancée.
+
+L'idée est donc de gérée l'exception dans un block catch. Ce dernier (ou bloque finally) peut exécuter un code transactionnel. Ce dernier se fera dans le contexte transactionnelle englobant ou si ce dernier est indépendant, un transaction template peut être utilisé.
 
 
