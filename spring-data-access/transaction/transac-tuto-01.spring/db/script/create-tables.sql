@@ -1,0 +1,50 @@
+--
+-- Table book
+--
+CREATE TABLE BOOK (
+	ISBN 		VARCHAR(50) NOT NULL,
+	BOOK_NAME	VARCHAR(100) NOT NULL,
+	PRICE		INT,
+	PRIMARY KEY (ISBN)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+--
+-- Table book_stock
+--
+CREATE TABLE BOOK_STOCK (
+	ISBN 		VARCHAR(50) NOT NULL,
+	STOCK		INT,
+	PRIMARY KEY (ISBN),
+	CHECK(STOCK > 0)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+--
+-- Table account
+--
+DROP TABLE ACCOUNT;
+CREATE TABLE ACCOUNT (
+	USERNAME 	VARCHAR(50) NOT NULL,
+	BALANCE		INT NOT NULL,
+	PRIMARY KEY (USERNAME)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+--
+-- PROCEDURE: account
+-- A JOUR SUR LE WORKBENCH pour MySql 5
+--
+DELIMITER $
+CREATE PROCEDURE test.account_check_balance (  IN balance INT  )
+BEGIN
+    IF balance < 0 THEN
+        SIGNAL SQLSTATE '45000'
+           SET MESSAGE_TEXT = 'check constraint on account.balance failed';
+    END IF;
+END$
+
+DELIMITER ;
+--
+-- TRIGGER: account
+--
+DELIMITER $
+CREATE TRIGGER test.account_before_update BEFORE UPDATE ON account FOR EACH ROW BEGIN
+    CALL account_check_balance(new.balance);
+END$
+
+DELIMITER ;
