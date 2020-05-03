@@ -23,8 +23,10 @@ Les arguments de la méthode dans lequel est définit le TransactionTemplate doi
 ### Notes
 #### portée de la transaction
 * Le code transactionnel démarre et arrête au début et à la fin de la classe de rappel.
-#### gestion Exception
-* Si une exception, type RuntimeException est déclenché dans la classe de rappel, la Tx est annulé (Rollback) et remonte dans la pile d'appel. 
+* La transaction est annulée dans le cas d'une transaction non vérifiée ou à l'invocation de la méthode `setRollbackOnly()`
+
+#### important : gestion Exception non vérifiée
+* Si une exception non vérifiée, type RuntimeException ou DataAccessExeption, est déclenchée dans la classe de rappel, la Tx est annulée et remonte dans la pile d'appel. 
 
 1- Dans le cas d'une transaction qui n'opére pas dans le même contexte transactionnel que la transaction parente, si l'exception n'est pas gérée, la transaction englobante est quand même annulée. En gérant l'exception, la transaction englobante ira à son terme.
 
