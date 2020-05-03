@@ -11,8 +11,8 @@ Un bloc de code d'une méthode métier, non l'intégralité du corps de la méth
 * annuler la transaction en cas de réception d'une exceptions dans le code
 
 ### Solution
-Utiliser un template de transaction `TransactionTemplate` qui va gérer pour nous le code standard de gestion de la transaction.
-Le code est à encapsuler dans une classe de rappel qui implémente l'interface `TransactionCallBack` et la passer au template de transaction pour son exécution.
+* Utiliser un template de transaction `TransactionTemplate` qui va gérer pour nous le code standard de gestion de la transaction.
+* Le code est à encapsuler dans une classe de rappel qui implémente l'interface `TransactionCallBack` ou `TransactionCallBackWithoutResult` et la passer au template de transaction pour son exécution.
 
 ### Explication
 Un template de transaction est créé pour un gestionnaire de transactions, tout comme un template JDBC est créé pour une source de données.
