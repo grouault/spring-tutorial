@@ -8,7 +8,7 @@ Définition:
 
 * AuthenticationManager
 API qui définit comment les filtres de spring-security réalise l'authentification.
-Retourne un objet `Authentication` qui est mis dans le context `SecurityContextHolder`.
+Retourne un objet `Authentication` qui est mis dans le context `SecurityContextHolder`par le contrôleur (les filtres) qui ont invoqué l'`AutenticationManager`.
 
 
 * ProviderManager
