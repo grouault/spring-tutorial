@@ -13,7 +13,9 @@ Définition:
 
 
 #### ProviderManager
-L'implémetation par défaut de l'interface AuthenticationManager.
-
+* L'implémetation par défaut de l'interface AuthenticationManager.
+* Délègue le traitement de l'authentification à une liste d'AuthenticationProviders.
+* Chaque AuthenticationProvider à la possiblité de valider l'authentification ou sinon de permettre au filtre suivant de décider.
+* Si aucun des Providers ne peut réaliser l'authentification, une exception 'ProviderNotFoundException' est levée.
 
 #### AuthenticationProviders
