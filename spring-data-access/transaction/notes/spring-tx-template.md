@@ -34,5 +34,6 @@ Les arguments de la méthode dans lequel est définit le TransactionTemplate doi
 
 Traitement:
 L'idée est donc de gérée l'exception dans un block `try catch` . Ce dernier (ou bloque finally) peut exécuter un code transactionnel. Ce dernier se fera dans le contexte transactionnelle englobant. Si ce dernier doit se faire dans son propre contexte transactionne, un transaction template peut être utilisé.
+[voir la note](https://github.com/spring-projects/spring-framework/issues/8135)
 
 
