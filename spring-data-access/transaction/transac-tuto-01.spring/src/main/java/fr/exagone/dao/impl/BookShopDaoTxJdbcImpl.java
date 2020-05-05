@@ -11,6 +11,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import fr.exagone.dao.IBookShopDao;
 
@@ -24,8 +25,8 @@ import fr.exagone.dao.IBookShopDao;
  * @author gildas
  *
  */
-// @Component
-public class BookShopDaoSimpleJdbcImpl implements IBookShopDao{
+@Repository("bookShopDaoTxJdbc")
+public class BookShopDaoTxJdbcImpl implements IBookShopDao{
 
 	private static final Logger LOG = LogManager.getLogger();
 	

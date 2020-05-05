@@ -16,37 +16,6 @@
 	<!-- Chargement du fichier de properties dans le contexte Spring -->
 	<context:property-placeholder location="classpath:spring/database.properties" />
 
-	<!-- On indique l'ensemble des packages qui vont contenir nos annotations -->
-	<context:component-scan base-package="fr.exagone.service.impl, fr.exagone.dao.impl" />
-
-	<!-- aop -->
-	<aop:config>
-		<!-- fooServiceOperation -->
-		<aop:pointcut id="fooServiceOperation" expression="execution(* fr.exagone.service.impl.FooServiceImpl.*(..))" />
-		<aop:advisor advice-ref="txAdvice" pointcut-ref="fooServiceOperation"/>
-	</aop:config>
-
-	<aop:config>
-		<!-- fooServiceOperation -->
-		<aop:pointcut id="BookSericeOperation" expression="execution(* fr.exagone.service.impl.BookServiceImpl.*(..))" />
-		<aop:advisor advice-ref="txAdvice" pointcut-ref="BookSericeOperation"/>
-	</aop:config>
-
-	<!-- transaction-advice -->
-	<tx:advice id="txAdvice" transaction-manager="txManager">
-		<tx:attributes>
-			<!-- all method starting with 'get' are read-only -->
-			<tx:method name="get*" read-only="true"/>
-			<!-- other methods use the default transaction settings -->
-			<tx:method name="*" rollback-for="FonctionnelleException" no-rollback-for="UncategorizedSQLException"/>
-		</tx:attributes>
-	</tx:advice>
-
-	<!-- transaction-manager -->
-	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSource" />
-	</bean>
-
 	<!-- Declaration de notre data source -->
 	<bean id="dataSource" destroy-method="close" class="org.apache.commons.dbcp2.BasicDataSource">
 		<property name="driverClassName" value="${db.driver}" />
@@ -55,10 +24,23 @@
 		<property name="password" value="${db.password}" />
 	</bean>
 
+	<!-- transaction-manager -->
+	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
 	<!-- Declaration de jdbc template qui est lie avec notre data source -->
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
+
+	<!-- ANNOTATIONS -->
+
+	<!-- On indique l'ensemble des packages qui vont contenir nos annotations -->
+	<context:component-scan base-package="fr.exagone.service.impl, fr.exagone.dao.impl" />
+	
+	<!-- prise en compte des annnotations -->
+	<tx:annotation-driven transaction-manager="txManager"/>
 
 
 </beans>

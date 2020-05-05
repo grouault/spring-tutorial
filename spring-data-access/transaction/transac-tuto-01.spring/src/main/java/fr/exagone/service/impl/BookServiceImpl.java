@@ -3,14 +3,22 @@ package fr.exagone.service.impl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.UnexpectedRollbackException;
 
 import fr.exagone.dao.IBookDao;
 import fr.exagone.dao.IBookShopDao;
 import fr.exagone.service.IBookService;
 import fr.exagone.service.ex.FonctionnelleException;
 
+/**
+ * Transactionnel via l'aop
+ * voir aop-context.xml : boolServiceOperation
+ * 
+ * 
+ * @author gildas
+ *
+ */
 @Service
 public class BookServiceImpl implements IBookService {
 
@@ -19,8 +27,13 @@ public class BookServiceImpl implements IBookService {
 	@Autowired
 	private IBookDao bookDao;
 	
-	@Autowired
 	private IBookShopDao bookShopDao;
+	
+	@Autowired
+	public BookServiceImpl(@Qualifier("bookShopDaoTxAnnotation")IBookShopDao bookShopDao) {
+		this.bookShopDao = bookShopDao;
+	}
+	
 	
 	@Override
 	public void updatePrice(String isbn, Integer price, String userName) {
@@ -40,8 +53,6 @@ public class BookServiceImpl implements IBookService {
 		LOG.info("updatePrice - updatePrice");
 		bookDao.updatePrice(isbn, price);
 			
-			
-		
 		
 	}
 

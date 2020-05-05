@@ -6,7 +6,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.transaction.UnexpectedRollbackException;
 
 import fr.exagone.service.IBookService;
-import fr.exagone.service.IBookShopService;
 import fr.exagone.service.IFooService;
 
 /**
@@ -62,6 +61,8 @@ public final class Main {
 			IBookService bookService = appContext.getBean(IBookService.class);
 			bookService.updatePrice("D7G 7T9", 40, "grouault");
 			
+			// IBookShopDao bookShopDao = (IBookShopDao) appContext.getBean("bookShopProxy");
+			//bookShopDao.purchase("D7G 7T9", "grouault");
 			
 			Main.LOG.info("-- Fin --");
 			

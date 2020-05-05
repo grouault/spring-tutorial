@@ -11,28 +11,28 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionStatus;
-import org.springframework.transaction.support.DefaultTransactionDefinition;
 import org.springframework.transaction.support.TransactionCallbackWithoutResult;
 import org.springframework.transaction.support.TransactionTemplate;
 
 import fr.exagone.dao.IBookShopDao;
 import fr.exagone.service.ex.FonctionnelleException;
 
-@Repository
-public class BookShopDaoTransactionTemplateImpl extends JdbcDaoSupport implements IBookShopDao {
+@Repository("bookShopDaoTxTemplate")
+public class BookShopDaoTxTemplateImpl extends JdbcDaoSupport implements IBookShopDao {
 
 	private static final Logger LOG = LogManager.getLogger();
 	
 	@Autowired
 	private PlatformTransactionManager txManager;
 	
-	public BookShopDaoTransactionTemplateImpl(@Autowired DataSource dataSource) {
+	public BookShopDaoTxTemplateImpl(@Autowired DataSource dataSource) {
 		this.setDataSource(dataSource);
 	}
 	
 	/**
 	 * Opération d'achat d'un livre
 	 * Se déroule dans une Trxction indépendante car cette opération se doit d'être atomique.
+	 * La transaction 
 	 */
 	@Override
 	public void purchase(final String isbn, final String username) throws FonctionnelleException{

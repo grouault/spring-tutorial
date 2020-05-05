@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionStatus;
@@ -18,6 +18,8 @@ import fr.exagone.dao.IBookShopDao;
 /**
  * 
  * Besoin :
+ * 
+ * - Gérer les transactions par programmation avec l'API du gestionnaire de transaction
  * 
  * - besoin d'un contrôle précis sur la validation et l'annulation des transactions dans 
  *   les méthodes méters mais sans vouloir accéder directement à l'API transactionnelle
@@ -38,8 +40,8 @@ import fr.exagone.dao.IBookShopDao;
  * @author gildas
  *
  */
-// @Component
-public class BookShopDaoTransactionalJdbcImpl extends JdbcDaoSupport implements IBookShopDao {
+@Repository("bookShopDaoTxMgr")
+public class BookShopDaoTxMgrImpl extends JdbcDaoSupport implements IBookShopDao {
 
 	private static final Logger LOG = LogManager.getLogger();
 	
@@ -47,7 +49,7 @@ public class BookShopDaoTransactionalJdbcImpl extends JdbcDaoSupport implements 
 	private PlatformTransactionManager txManager;
 
 	// constructeur avec dataSource.
-	public BookShopDaoTransactionalJdbcImpl(@Autowired DataSource dataSource) {
+	public BookShopDaoTxMgrImpl(@Autowired DataSource dataSource) {
 		this.setDataSource(dataSource);
 	}
 	
