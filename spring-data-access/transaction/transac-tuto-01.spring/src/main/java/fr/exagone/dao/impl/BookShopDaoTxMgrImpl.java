@@ -22,7 +22,7 @@ import fr.exagone.dao.IBookShopDao;
  * - Gérer les transactions par programmation avec l'API du gestionnaire de transaction
  * 
  * - besoin d'un contrôle précis sur la validation et l'annulation des transactions dans 
- *   les méthodes méters mais sans vouloir accéder directement à l'API transactionnelle
+ *   les méthodes métiers mais sans vouloir accéder directement à l'API transactionnelle
  *   sous-jacentes.
  *   
  *   Utilisation du gestionnaire de transaction spring (PlatefromTransactionManager)
@@ -82,6 +82,18 @@ public class BookShopDaoTxMgrImpl extends JdbcDaoSupport implements IBookShopDao
 	
 	public void setTxManager(PlatformTransactionManager txManager) {
 		this.txManager = txManager;
+	}
+
+	@Override
+	public int checkStock(String isbn) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void increaseStock(String isbn, int stock) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

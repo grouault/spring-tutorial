@@ -34,4 +34,15 @@ public class BookShopDaoJdbcImpl extends JdbcDaoSupport implements IBookShopDao 
 		
 	}
 
+	@Override
+	public int checkStock(String isbn) {
+		int stock = getJdbcTemplate().queryForObject("SELECT STOCK FROM BOOK_STOCK WHERE ISBN = ?", Integer.class, new Object[] {isbn});
+		return stock;
+	}
+
+	@Override
+	public void increaseStock(String isbn, int stock) {
+		getJdbcTemplate().update("UPDATE BOOK_STOCK SET STOCK = STOCK + ? WHERE ISBN = ?", new Object[] { stock, isbn });
+	}
+
 }

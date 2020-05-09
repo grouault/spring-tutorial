@@ -101,4 +101,16 @@ public class BookShopDaoTxTemplateImpl extends JdbcDaoSupport implements IBookSh
 		this.txManager = txManager;
 	}
 
+	@Override
+	public int checkStock(String isbn) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void increaseStock(String isbn, int stock) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

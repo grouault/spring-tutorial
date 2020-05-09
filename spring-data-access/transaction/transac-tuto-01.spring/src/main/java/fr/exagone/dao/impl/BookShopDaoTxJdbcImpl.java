@@ -10,7 +10,6 @@ import javax.sql.DataSource;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import fr.exagone.dao.IBookShopDao;
@@ -19,7 +18,8 @@ import fr.exagone.dao.IBookShopDao;
  * Gestion de la transaction en utilisant directement API JDBC
  * - avantage : gérer la transaction en validant et en annulant explicitement.
  * 
- * - inconvénient : à répéter dans toutes les méthodes
+ * - inconvénient : 
+ * - code transactionnel à répéter dans toutes les méthodes
  * - code propre à JDBC et doit être changer si une autre technologie doit être utilisée.
  * 
  * @author gildas
@@ -83,6 +83,18 @@ public class BookShopDaoTxJdbcImpl implements IBookShopDao{
 
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
+	}
+
+	@Override
+	public int checkStock(String isbn) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void increaseStock(String isbn, int stock) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

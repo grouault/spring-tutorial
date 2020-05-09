@@ -15,6 +15,10 @@ public interface IBookShopDao {
 	 * @param username
 	 * @throws FonctionnelleException
 	 */
-	void purchase(String isbn, String username) throws FonctionnelleException;
+	public void purchase(String isbn, String username) throws FonctionnelleException;
+	
+	public int checkStock(String isbn);
+	
+	public void increaseStock(String isbn, int stock);
 	
 }

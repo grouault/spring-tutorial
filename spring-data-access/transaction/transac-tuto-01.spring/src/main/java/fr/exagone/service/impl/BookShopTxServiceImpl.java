@@ -12,9 +12,10 @@ import fr.exagone.dao.IBookShopDao;
 import fr.exagone.service.IBookShopService;
 import fr.exagone.service.ex.FonctionnelleException;
 
+@Transactional
 @Service
-@Qualifier("bookShopServiceImpl")
-public class BookShopServiceImpl implements IBookShopService {
+@Qualifier("bookShopTxServiceImpl")
+public class BookShopTxServiceImpl implements IBookShopService {
 
 	private static final Logger LOG = LogManager.getLogger();
 	
@@ -22,7 +23,7 @@ public class BookShopServiceImpl implements IBookShopService {
 	
 	// Note: utiliser le bon Qualifier pour injecter le DAO souhaité.
 	@Autowired
-	public BookShopServiceImpl(@Qualifier("bookShopDaoJdbc")IBookShopDao bookShopDao) {
+	public BookShopTxServiceImpl(@Qualifier("bookShopDaoTxAnnotation")IBookShopDao bookShopDao) {
 		this.bookShopDao = bookShopDao;
 	}
 	
@@ -35,41 +36,21 @@ public class BookShopServiceImpl implements IBookShopService {
 		bookShopDao.purchase(isbn, username);
 	}
 
-
 	@Override
+	@Transactional(propagation = Propagation.REQUIRES_NEW)
 	public void increaseStock(String isbn, int stock) {
-
-		String threadName = Thread.currentThread().getName();
-		LOG.info("[Thread {}] - prêt à augmenter le stock du livre {}.", threadName, isbn);
+		LOG.info("increase: isbn = {}, stock = {}", isbn, stock);
+		bookShopDao.checkStock(isbn);
 		bookShopDao.increaseStock(isbn, stock);
-		LOG.info("[Thread {}] - Stock du livre {} augmenté de {}.", threadName, isbn, stock);
-		sleep(threadName);
-
+		bookShopDao.checkStock(isbn);
 	}
-
 
 	@Override
 	public int checkStock(String isbn) {
-		
-		String threadName = Thread.currentThread().getName();
-		LOG.info("[Thread: {}] - prêt à vérifier le stock du livre {}.", threadName, isbn);
+		LOG.info("checkStock: isbn = {}", isbn);
 		int stock = bookShopDao.checkStock(isbn);
-		LOG.info("[Thread: {}] - stock du livre {} : {}.", threadName, isbn, stock);
-		sleep(threadName);
-		
 		return stock;
-		
 	}
 	
-	private void sleep(String threadName) {
-		LOG.info("[Thread: {}] - En sommeil", threadName);
-		try {
-			Thread.sleep(1000);
-			// Thread.sleep(10000);
-		} catch (InterruptedException e) {
-			LOG.error(e.getMessage());
-		}
-		LOG.info("[Thread: {}] - Réveillé", threadName);
-	}
 
 }

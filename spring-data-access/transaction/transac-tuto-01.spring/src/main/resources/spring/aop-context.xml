@@ -14,28 +14,39 @@
 			http://www.springframework.org/schema/aop/spring-aop.xsd">
 
 
-	<!-- aop -->
-	<aop:config>
-		<!-- fooServiceOperation -->
+    <!-- /////////////////////////////////////////////////// -->
+    <!-- AOP Classique                                       -->
+    <!-- - declaration avec greffon transactionnel           --> 
+    <!-- /////////////////////////////////////////////////// -->
+
+    <!-- //////// -->
+    <!-- GREFFONs -->
+    <!-- //////// -->      
+    <tx:advice id="txAdvice" transaction-manager="txManager">
+      <tx:attributes>
+        <!-- all method starting with 'get' are read-only -->
+        <tx:method name="get*" read-only="true"/>
+        <!-- other methods use the default transaction settings -->
+        <tx:method name="*" rollback-for="FonctionnelleException" no-rollback-for="UncategorizedSQLException"/>
+     </tx:attributes>
+   </tx:advice>
+    
+    <!-- /////////////// -->
+    <!-- POINTs DE COUPE -->
+	<!-- /////////////// -->
+    <!-- fooServiceOperation -->
+    <aop:config>
 		<aop:pointcut id="fooServiceOperation" expression="execution(* fr.exagone.service.impl.FooServiceImpl.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="fooServiceOperation"/>
 	</aop:config>
-
+    
+    <!-- bookServiceOperation -->
 	<aop:config>
-		<!-- bookServiceOperation -->
 		<aop:pointcut id="BookSericeOperation" expression="execution(* fr.exagone.service.impl.BookServiceImpl.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="BookSericeOperation"/>
 	</aop:config>
 
-	<!-- transaction-advice -->
-	<tx:advice id="txAdvice" transaction-manager="txManager">
-		<tx:attributes>
-			<!-- all method starting with 'get' are read-only -->
-			<tx:method name="get*" read-only="true"/>
-			<!-- other methods use the default transaction settings -->
-			<tx:method name="*" rollback-for="FonctionnelleException" no-rollback-for="UncategorizedSQLException"/>
-		</tx:attributes>
-	</tx:advice>
+
 
 
 </beans>

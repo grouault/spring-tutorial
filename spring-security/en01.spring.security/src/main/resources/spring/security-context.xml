@@ -17,11 +17,14 @@
 		</authentication-provider>
 	</authentication-manager>
 
+	<http pattern="/login.jsp" security="none" />
+
 	<http use-expressions="true">
 		<intercept-url pattern="/index.jsp" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/user/pageA.jsp" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/adm/pageB.jsp" access="hasRole('ROLE_ADMIN')" />
-		<http-basic/>
+		<form-login />
+		<csrf disabled="true" />
 	</http>
 					  
 </beans:beans>

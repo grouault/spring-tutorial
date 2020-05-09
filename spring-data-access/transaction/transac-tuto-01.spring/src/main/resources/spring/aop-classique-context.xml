@@ -13,11 +13,13 @@
 			http://www.springframework.org/schema/aop 
 			http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-	<!-- aop -->
-	<bean id="bookShopDaoJdbc" class="fr.exagone.dao.impl.BookShopDaoJdbcImpl">
-		<constructor-arg name="dataSource" ref="dataSource"/>
-	</bean>	
-	
+    <!-- /////////////////////////////////////////////////// -->
+    <!-- AOP Classique                                       -->
+    <!-- - declaration d'un greffon 'TransactionInterceptor' --> 
+    <!--    et d'un proxy                                    -->
+    <!-- - attachement du greffon au proxy                   -->
+    <!-- /////////////////////////////////////////////////// -->
+    
 	<!-- greffon transactionnel -->
 	<bean id="transactionInterceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor">
 		<property name="transactionManager" ref="txManager" />
@@ -28,6 +30,11 @@
 			</props>
 		</property>
 	</bean>
+
+    <!-- target --> 
+    <bean id="bookShopDaoJdbc" class="fr.exagone.dao.impl.BookShopDaoJdbcImpl">
+      <constructor-arg name="dataSource" ref="dataSource"/>
+    </bean> 
 	
 	<!-- proxy -->
 	<bean id="bookShopProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
@@ -38,6 +45,5 @@
 			</list>
 		</property>
 	</bean>
-	
 
 </beans>
