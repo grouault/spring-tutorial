@@ -1,5 +1,12 @@
 ## Spring-security
 
+https://www.logicbig.com/tutorials/spring-framework/spring-web-mvc/spring-mvc-intro.html
+https://www.logicbig.com/tutorials/java-ee-tutorial/java-servlet/programmatic-registration.html
+https://www.logicbig.com/tutorials/java-ee-tutorial/java-servlet/servlet-container-initializer-example.html
+https://www.logicbig.com/tutorials/spring-framework/spring-security/security-with-servlet-jsp.html
+https://www.logicbig.com/tutorials/spring-framework/spring-web-mvc/spring-servlet-container-initializer.html
+https://www.logicbig.com/tutorials/spring-framework/spring-security/spring-security-components-and-configuration.html
+
 Définition:
 
 ### Spring-security-core
