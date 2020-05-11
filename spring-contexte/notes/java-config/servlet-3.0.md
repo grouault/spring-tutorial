@@ -1,4 +1,5 @@
 ## Servlet 3.0
+[retour](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/java-config/index.md)
 
 ### AbstractSecurityWebApplicationInitializer
 * Classe qui aura la chage de charger les fichiers de configuration par
