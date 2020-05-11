@@ -17,6 +17,7 @@ https://github.com/Baeldung/spring-security-registration/issues/65
 ## docs-spring
 https://docs.spring.io/spring-security/site/docs/5.3.2.BUILD-SNAPSHOT/reference/html5/#servlet-authentication-authenticationmanager
 
+[form-login](https://www.baeldung.com/spring-security-login)
 Définition:
 
 ### Spring-security-core
