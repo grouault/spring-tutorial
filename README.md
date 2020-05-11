@@ -11,3 +11,6 @@
 
 ## livre
 * [spring par l'exemple](https://www.yumpu.com/fr/document/read/16621125/spring-par-lexemple)
+
+## TODOs
+[Optional](https://www.baeldung.com/java-optional)
