@@ -11,6 +11,9 @@ https://www.logicbig.com/tutorials/spring-framework/spring-security/spring-secur
 https://docs.spring.io/spring-security/site/docs/3.0.x/reference/el-access.html
 https://www.baeldung.com/spring-security-create-new-custom-security-expression
 
+https://www.concretepage.com/spring/spring-security/spring-security-in-memory-authentication
+https://github.com/Baeldung/spring-security-registration/issues/65
+
 Définition:
 
 ### Spring-security-core
