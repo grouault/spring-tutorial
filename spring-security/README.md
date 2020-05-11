@@ -9,6 +9,7 @@ https://www.logicbig.com/tutorials/spring-framework/spring-security/spring-secur
 
 # permissions
 https://docs.spring.io/spring-security/site/docs/3.0.x/reference/el-access.html
+https://www.baeldung.com/spring-security-create-new-custom-security-expression
 
 Définition:
 
