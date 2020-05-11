@@ -1,5 +1,7 @@
  ## Utilisation de classe Java : @Configuration
  
+ [retour](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/INDEX.md)
+ 
  * Classe qui aura la chage de charger les fichiers de configuration par
  * annotation et de faire le mapping des URL. <br/>
  *
