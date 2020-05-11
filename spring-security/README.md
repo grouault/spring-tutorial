@@ -7,6 +7,9 @@ https://www.logicbig.com/tutorials/spring-framework/spring-security/security-wit
 https://www.logicbig.com/tutorials/spring-framework/spring-web-mvc/spring-servlet-container-initializer.html
 https://www.logicbig.com/tutorials/spring-framework/spring-security/spring-security-components-and-configuration.html
 
+# permissions
+https://docs.spring.io/spring-security/site/docs/3.0.x/reference/el-access.html
+
 Définition:
 
 ### Spring-security-core
