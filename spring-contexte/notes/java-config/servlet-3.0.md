@@ -1,6 +1,12 @@
 ## Servlet 3.0
 [retour](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/java-config/index.md)
 
+https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/java-config/servlet-3.0.md
+
+SpringServletContainerInitializer
+
+ServletContainerInitializer
+
 ### AbstractSecurityWebApplicationInitializer
 * Classe qui aura la chage de charger les fichiers de configuration par
 * annotation et de faire le mapping des URL.
