@@ -1,7 +1,10 @@
 ## @Conditional
 [retour](https://github.com/grouault/spring-tutorial/blob/master/spring-contexte/notes/spring-configuration-xml/index.md)
 
+## lien
+https://javapapers.com/spring/spring-conditional-annotation/
 
+## Notes
 Il sert à élaborer un type de vérification conditionnelle « If-Then-Else » pour l’enregistrement des beanss.
 
 Spring Condition Interface
