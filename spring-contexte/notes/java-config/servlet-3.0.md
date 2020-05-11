@@ -1,5 +1,6 @@
+## Servlet 3.0
 
-## AbstractSecurityWebApplicationInitializer
+### AbstractSecurityWebApplicationInitializer
 * Classe qui aura la chage de charger les fichiers de configuration par
 * annotation et de faire le mapping des URL.
 * Le fichir web.xml n'a plus la charge de réaliser ses operations.
