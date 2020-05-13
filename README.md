@@ -11,3 +11,9 @@
 
 ## livre
 * [spring par l'exemple](https://www.yumpu.com/fr/document/read/16621125/spring-par-lexemple)
+
+## slack-formation
+https://app.slack.com/client/TMJUN2QQ6/CM5A0D8QJ
+
+## TODOs
+[Optional](https://www.baeldung.com/java-optional)

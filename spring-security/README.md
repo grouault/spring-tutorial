@@ -7,6 +7,20 @@ https://www.logicbig.com/tutorials/spring-framework/spring-security/security-wit
 https://www.logicbig.com/tutorials/spring-framework/spring-web-mvc/spring-servlet-container-initializer.html
 https://www.logicbig.com/tutorials/spring-framework/spring-security/spring-security-components-and-configuration.html
 
+## permissions
+https://docs.spring.io/spring-security/site/docs/3.0.x/reference/el-access.html
+https://www.baeldung.com/spring-security-create-new-custom-security-expression
+
+https://www.concretepage.com/spring/spring-security/spring-security-in-memory-authentication
+https://github.com/Baeldung/spring-security-registration/issues/65
+
+## docs-spring
+https://docs.spring.io/spring-security/site/docs/5.3.2.BUILD-SNAPSHOT/reference/html5/#servlet-authentication-authenticationmanager
+
+* [form-login-1](https://www.baeldung.com/spring-security-login)
+* [form-login-2](https://www.baeldung.com/java-config-spring-security)
+
+
 Définition:
 
 ### Spring-security-core
