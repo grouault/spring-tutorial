@@ -18,7 +18,10 @@ Installer le plugin:
 ``
   <plugin>
     <groupId>org.apache.tomcat.maven</groupId>
+    
     <artifactId>tomcat7-maven-plugin</artifactId>
+    
     <version>2.2</version>
+  
   </plugin>
 ``
