@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<Configuration status="warn" strict="true">
+  <Appenders>
+    <Appender type="Console" name="STDOUT">
+      <Layout type="PatternLayout" pattern="[%d{dd/MM/yyyy HH:mm:ss}] - %5p - %l - %m %n" />
+    </Appender>
+    <File name="FILE" fileName="spring-security.log" append="false">
+      <Layout type="PatternLayout" pattern="[%d{dd/MM/yyyy HH:mm:ss}] - %5p - %l - %m %n" />
+    </File>
+  </Appenders>
+
+  <Loggers>
+    <Root level="INFO">
+      <AppenderRef ref="STDOUT" />
+    </Root>
+  </Loggers>
+
+</Configuration>
