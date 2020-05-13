@@ -14,10 +14,16 @@ Pour lancer le projet:
 mvn -Dmaven.tomcat.port=8181  tomcat7:run-war
 
 Installer le plugin:
+
 ``
   <plugin>
+  
     <groupId>org.apache.tomcat.maven</groupId>
+    
     <artifactId>tomcat7-maven-plugin</artifactId>
+    
     <version>2.2</version>
+  
   </plugin>
+
 ``
