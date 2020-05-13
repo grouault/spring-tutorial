@@ -16,7 +16,7 @@ mvn -Dmaven.tomcat.port=8181  tomcat7:run-war
 Installer le plugin:
 
 ``
-  <plugin>
+  \<plugin>
   
     <groupId>org.apache.tomcat.maven</groupId>
     
@@ -24,6 +24,6 @@ Installer le plugin:
     
     <version>2.2</version>
   
-  </plugin>
+  \</plugin>
 
 ``
