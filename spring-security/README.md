@@ -21,7 +21,13 @@ https://docs.spring.io/spring-security/site/docs/5.3.2.BUILD-SNAPSHOT/reference/
 * [form-login-2](https://www.baeldung.com/java-config-spring-security)
 
 
-Définition:
+## Process
+### urls
+https://docs.spring.io/spring-security/site/docs/4.2.14.RELEASE/apidocs/org/springframework/security/access/intercept/AbstractSecurityInterceptor.html
+https://www.docs4dev.com/docs/en/spring-security/5.1.2.RELEASE/reference/authorization.html
+https://www.docs4dev.com/docs/en/spring-security/5.1.2.RELEASE/reference/web-app-security.html#security-filter-chain
+
+Définition
 
 ### Spring-security-core
 
