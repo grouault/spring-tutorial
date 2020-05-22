@@ -48,7 +48,7 @@ Permet de dire le/les ressources à sécuriser en fonction d'un ou plusieurs rô
 
 #### * form-logout
 
-#### * access-denied-url
+#### * access-denied-handler
 
 #### * csrf
 
