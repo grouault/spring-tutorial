@@ -27,6 +27,11 @@ https://docs.spring.io/spring-security/site/docs/4.2.14.RELEASE/apidocs/org/spri
 https://www.docs4dev.com/docs/en/spring-security/5.1.2.RELEASE/reference/authorization.html
 https://www.docs4dev.com/docs/en/spring-security/5.1.2.RELEASE/reference/web-app-security.html#security-filter-chain
 
+
+### 
+*[mise-en-place](https://github.com/grouault/spring-tutorial/blob/master/spring-security/notes/mise-en-place.md)
+
+
 Définition
 
 ### Spring-security-core
