@@ -30,8 +30,19 @@ Dans un contexte J2ee deux choses à faire à minima:
 * Réaliser un fichier de configuration dédié au Spring-Security
 
 ### authentication-manager
+
+Permet de définir des providers
+
 #### authentication-provider
+
+Permet de définir les objets qui vont fournir les informations d'authenfication
+
 ### http
-#### intercept-utl
+#### intercept-url
+
+Permet de dire le/les ressources à sécuriser en fonction d'un ou plusieurs rôles
+
 #### http-basic
+
+#### form-login
 
