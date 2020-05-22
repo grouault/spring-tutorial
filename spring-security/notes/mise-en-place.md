@@ -38,11 +38,18 @@ Permet de définir des providers
 Permet de définir les objets qui vont fournir les informations d'authenfication
 
 ### http
-#### intercept-url
+#### * intercept-url
 
 Permet de dire le/les ressources à sécuriser en fonction d'un ou plusieurs rôles
 
-#### http-basic
+#### * http-basic
 
-#### form-login
+#### * form-login
+
+#### * form-logout
+
+#### * access-denied-url
+
+#### * csrf
+
 
