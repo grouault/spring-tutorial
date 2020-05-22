@@ -1,6 +1,6 @@
 ## Architecture - mise en place
 
-### Configuration XML
+## web.xml
 Dans un contexte J2ee deux choses à faire à minima:
 * WEB.xml ajouter un listener pour que le fichiers Spring soient chargés dans le context J2ee
 ```
@@ -26,6 +26,12 @@ Dans un contexte J2ee deux choses à faire à minima:
   	<url-pattern>/*</url-pattern>
   </filter-mapping> 
 ```
-
+## spring-security-context.xml
 * Réaliser un fichier de configuration dédié au Spring-Security
+
+### authentication-manager
+#### authentication-provider
+### http
+#### intercept-utl
+#### http-basic
 
