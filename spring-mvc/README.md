@@ -4,7 +4,7 @@
 
 ### Cycle de vie d'une requête
 ![cycle-de-vie-requete simple](https://user-images.githubusercontent.com/20648687/82791477-23a79d80-9e6e-11ea-90f8-8e0a351e3ca1.png)
-
+https://user-images.githubusercontent.com/20648687/82791673-7aad7280-9e6e-11ea-95fe-ac59a5b97485.jpg
 ### Configuration Spring MVC dans une application web
 #### Fichier propres à la couche métier (@Service, @Repository)
 
