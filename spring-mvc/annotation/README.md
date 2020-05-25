@@ -14,4 +14,6 @@
 * Comme à l'ancienne, le faire en déclartion XML.
 
 ### ModelAndView
-* Contient
+Contient:
+* la vue (identifiant de vue)
+* le modèle (ensembles des informations à afficher)
