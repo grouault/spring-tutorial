@@ -18,4 +18,4 @@ Contient:
 * la vue (identifiant de vue)
 * le modèle (ensembles des informations à afficher)
 
-`Spring MVC place automatiquement la Map dans le contexte appoprié.`
+`Spring MVC place automatiquement la Map dans le contexte appoprié : request par défaut`
