@@ -10,6 +10,7 @@
 * pas de méthode spécfique
 * injection de dépendant
 * déclaration : fichier de contexte spring du DispatcherServlet
+
 ``
 <mvc:annotation-driven>
 <context:component-scan base-package="fr.exagone.web" />
