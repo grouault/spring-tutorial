@@ -8,7 +8,7 @@
 ### Le contrôleur : @Controller
 * pas d'héritage de classe/interface spécifique
 * pas de méthode spécfique
-* injection de dépendant
+* injection de dépendance : @Autowired
 * déclaration : fichier de contexte spring du DispatcherServlet
 
 ```
