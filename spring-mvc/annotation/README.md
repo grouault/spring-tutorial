@@ -8,6 +8,12 @@
 ### Le contrôleur : @Controller
 * pas d'héritage de classe/interface spécifique
 * pas de méthode spécfique
+* injection de dépendant
+* déclaration : fichier de contexte spring du DispatcherServlet
+``
+<mvc:annotation-driven>
+<context:component-scan base-package="fr.exagone.web" />
+``
 
 ### Le view resolver
 * a pour objectif de simplifier vos chemins d'URL dans le code
