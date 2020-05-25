@@ -13,7 +13,9 @@
 
 ``
 <mvc:annotation-driven>
+
 <context:component-scan base-package="fr.exagone.web" />
+
 ``
 
 ### Le view resolver
