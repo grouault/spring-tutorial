@@ -1,0 +1,17 @@
+## Spring MVC et les annotations
+
+### Idées :
+* supprimer la nécessité d'héritage
+* privilégié le modèle POJO (annoter les classse POJOs)
+* Alléger la configuration XML
+
+### Le contrôleur : @Controller
+* pas d'héritage de classe/interface spécifique
+* pas de méthode spécfique
+
+### Le view resolver
+* a pour objectif de simplifier vos chemins d'URL dans le code
+* Comme à l'ancienne, le faire en déclartion XML.
+
+### ModelAndView
+* Contient
