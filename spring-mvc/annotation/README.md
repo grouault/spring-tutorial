@@ -26,3 +26,10 @@ Contient:
 * le modèle (ensembles des informations à afficher)
 
 `Spring MVC place automatiquement la Map dans le contexte appoprié : request par défaut`
+
+
+### Défintion Spring MVC
+1 header | header 2 | 3 he
+- |:-: | -:
+line `1` | **1** | **_valeur_**
+Line 2 | 2 | *Value*
