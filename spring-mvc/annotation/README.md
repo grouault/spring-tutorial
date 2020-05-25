@@ -29,7 +29,9 @@ Contient:
 
 
 ### Défintion Spring MVC
-1 header | header 2 | 3 he
-- |:-: | -:
-line `1` | **1** | **_valeur_**
-Line 2 | 2 | *Value*
+
+Titre colonne 1 (droite) | Titre colonne 1 (centré) | Titre colonne 1 (gauche)
+ ---: | :---: | :--- 
+Celule 1.1 | Celule 1.2 | Celule 1.3 
+Celule 2.1 | Celule 2.2 | Celule 2.3 
+
