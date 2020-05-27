@@ -30,7 +30,7 @@ Contient:
 
 
 ### Signature des méthodes n'est pas figée
-### En paramètres : Request, Response et Session de l'API Servlet
+##### En paramètres : Request, Response et Session de l'API Servlet
 
 En paramètre |  ...
  ---: | :--- 
@@ -39,3 +39,11 @@ En paramètre |  ...
 @RequestHeader | récèpère un header d'une reqête web
 @RequestBody | accède au corps de la requête
 @ModelAttribute | * classe contenant le modèle objet et permet son enrichissement avant transmission à la vue * permet de construire un bean qui sera automatiqument contruit par Spring * faire le lien entre un formulaire web et le code
+
+##### En retour 
+En retour |  ...
+ ---: | :--- 
+ModelAndView | encapsule le nom logique de la vue et son modèle
+Model | Encapsule le modèle. Retour sur la vue courante.
+View | Retourne la vue préparée par l'application: Exemple : retour de documents générés.
+String | Fournit le nom logique
