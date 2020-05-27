@@ -7,7 +7,7 @@
 
 ### Le contrôleur : @Controller
 * pas d'héritage de classe/interface spécifique
-* pas de méthode spécifique (formBacking, referencedData ...)
+* pas de méthode spécifique (formBacking, referencedData ...) mais affichage et soummission formulaire dans le même controller
 * pas de configuation XML, véification à la compilation...
 * Déclaration, instanciation etinjection de dépendance : `@Controller`, `@RequestMapping`, `@Autowired` 
 
