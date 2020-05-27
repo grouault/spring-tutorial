@@ -10,6 +10,7 @@
 * pas de méthode spécifique (formBacking, referencedData ...) mais affichage et soummission formulaire dans le même controller
 * pas de configuation XML, véification à la compilation...
 * Déclaration, instanciation etinjection de dépendance : `@Controller`, `@RequestMapping`, `@Autowired` 
+* Déclaration : fichier de contexte Spring du DispatcherServlet
 
 ```
 <mvc:annotation-driven>
