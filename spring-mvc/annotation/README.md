@@ -2,15 +2,14 @@
 [retour](https://github.com/grouault/spring-tutorial/blob/master/spring-mvc/README.md)
 
 ### Idées :
-
 * privilégié le modèle POJO (annoter les classse POJOs)
 * Alléger la configuration XML
 
 ### Le contrôleur : @Controller
 * pas d'héritage de classe/interface spécifique
-* pas de configuation XML, véification à la compilation... ?
+* pas de méthode spécifique (formBacking, referencedData ...)
+* pas de configuation XML, véification à la compilation...
 * Déclaration, instanciation etinjection de dépendance : `@Controller`, `@RequestMapping`, `@Autowired` 
-* déclaration : fichier de contexte spring du DispatcherServlet
 
 ```
 <mvc:annotation-driven>
