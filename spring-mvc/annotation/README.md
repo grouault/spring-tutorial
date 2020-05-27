@@ -1,13 +1,13 @@
 ## Spring MVC et les annotations
 
 ### Idées :
-* supprimer la nécessité d'héritage
+
 * privilégié le modèle POJO (annoter les classse POJOs)
 * Alléger la configuration XML
 
 ### Le contrôleur : @Controller
 * pas d'héritage de classe/interface spécifique
-* pas de configuation XML
+* pas de configuation XML, véification à la compilation... ?
 * Déclaration, instanciation etinjection de dépendance : `@Controller`, `@RequestMapping`, `@Autowired` 
 * déclaration : fichier de contexte spring du DispatcherServlet
 
