@@ -27,11 +27,15 @@ public class AuthJdbcProvider implements AuthenticationProvider {
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-        String username = authentication.getName();
+        
+    	// 1- recuperation de donnees d'authentification
+    	String username = authentication.getName();
         String password = authentication.getCredentials().toString();
 
         User user = null;
         try {
+        	
+        	// 2- recuperation des infos du user en base
             user = jdbcTemplate.queryForObject("select username, encript_password, hash_id, enabled, blocked, expired from user_detail where username = ?", new RowMapper<User>() {
                 @Override
                 public User mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -46,16 +50,20 @@ public class AuthJdbcProvider implements AuthenticationProvider {
                 }
             }, username);
 
+            // 3- check validite du password
             boolean isValid = utils.isPasswordValid(user.getPassword(), password, user.getSalt());
             if (!isValid)
                 throw new BadCredentialsException("Username atau password salah!");
 
+            // 4- check unsername actif
             if (!user.isEnable())
                 throw new LockedException("Username is locked!");
 
+            // 5- check username blocked
             if (user.isBlocked())
                 throw new LockedException("Username is blocked!");
 
+            // 6- check user expiration
             if (user.isExpired())
                 throw new AccountExpiredException("Username is expired!");
 
