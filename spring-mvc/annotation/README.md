@@ -8,7 +8,7 @@
 ### Le contrôleur : @Controller
 * pas d'héritage de classe/interface spécifique
 * pas de configuation XML
-* injection de dépendance : @Autowired
+* Déclaration, instanciation etinjection de dépendance : `@Controller`, `@RequestMapping`, `@Autowired` 
 * déclaration : fichier de contexte spring du DispatcherServlet
 
 ```
