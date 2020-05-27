@@ -1,0 +1,15 @@
+version: '3.6'
+services:
+  mysql:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=security_management
+      - MYSQL_USER=security_management
+      - MYSQL_PASSWORD=security_management
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+volumes:
+  mysql_data:

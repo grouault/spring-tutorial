@@ -26,6 +26,10 @@ public class SimpleQuestion implements DisposableBean, InitializingBean {
 	@Autowired
 	private ApplicationContextProvider appContext;
 	
+	
+	@Autowired
+	TestBean testBean;
+	
 	public SimpleQuestion() {
 	}
 	
@@ -38,7 +42,9 @@ public class SimpleQuestion implements DisposableBean, InitializingBean {
 	
 	public void initialiser() {
 		TestBean tb = appContext.getApplicactionContext().getBean("testBean", TestBean.class);
-		SimpleQuestion.LOG.info("[SimpleQuestion]: in Init method : TestBean = " + tb);
+		SimpleQuestion.LOG.info("[SimpleQuestion]: in Init method : TestBean (appContext) = " + tb);
+		SimpleQuestion.LOG.info("[SimpleQuestion]: in Init method : TestBean (appContext) = " + appContext);
+		SimpleQuestion.LOG.info("[SimpleQuestion]: in Init method : TestBean (autowired) = " + tb);
 	}
 	
 	public void detruire() {
