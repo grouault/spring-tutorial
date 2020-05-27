@@ -70,4 +70,4 @@ String | Fournit le nom logique
 
 ### Validation JSR 303 - Annotation
 
-### Validation JSR 3030 - Spring
+### Validation JSR 303 - Spring
