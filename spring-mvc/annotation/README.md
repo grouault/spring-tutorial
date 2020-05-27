@@ -29,10 +29,11 @@ Contient:
 `Spring MVC place automatiquement la Map dans le contexte appoprié : request par défaut`
 
 
-### Défintion Spring MVC
+### Signature des méthodes n'est pas figée
+### En paramètres : Request, Response et Session de l'API Servlet
 
 Titre colonne 1 (droite) | Titre colonne 1 (centré) | Titre colonne 1 (gauche)
- ---: | :---: | :--- 
-Celule 1.1 | Celule 1.2 | Celule 1.3 
-Celule 2.1 | Celule 2.2 | Celule 2.3 
+ ---: | :--- 
+@PathVariable | récupère une partie de l'url et la place dans le paramètre annoté 
+@RequestParam | récupère un paramètre de requête web (GET ou POST)
 
