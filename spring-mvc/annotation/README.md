@@ -61,3 +61,13 @@ String | Fournit le nom logique
 ### Gestion du modèle
 ##### Scope Session
 ##### Scope Application
+
+### Gestion des JSPs
+
+### Gestion des erreurs
+
+### Gestion de l'internationnalisation
+
+### Validation JSR 303 - Annotation
+
+### Validation JSR 3030 - Spring
