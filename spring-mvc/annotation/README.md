@@ -32,7 +32,7 @@ Contient:
 ### Signature des méthodes n'est pas figée
 ### En paramètres : Request, Response et Session de l'API Servlet
 
-Titre colonne 1 (droite) | Titre colonne 1 (centré) | Titre colonne 1 (gauche)
+Titre colonne 1 (droite) | Titre colonne 1 (centré) 
  ---: | :--- 
 @PathVariable | récupère une partie de l'url et la place dans le paramètre annoté 
 @RequestParam | récupère un paramètre de requête web (GET ou POST)
