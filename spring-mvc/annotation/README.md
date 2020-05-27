@@ -38,4 +38,4 @@ En paramètre |  ...
 @RequestParam | récupère un paramètre de requête web (GET ou POST)
 @RequestHeader | récèpère un header d'une reqête web
 @RequestBody | accède au corps de la requête
-@ModelAttribute | classe contenant le modèle objet et permet son enrichissement avant transmission à la vue ; permet de contruire un bean qui sera automatiqumeent contruit par Spring
+@ModelAttribute | classe contenant le modèle objet et permet son enrichissement avant transmission à la vue ; permet de contruire un bean qui sera automatiqument contruit par Spring
