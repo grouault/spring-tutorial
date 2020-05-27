@@ -36,4 +36,6 @@ En paramètre |  ...
  ---: | :--- 
 @PathVariable | récupère une partie de l'url et la place dans le paramètre annoté 
 @RequestParam | récupère un paramètre de requête web (GET ou POST)
-
+@RequestHeader | récèpère un header d'une reqête web
+@RequestBody | accède au corps de la requête
+@ModelAttribute | classe contenant le modèle objet et permet son enrichissement avant transmission à la vue
