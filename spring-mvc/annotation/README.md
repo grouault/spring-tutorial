@@ -58,4 +58,6 @@ String | Fournit le nom logique
 
 ### Gestion des vues
 
-### Gestion du modèle - Scope Session
+### Gestion du modèle
+##### Scope Session
+##### Scope Application
