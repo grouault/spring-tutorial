@@ -2,7 +2,7 @@
 
 ### paramétrage en base de données
 * REMEMBERME
-* Authentificaiton
+* Authentification
 
 ### REMEMBERME
 * céation de la table  : persistent_logins
