@@ -5,7 +5,7 @@
 ### Cycle de vie d'une requête
 
 ### Configuration Spring MVC dans une application web
-#### Fichier propres à la couche métier (@Service, @Repository)
+#### Fichier propres à la couche métier (@Service, @Repository)s
 
 #### Configuration du Spring MVC et déclaration du dispatcher-servlet
 
