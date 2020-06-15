@@ -52,7 +52,7 @@
     <version.log4j2>2.9.0</version.log4j2>
     <version.aspectj>1.8.10</version.aspectj>
     <version.spring>4.3.11.RELEASE</version.spring>
-    <version.springsecuirty>4.2.3.RELEASE</version.springsecuirty>
+    <version.springsecuirty>5.3.3.RELEASE</version.springsecuirty>
 
     <!-- https://maven.apache.org/plugins/index.html -->
     <maven-compiler-plugin-version>3.7.0</maven-compiler-plugin-version>
