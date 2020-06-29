@@ -3,4 +3,4 @@
 * Project squelette
 - démarre sans connexion préalable
 
-* Tomcat 8 requiredd
+* Tomcat 8 required
