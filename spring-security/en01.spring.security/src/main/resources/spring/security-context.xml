@@ -24,7 +24,6 @@
 		<!-- form-login / -->
 		<csrf disabled="true" />
         <http-basic/>
-    
 	</http>
 					  
 </beans:beans>

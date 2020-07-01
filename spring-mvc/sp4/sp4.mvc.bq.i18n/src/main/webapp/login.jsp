@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%-- On declare le fait que l'on va utiliser la taglib JSTL --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -28,7 +30,7 @@
 											<c:if test="${!empty requestScope.erreur}">
 												<p><c:out value="${requestScope.erreur}" /></p>
 											</c:if>
-											<p class="eltitre1">Veuillez entrer votre nom d'utilisateur et votre mot de passe</p>
+											<p class="eltitre1"><spring:message code="login.title" /></p>
 											<p>&nbsp;</p>
 										</td>
 									</tr>

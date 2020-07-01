@@ -1,8 +1,10 @@
+<%@page import="java.util.Locale"%>
+<%@page import="org.springframework.web.servlet.support.RequestContextUtils"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE HTML>
 <html lang="fr">
 	<head>
@@ -12,6 +14,12 @@
 	
 	<body>
 		<h1>Bonjour <sec:authentication property="principal.username"/></h1>
+		locale = <%= RequestContextUtils.getLocale(request) %>,
+		locale (response) = <%= response.getLocale() %><%
+		Locale locale = new Locale("en","US");
+		response.setLocale(locale);
+		%>,
+		locale2 (response) = <%= response.getLocale() %>
 		<table style="width:100%;">
 			<tr>
 				<sec:authorize access="hasRole('ROLE_USER')">
@@ -22,7 +30,7 @@
 				</sec:authorize>				
 				<td>&nbsp;</td>
 				<sec:authorize access="isFullyAuthenticated()">
-				<td><a href="<c:url value="/logout"/>">Logout</a></td>
+				<td><a href="<c:url value="/logout"/>"><spring:message code="logout"  />-test</a></td>
 				</sec:authorize>
 				
 				<%-- Ne pas gerer les droits a ce niveau, annoter les services metiers --%>

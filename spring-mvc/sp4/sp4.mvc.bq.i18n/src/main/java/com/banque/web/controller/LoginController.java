@@ -1,6 +1,7 @@
 package com.banque.web.controller;
 
 import java.io.IOException;
+import java.util.Locale;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,9 +13,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.mockito.ArgumentMatchers;
 import org.mockito.Mockito;
+import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
+import org.springframework.web.servlet.support.RequestContextUtils;
 
 import com.banque.entity.IUtilisateurEntity;
 import com.banque.entity.impl.UtilisateurEntity;
+import com.banque.providers.ApplicationContextProvider;
 import com.banque.service.IAuthentificationService;
 import com.banque.web.bean.LoginBean;
 
@@ -59,6 +64,18 @@ public class LoginController extends AbstractController {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		Locale currentLocale = RequestContextUtils.getLocale(request);
+		ApplicationContextProvider appContext = new ApplicationContextProvider();
+		SessionLocaleResolver localeResolver = appContext.getApplicactionContext().getBean("localeResolver", SessionLocaleResolver.class);
+		localeResolver.setLocaleAttributeName("fr_FR");
+		localeResolver.setLocale(request, response, Locale.FRANCE);
+		
+		// Tentative de recuperation du localResolver
+		// Pb: a cet endroit, le localeResolber == null
+		// LocaleResolver testLocaleResolver = RequestContextUtils.getLocaleResolver(request);
+		// testLocaleResolver.setLocale(request, response, Locale.FRANCE);
+		
 		String destination = "login.jsp";
 		LoginController.LOG.debug("--> Passage dans LoginController.doPost");
 

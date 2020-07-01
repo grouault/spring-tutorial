@@ -16,7 +16,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>springapp</servlet-name>
-    <url-pattern>/rest/*</url-pattern>
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
 
   <!-- Filtre de Spring Security -->

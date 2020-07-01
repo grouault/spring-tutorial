@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+  <!-- ################## -->
+  <!-- MISE en place I18n -->
+  <!-- ################## -->
+  
+  <!-- i18n -->
+  <bean name="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"> 
+    <property name="basename"> 
+        <value>messages/messages</value> 
+    </property> 
+  </bean>
+
+  <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+    <property name="defaultLocale" value="fr" />
+  </bean>
+
+  <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+    <property name="paramName" value="lang" />
+  </bean>
+
+  <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+    <property name="interceptors">
+        <list>
+            <ref bean="localeChangeInterceptor" />
+        </list>
+    </property>
+  </bean>  
+
+</beans>
+

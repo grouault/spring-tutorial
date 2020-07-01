@@ -4,6 +4,11 @@
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                       http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
+  <beans:bean 
+    name="refAuthenticationSuccessHandler" 
+    class="com.banque.security.handler.RefererAuthenticationSuccessHandler">
+    <beans:property name="defaultTargetUrl" value="/tomenu.smvc" />
+  </beans:bean>
 
   <authentication-manager>
     <authentication-provider>
@@ -14,19 +19,33 @@
     </authentication-provider>
   </authentication-manager>
 
-  
   <http pattern="/login.jsp*" security="none" />
   <!-- Pas obligatoire -->
   <http pattern="/logoutok.jsp*" security="none" />
 
   <http>
     <access-denied-handler error-page="/mauvaisrole.jsp" />
+    <!--  intercept-url pattern="/login" access="permitAll"/ -->
+    <!--  intercept-url pattern="/** ** " access="isAuthenticated()"/ -->
     <intercept-url pattern="/mauvaisrole.jsp*" access="isAuthenticated()" />
     <intercept-url pattern="/menu.jsp*"        access="isAuthenticated()" />
     <intercept-url pattern="/user/pageA.jsp*"  access="hasRole('ROLE_USER')" />
     <intercept-url pattern="/adm/pageB.jsp*"   access="hasRole('ROLE_ADMIN')" />
 
-    <form-login login-page="/login.jsp"  default-target-url="/menu.jsp" authentication-failure-url="/login.jsp?error=true" />
+
+    <!-- form-login 
+      login-page="/login.jsp"  
+      default-target-url="/menu.jsp" 
+      authentication-failure-url="/login.jsp?error=true" 
+      authentication-success-handler-ref="refAuthenticationSuccessHandler" 
+    / -->
+
+    <form-login 
+      login-page="/login.smvc"  
+      default-target-url="/dologin.smvc" 
+      authentication-failure-url="/login.smvc?error=true" 
+      authentication-success-handler-ref="refAuthenticationSuccessHandler" 
+    />
     
     <logout logout-success-url="/logoutok.jsp" invalidate-session="true"/>
     

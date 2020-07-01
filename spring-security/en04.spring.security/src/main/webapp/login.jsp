@@ -1,7 +1,8 @@
+<%@page import="org.springframework.web.servlet.support.RequestContextUtils"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE HTML>
 <html lang="fr">
 	<head>
@@ -11,6 +12,8 @@
 	
 	<body>
 		<h1>Spring Security 4+</h1>
+		locale = <%= RequestContextUtils.getLocale(request) %>,
+		locale (response) = <%= response.getLocale() %>
 		<c:if test="${!empty param.error}">
 			<p>Problème d'authentification. </p>
 			<c:out value="${SPRING_SECURITY_LAST_EXCEPTION}"/>
@@ -21,7 +24,7 @@
 			<form action="<c:url value="/login"/>" method="post">
 				<table style="width:100%;">
 					<tr>
-						<td>Nom d'utilisateur</td>
+						<td><spring:message code="login.label.name" /></td>
 						<td><input type="text" size="20" name="username" /></td>
 					</tr>
 					<tr>

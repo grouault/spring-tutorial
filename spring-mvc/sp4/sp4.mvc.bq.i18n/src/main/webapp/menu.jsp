@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%-- On declare le fait que l'on va utiliser la taglib JSTL --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -39,7 +41,7 @@
 								<tr class="ellignetableau1">
 									<td width="446" class="elcelluletableau3">
 										<img src="<c:url value="/images/puce.gif"/>" width="13" height="18" alt="" />&nbsp;
-										<a href="<c:url value="/listeCompte"/>"> Liste de vos comptes</a>
+										<a href="<c:url value="/listeCompte"/>"> <spring:message code="menu.liste.compte" /></a>
 									</td>
 								</tr>
 								<tr class="ellignetableau2">
