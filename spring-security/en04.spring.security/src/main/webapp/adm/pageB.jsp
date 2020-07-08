@@ -12,6 +12,6 @@
 	<body>
 		<h1>Page B</h1>
 		<p>Pour les admin</p>
-		<p>Revenir sur <a href="<c:url value="/menu.jsp"/>">Menu</a></p>
+		<p>Revenir sur <a href="<c:url value="/tomenu.smvc"/>">Menu</a></p>
 	</body>
 </html>

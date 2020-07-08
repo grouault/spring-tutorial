@@ -28,8 +28,9 @@ public class RefererAuthenticationSuccessHandler extends SavedRequestAwareAuthen
 
     protected void setLocale(Authentication authentication, HttpServletRequest request, HttpServletResponse response) {
     	
-    	
-    	localeResolver.setLocale(request, response, Locale.ENGLISH);
+    	// localeResolver.setLocale(request, response, Locale.ENGLISH);
+    	localeResolver.setLocale(request, response, Locale.FRANCE);
+    	// localeResolver.setLocale(request, response, Locale.GERMANY);
     	/*
     	Locale locale = new Locale("fr","FR");
     	localeResolver.setLocale(request, response, locale);
