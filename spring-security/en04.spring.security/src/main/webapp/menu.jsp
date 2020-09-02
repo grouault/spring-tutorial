@@ -31,7 +31,7 @@
 				</sec:authorize>				
 				<td>&nbsp;</td>
 				<sec:authorize access="isFullyAuthenticated()">
-				<td><a href="<c:url value="/logout"/>"><spring:message code="logout"  />-test</a></td>
+				<td><a href="<c:url value="/logout"/>"><spring:message code="logout" />-test</a></td>
 				</sec:authorize>
 				
 				<%-- Ne pas gerer les droits a ce niveau, annoter les services metiers --%>
