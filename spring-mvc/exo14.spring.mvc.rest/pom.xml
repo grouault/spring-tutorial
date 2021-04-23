@@ -42,7 +42,7 @@
     <jdk.source>1.7</jdk.source>
     <jdk.target>1.7</jdk.target>
 
-    <version.mysql>5.1.44</version.mysql>
+    <version.mysql>8.0.16</version.mysql>
     <!-- Avant J2EE 7 -->
     <version.servlet>3.1.0</version.servlet>
     <version.jsp>2.0</version.jsp>
