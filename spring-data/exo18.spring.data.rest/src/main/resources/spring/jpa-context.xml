@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+	<!-- 
+	On indique le package qui contient les interface representant nos DAO
+	Nous sommes en Spring Data JPA, il n'y a pas de classe qui implemente ses interfaces. 
+	-->
+	<jpa:repositories base-package="com.banque.dao" />
+  
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="jtaDataSource" ref="dataSource"/>
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.connection.pool_size">${hibernate.connection.pool_size}</prop>
+				<prop key="hibernate.cache.provider_class">${hibernate.cache.provider_class}</prop>                
+                <prop key="hibernate.show_sql">false</prop>
+            </props>
+        </property>
+	</bean>
+
+<!-- 	Autre exemple Spring+JPA, on ne se sert plus du fichier META-INF/persistence.xml -->
+<!-- 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"> -->
+<!-- 		<property name="dataSource" ref="dataSource" /> -->
+<!-- 		<property name="packagesToScan" value="com.banque.entity.impl" /> -->
+<!-- 		<property name="jpaVendorAdapter"> -->
+<!-- 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"> -->
+<!-- 				<property name="showSql" value="false" /> -->
+<!-- 				<property name="databasePlatform" value="${hibernate.dialect}" /> -->
+<!-- 				<property name="generateDdl" value="false" /> -->
+<!-- 			</bean> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+	
+</beans>
+

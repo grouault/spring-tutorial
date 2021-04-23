@@ -1,0 +1,32 @@
+<!-- Messages -->
+<div class="erreur" ng-if="message.error != null">{{message.error}}</div>
+<div class="message" ng-if="message.information != null">{{message.information}}</div>
+<!-- -------- -->
+
+<table class="center">
+	<caption>Liste de vos comptes sur Net Banque</caption>
+	<thead>
+		<tr>
+			<th ng-click="doSort('id')">Num&eacute;ro</th>
+			<th ng-click="doSort('libelle')">D&eacute;signation</th>
+			<th ng-click="doSort('taux')">Taux</th>
+			<th ng-click="doSort('decouvert')">D&eacute;couvert	autoris&eacute;</th>
+			<th ng-click="doSort('solde')">Solde</th>
+		</tr>
+	</thead>
+	<tfoot></tfoot>
+	<tbody>
+		<!-- TODO Alterner le style -->
+		<tr ng-repeat="cpt in comptes | orderBy:sortBy:reverse" ng-class-even="'elLigneTableau1'" ng-class-odd="'elLigneTableau2'">
+			<td class="center"><a href="#/comptehistorique/{{cpt.id}}">{{	cpt.id }}</a></td>
+			<td>{{ cpt.libelle }}</td>
+			<td>{{ cpt.taux | currency:'&euro;'}}</td>
+			<td>{{ cpt.decouvert | currency:'&euro;'}}</td>
+			<td>{{ cpt.solde | currency:'&euro;'}}</td>
+		</tr>
+	</tbody>
+</table>
+<br />
+<div class="center">
+	<button type="button" class="menu" ng-click="goMenu();"></button>
+</div>

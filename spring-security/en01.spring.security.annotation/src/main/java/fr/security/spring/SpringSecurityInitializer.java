@@ -6,7 +6,7 @@ import org.springframework.security.web.context.AbstractSecurityWebApplicationIn
  * Classe qui aura la chage de charger les fichiers de configuration par
  * annotation et de faire le mapping des URL. <br/>
  *
- * Le fichir web.xml n'a plus la charge de réaliser ses operations. <br/>
+ * Le fichir web.xml n'a plus la charge de réaliser ces operations. <br/>
  *
  * Il faut être en Servlet 3.0 minimum pour utiliser cette technique. <br/>
  *

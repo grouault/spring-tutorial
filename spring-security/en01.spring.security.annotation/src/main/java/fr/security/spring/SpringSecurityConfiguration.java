@@ -43,10 +43,13 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.and()
 			// logout
 			.logout()
+			 	// url qui déclenche le mécanisme de déconnexion. [valeur par défaut : /logout]
 				.logoutUrl("/logout")
-				.logoutSuccessUrl("/logout-success.jsp")
+				// page à afficher quand le logout est realisé.
+				.logoutSuccessUrl("/logout-success.jsp").permitAll()
 				// TODO : ??
 				// .logoutSuccessHandler(LogoutSuccessHandler)
+				.invalidateHttpSession(true)
 				.deleteCookies("JSESSIONID")
 				.and()
 			// access-denied for role.

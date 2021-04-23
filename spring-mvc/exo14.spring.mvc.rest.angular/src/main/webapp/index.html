@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="banqueApp">
+	<head>
+		<meta charset="utf-8" />
+		<title>NET*Banque : Login</title>
+		<link href="css/banque.css" rel="stylesheet" />
+	</head>
+
+	<body class="elbody" style="width: 931px;">
+		<header>
+			<span>
+				<img src="images/image-femme.jpg" alt="" class="imd" />
+				<img src="images/titre.jpg" alt="" class="imh" />				
+			</span>
+		</header>
+		<section>
+			<h2>&nbsp;</h2>
+			<div ng-view></div>
+		</section>
+		
+	    <script src="scripts/angular.js"></script>
+	    <script src="scripts/angular-route.js"></script>
+	    <script src="scripts/app/app.js"></script>
+	    
+	    <script src="scripts/app/controllers/loginController.js"></script>	    
+	    <script src="scripts/app/controllers/compteListeController.js"></script>
+	    <script src="scripts/app/controllers/compteVirementController.js"></script>
+	    <script src="scripts/app/controllers/operationController.js"></script>
+
+		<script src="scripts/app/services/loginFactory.js"></script>
+	    <script src="scripts/app/services/compteFactory.js"></script>		    
+	    <script src="scripts/app/services/operationFactory.js"></script>	    
+
+	</body>
+</html>

@@ -24,17 +24,26 @@
     <intercept-url pattern="/user/pageA.jsp" access="hasRole('ROLE_USER')" />
     <intercept-url pattern="/adm/pageB.jsp" access="hasRole('ROLE_ADMIN')" />
 
-	<!-- A vous de parametrer -->
+	<!-- A vous de parametrer 
+  
+    default-target-url: si auth ok
+    authentication-success-forward-url: ?
+    
+    -->
     <form-login 
       login-processing-url="/login"
+      login-page="/login.jsp"
+      default-target-url="/menu.jsp"
       authentication-success-forward-url="/menu.jsp"
       authentication-failure-url="/login.jsp?erreur=true"
     />
     
-    <logout invalidate-session="true" 
+    <logout 
+      invalidate-session="true" 
       logout-url="/logout"
       logout-success-url="/logout-success.jsp" />
 	
+    <!-- Redirection si pb de rôle -->
     <access-denied-handler error-page="/mauvaisrole.jsp"/>
   
     <!-- Tres important en SS4, ne pas oublier -->

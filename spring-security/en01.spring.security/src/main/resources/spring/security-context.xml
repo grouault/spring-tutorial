@@ -18,7 +18,7 @@
 	</authentication-manager>
 
 	<http use-expressions="true">
-		<intercept-url pattern="/index.jsp" access="hasRole('ROLE_USER')" />
+		<!-- intercept-url pattern="/index.jsp" access="hasRole('ROLE_USER')" / -->
 		<intercept-url pattern="/user/pageA.jsp" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/adm/pageB.jsp" access="hasRole('ROLE_ADMIN')" />
 		<!-- form-login / -->

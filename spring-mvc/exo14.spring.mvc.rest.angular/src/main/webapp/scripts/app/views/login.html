@@ -1,0 +1,27 @@
+<!-- Messages -->
+<div class="erreur" ng-if="message.error != null">{{message.error}}</div>
+<div class="message" ng-if="message.information != null">{{message.information}}</div>
+<!-- -------- -->
+			
+<table class="center">
+	<thead></thead>
+	<tfoot></tfoot>
+	<tbody>
+		<tr>
+			<td colspan="2" class="center">Veuillez entrer votre nom d'utilisateur et votre mot de passe</td>
+		</tr>
+		<tr>
+			<td><label for="idlogin">Nom d'utilisateur</label></td>
+			<td><input type="text" id="idlogin" ng-model="loginBean.login" /></td>
+		</tr>
+		<tr>
+			<td><label for="idpassword">Mot de passe</label></td>
+			<td><input type="password" id="idpassword" ng-model="loginBean.password"/></td>
+		</tr>
+		<tr>
+			<td colspan="2" class="center">
+				<button type="submit" class="valider" ng-click="authentifier()"></button>
+			</td>
+		</tr>
+	</tbody>
+</table>

@@ -1,0 +1,68 @@
+<!-- Messages -->
+<div class="erreur" ng-if="message.error != null">{{message.error}}</div>
+<div class="message" ng-if="message.information != null">{{message.information}}</div>
+<!-- -------- -->
+
+<header><h2 class="center">Historique de vos op&eacute;rations effectu&eacute;es sur le compte n&deg; {{operationBean.cptId}}</h2></header>
+<table class="center jaune">
+	<caption>Crit&egrave;res de recherche :</caption>
+	<thead>
+		<tr>
+			<th>Date</th>
+			<th>Type</th>
+		</tr>
+	</thead>
+	<tfoot></tfoot>
+	<tbody>
+		<tr>
+			<td class="center">
+				<label for="inDateDebut">Du</label> 
+				<input type="date" id="inDateDebut" value="" ng-model="operationBean.dateDebut" 
+					placeholder="yyyy/MM/dd"
+					datetime="yyyy/MM/dd"/>&nbsp;&nbsp;
+				<label for="inDateFin">Au</label> 
+				<input type="date" id="inDateFin" value="" ng-model="operationBean.dateFin" 
+					placeholder="yyyy/MM/dd"
+					datetime="yyyy/MM/dd"/>
+			</td>
+			<td>
+				<label for="idcredit">Credit</label> 
+				<input type="checkbox" id="idcredit" ng-model="operationBean.credit"/>
+				<br/>
+				<label for="iddebit">Debit</label> 
+				<input type="checkbox" id="iddebit" ng-model="operationBean.debit" />
+			</td>
+		</tr>
+	</tbody>
+</table>
+<br/>
+<div class="center">
+	<button type="button" class="rechercher" ng-click="rechercher()"></button>
+</div>
+
+
+<h2>&nbsp;</h2>
+<table class="center">
+	<caption>R&eacute;sultats :</caption>
+	<thead>
+		<tr>
+			<th ng-click="doSort('date')">Date</th>
+			<th ng-click="doSort('libelle')">Libelle</th>
+			<th ng-click="doSort('montant')">Montant</th>
+		</tr>
+	</thead>
+	<tfoot></tfoot>
+	<tbody>
+	<tbody>
+		<tr ng-repeat="oper in operations | orderBy:sortBy:reverse" ng-class-even="'elLigneTableau1'" ng-class-odd="'elLigneTableau2'">
+			<td>{{ oper.date}}</td>
+			<td>{{ oper.libelle }}</td>
+			<td>{{ oper.montant | currency:'&euro;'}}</td>
+		</tr>
+	</tbody>	
+</table>
+<br/>
+<div class="center">
+	<button type="button" class="listecomptes" ng-click="goListe();"></button>
+	<button type="button" class="menu" ng-click="goMenu();"></button>
+</div>

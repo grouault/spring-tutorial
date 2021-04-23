@@ -1,0 +1,39 @@
+<!-- Messages -->
+<div class="erreur" ng-if="message.error != null">{{message.error}}</div>
+<div class="message" ng-if="message.information != null">{{message.information}}</div>
+<!-- -------- -->
+
+<table class="center">
+	<thead></thead>
+	<tfoot></tfoot>
+	<tbody>
+		<tr>
+			<td><img src="images/puce.gif" alt=""/>&nbsp;<label for="inCmptEme">Comptes &eacute;metteurs</label></td>
+			<td>
+				<select id="inCmptEme" ng-model="virementBean.cptSrcId">
+					<option value="">&nbsp;&nbsp;&nbsp;--&nbsp;Choix&nbsp;--&nbsp;&nbsp;&nbsp;</option>
+					<option ng-repeat="cpt in comptes" value="{{cpt.id}}">{{cpt.libelle}}</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td><img src="images/puce.gif" alt=""/>&nbsp;<label for="inCmptDes">Comptes destinataires</label></td>
+			<td>
+				<select id="inCmptDes" ng-model="virementBean.cptDstId">
+					<option value="">&nbsp;&nbsp;&nbsp;--&nbsp;Choix&nbsp;--&nbsp;&nbsp;&nbsp;</option>
+					<option ng-repeat="cpt in comptes" value="{{cpt.id}}">{{cpt.libelle}}</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td><img src="images/puce.gif" alt=""/>&nbsp;<label for="inMontant">Montant du virement</label></td>
+			<td><input type="number" step="any" id="inMontant" value="0.0" size="12" ng-model="virementBean.montant"/></td>
+		</tr>
+	</tbody>
+</table>
+<br/>
+<div class="center">
+	<!-- On ne montre le bouton que si on a pas de message d'informations -->
+	<button type="button" class="valider" ng-click="virer()" ng-if="message.information == null"></button>
+	<button type="button" class="menu" ng-click="goMenu();"></button>
+</div>

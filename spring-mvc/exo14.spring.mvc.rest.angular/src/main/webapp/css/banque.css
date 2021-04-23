@@ -1,0 +1,126 @@
+img.imh {
+  width: 800px;
+  float: top;
+}
+
+img.imhb {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+
+img.imd {
+  float: left;
+}
+
+body.elbody {
+  background: url("../images/image-fond.jpg");
+  /* Donne toute la taille de la fenetre du navigateur en HTML 5 */
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  font: 13px;
+}
+
+section {
+  padding-top: 20px;
+}
+
+table {
+  background-color: lightgray;
+  border: 1px solid black;
+  width: 75%;
+}
+
+table.center {
+  margin: 0 auto;
+}
+
+table.jaune {
+  background-color: rgb(250, 230, 160);
+}
+
+th, td, caption {
+  padding: 5px;
+  vertical-align: bottom;
+}
+
+th {
+  text-align: center;
+  background-color: white;
+}
+
+td.center {
+  text-align: center;
+}
+
+tr.elLigneTableau1 {
+  border: 1px solid black;
+  background: #aabac5;
+}
+
+tr.elLigneTableau2 {
+  border: 1px solid black;
+  background: #f7b260;
+}
+
+button {
+  height: 26px;
+  border: none;
+  cursor: pointer;
+  margin: 2px;
+}
+
+button.valider {
+  background: url("../images/bouton-validez.gif") no-repeat;
+  width: 86px;
+}
+
+button.menu {
+  background: url("../images/menu.gif") no-repeat;
+  width: 87px;
+}
+
+button.rechercher {
+  background: url("../images/rechercher.gif") no-repeat;
+  width: 86px;
+}
+
+button.listecomptes {
+  background: url("../images/liste-comptes.gif") no-repeat;
+  width: 114px;
+}
+
+button.annuler {
+  background: url("../images/bouton-annuler.gif") no-repeat;
+  width: 87px;
+}
+
+h2.center {
+  text-align: center;
+}
+
+div.center {
+  text-align: center;
+  width: 65%;
+  margin: 0 auto;
+}
+
+div.erreur {
+  text-align: center;
+  width: 65%;
+  margin: 0 auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: red;
+  font-weight: bold;
+}
+
+div.message {
+  text-align: center;
+  width: 65%;
+  margin: 0 auto;
+  color: black;
+  font-weight: bold;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
