@@ -52,7 +52,7 @@
     <version.dbcp2>2.1.1</version.dbcp2>
     <version.hibernate>5.2.11.Final</version.hibernate>
     <!-- Pour la JSR303 -->
-    <version.hibernate-validator>6.0.2.Final</version.hibernate-validator>
+    <version.hibernate-validator>6.0.18.Final</version.hibernate-validator>
     <version.spring>4.3.11.RELEASE</version.spring>
 
     <!-- https://maven.apache.org/plugins/index.html -->
