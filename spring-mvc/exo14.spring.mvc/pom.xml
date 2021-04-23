@@ -41,7 +41,7 @@
     <jdk.source>1.7</jdk.source>
     <jdk.target>1.7</jdk.target>
 
-    <version.mysql>5.1.44</version.mysql>
+    <version.mysql>8.0.16</version.mysql>
     <!-- En J2EE 7 -->
     <version.javaee-web-api>7.0</version.javaee-web-api>
     <!-- La JSTL -->
