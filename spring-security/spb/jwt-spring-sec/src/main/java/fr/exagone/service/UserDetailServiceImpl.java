@@ -36,7 +36,7 @@ public class UserDetailServiceImpl implements UserDetailsService {
 		});
 		
 		
-		return new User(appUser.getUserName(), appUser.getPassword(), authorities);
+		return new User(appUser.getUsername(), appUser.getPassword(), authorities);
 	
 	}
 

@@ -29,7 +29,7 @@ public class AccountRestController {
 		
 		// creation du AppUser
 		AppUser appUser = new AppUser();
-		appUser.setUserName(userForm.getUsername());
+		appUser.setUsername(userForm.getUsername());
 		appUser.setPassword(userForm.getPassword());
 		accountService.save(appUser);
 		// ajout du rôle User par défaut.

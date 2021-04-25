@@ -6,6 +6,6 @@ import fr.exagone.entities.AppUser;
 
 public interface UserRepository extends JpaRepository<AppUser, Long> {
 
-	public AppUser findByUserName(String userName);
+	public AppUser findByUsername(String userName);
 	
 }

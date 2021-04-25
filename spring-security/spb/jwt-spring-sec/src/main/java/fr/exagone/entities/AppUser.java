@@ -13,22 +13,25 @@ import javax.persistence.ManyToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
+/**
+ * Note: on utilise pas lombok
+ * - car on besoin de deserialiser sans mettre le password dans le flux JSon.
+ * - cela necessite une configuration specifique : @JsonIgnore
+ * 
+ * @author grouault
+ *
+ */
 @Entity
-// @Data @AllArgsConstructor @NoArgsConstructor
 public class AppUser {
 
 	public AppUser() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public AppUser(Long id, String userName, String password, Collection<AppRole> roles) {
+	public AppUser(Long id, String username, String password, Collection<AppRole> roles) {
 		super();
 		this.id = id;
-		this.userName = userName;
+		this.username = username;
 		this.password = password;
 		this.roles = roles;
 	}
@@ -37,8 +40,16 @@ public class AppUser {
 	private Long id;
 	
 	@Column(unique=true)
-	private String userName;
+	private String username;
 	
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 	private String password;
 	
 	@ManyToMany(fetch = FetchType.EAGER)
@@ -50,14 +61,6 @@ public class AppUser {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
 	}
 
 	@JsonIgnore

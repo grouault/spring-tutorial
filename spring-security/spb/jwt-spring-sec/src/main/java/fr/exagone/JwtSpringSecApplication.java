@@ -34,6 +34,7 @@ public class JwtSpringSecApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		
 		// creation des users et des roles
+		
 		accounteService.save(new AppUser(null, "admin", "1234", null));
 		accounteService.save(new AppUser(null, "user", "1234", null));
 		

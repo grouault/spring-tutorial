@@ -26,9 +26,11 @@ public class AccountServiceImpl implements AccountService {
 	
 	@Override
 	public AppUser save(AppUser user) {
+		
 		String hashPwd = bCryptPasswordEncoder.encode(user.getPassword());
 		user.setPassword(hashPwd);
 		return userRepository.save(user);
+
 	}
 
 	@Override
@@ -39,13 +41,13 @@ public class AccountServiceImpl implements AccountService {
 	@Override
 	public void addRoleToUser(String userName, String roleName) {
 		AppRole role = roleRepository.findByRoleName(roleName);
-		AppUser user = userRepository.findByUserName(userName);
+		AppUser user = userRepository.findByUsername(userName);
 		user.getRoles().add(role);
 	}
 
 	@Override
 	public AppUser findUserByUserName(String userName) {
-		return userRepository.findByUserName(userName);
+		return userRepository.findByUsername(userName);
 	}
 
 }
