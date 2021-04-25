@@ -1,2 +1,2 @@
 ## Doc
-[doc](grouault/howto/tree/master/java/spring/spring-security/connexion-jwt-application)
+[doc](../../../../../../.. /grouault/howto/tree/master/java/spring/spring-security/connexion-jwt-application)
