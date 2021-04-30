@@ -46,7 +46,7 @@
     <!-- La JSTL -->
     <version.jstl>1.2</version.jstl>
 
-    <version.spring>4.3.11.RELEASE</version.spring>
+    <version.spring>4.3.29.RELEASE</version.spring>
     <version.junit>4.12</version.junit>
     <version.log4j2>2.9.0</version.log4j2>
     <version.slf4j>1.7.25</version.slf4j>
