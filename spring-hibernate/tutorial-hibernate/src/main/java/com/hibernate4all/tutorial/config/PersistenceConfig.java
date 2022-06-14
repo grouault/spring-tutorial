@@ -54,7 +54,7 @@ public class PersistenceConfig {
         Properties properties = new Properties();
         // au lancement du test : hibernate tente de faire un drop de la structure
         // tables, en fonction des entités déclarées
-        properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+        properties.setProperty("hibernate.hbm2ddl.auto", "none");
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
         return properties;
     }

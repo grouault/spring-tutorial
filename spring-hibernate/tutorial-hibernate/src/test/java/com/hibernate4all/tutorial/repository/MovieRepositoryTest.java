@@ -40,7 +40,6 @@ public class MovieRepositoryTest {
         Movie movie = new Movie();
         movie.setName("Inception");
         repository.persist(movie);
-
         // System.out.println("[save_CasNominal] - session contains movie : " + entityManager.contains(movie));
         System.out.println("fin de test");
     }

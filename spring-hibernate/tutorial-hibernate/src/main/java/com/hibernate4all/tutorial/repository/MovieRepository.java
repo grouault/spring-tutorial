@@ -2,6 +2,7 @@ package com.hibernate4all.tutorial.repository;
 
 import com.hibernate4all.tutorial.domain.Movie;
 import java.util.List;
+import java.util.Optional;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -18,14 +19,15 @@ public class MovieRepository {
     EntityManager entityManager;
 
     @Transactional
-    public void persist(Movie movie){
+    public Movie persist(Movie movie){
         LOGGER.trace("entityManager.contains() : " + entityManager.contains(movie));
         entityManager.persist(movie);
-        entityManager.flush();
+        // entityManager.flush();
         // entityManager.detach(movie);
-        entityManager.detach(movie);
-        movie.setDescription("change description");
-        LOGGER.trace("entityManager.contains() : " + entityManager.contains(movie));
+        // entityManager.detach(movie);
+        // movie.setDescription("change description");
+        // LOGGER.trace("entityManager.contains() : " + entityManager.contains(movie));
+        return movie;
     }
 
     @Transactional
@@ -35,11 +37,22 @@ public class MovieRepository {
         return result;
     }
 
+    @Transactional
+    public Optional<Movie> update(Movie movie) {
+        if (movie.getId() == null) {
+            return Optional.empty();
+        }
+        Movie toUpdate = find(movie.getId());
+        if (toUpdate != null) {
+            merge(movie);
+        }
+        return Optional.ofNullable(toUpdate);
+    }
+
     public Movie find(Long id){
         Movie result = entityManager.find(Movie.class,id);
         LOGGER.trace("entityManager.contains() : " + entityManager.contains(result));
         return result;
-
     }
 
     public List<Movie> getAll(){
@@ -47,18 +60,16 @@ public class MovieRepository {
     }
 
     @Transactional
-    public void remove(Long id) {
-        Movie movie = entityManager.find(Movie.class, id);
-        LOGGER.trace("entityManager.contains() : " + entityManager.contains(movie));
-        movie.setName("test gildas");
-        movie.setDescription("test toto");
-        Movie movie2 = entityManager.find(Movie.class, id);
-        movie2.setName("test max");
-        entityManager.persist(movie2);
-        Movie movie3 = entityManager.find(Movie.class, id);
-        LOGGER.trace("entityManager.contains() : " + entityManager.contains(movie));
-        entityManager.remove(movie);
-        LOGGER.trace("entityManager.contains() : " + entityManager.contains(movie));
+    public Boolean remove(Long id) {
+        Boolean result = false;
+        if (id != null) {
+            Movie movie = entityManager.find(Movie.class, id);
+            if (movie != null) {
+                entityManager.remove(movie);
+                result = true;
+            }
+        }
+        return result;
     }
 
     public Movie getReference(Long id) {
