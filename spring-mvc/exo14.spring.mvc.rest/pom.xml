@@ -55,7 +55,7 @@
     <version.aspectj>1.8.10</version.aspectj>
     <version.dbcp2>2.1.1</version.dbcp2>
     <version.hibernate>5.2.11.Final</version.hibernate>
-    <version.spring>4.3.11.RELEASE</version.spring>
+    <version.spring>4.3.29.RELEASE</version.spring>
     <version.netsfjson>2.4</version.netsfjson>
 
     <!-- https://maven.apache.org/plugins/index.html -->
