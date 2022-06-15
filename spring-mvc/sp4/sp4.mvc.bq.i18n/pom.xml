@@ -53,7 +53,7 @@
     <version.aspectj>1.8.10</version.aspectj>
     <version.dbcp2>2.1.1</version.dbcp2>
     <!-- Pour la JSR303 -->
-    <version.hibernate-validator>6.0.2.Final</version.hibernate-validator>
+    <version.hibernate-validator>6.0.20.Final</version.hibernate-validator>
     <version.hibernate>5.2.11.Final</version.hibernate>
     <version.spring>4.3.11.RELEASE</version.spring>
 
